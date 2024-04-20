@@ -1,0 +1,11 @@
+[package]
+name = "rust_wallet"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+clap = {version = "4.4.18", features = ["derive"]}
+chrono = "0.4.33"
+solana-client = "1.18.0"
+solana-sdk = "1.18.0"
+tiny-bip39 = "0.8.2"
