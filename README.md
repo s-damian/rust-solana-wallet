@@ -34,7 +34,7 @@ cd [project-directory]
 
 ## How to use?
 
-These operations writes the generated keypair to ```[project-directory]/storage/keypair.json```, allowing you to store or utilize the keypair in your Solana applications.
+These operations writes the generated keypair to ```[project-directory]/storage/keypair/id.json```, allowing you to store or utilize the keypair in your Solana applications.
 
 
 ### 🌐 "generate_seed": Generate and Display a Random Mnemonic:
@@ -70,7 +70,7 @@ Learn more about the **BIP 39** standard [here](https://github.com/bitcoin/bips/
 
 ### 🌐 "get_pubkey_from_file": Retrieve Public Key from Stored Keypair:
 
-This command reads the keypair stored in ```./storage/keypair.json```, extracts the public key, and displays it. This is useful for retrieving your Solana public key if you have already generated and stored your keypair locally.
+This command reads the keypair stored in ```[project-directory]/storage/keypair/id.json```, extracts the public key, and displays it. This is useful for retrieving your Solana public key if you have already generated and stored your keypair locally.
 
 Command:
 

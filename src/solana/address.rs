@@ -18,13 +18,17 @@ pub fn read_keypair_from_file(file_path: &str) -> io::Result<Keypair> {
     let content = fs::read_to_string(file_path)?;
     // Retirer les crochets et espaces blancs, puis diviser par les virgules
     let cleaned_content = content.trim_matches(|c: char| c == '[' || c == ']' || c.is_whitespace());
-    let bytes: Result<Vec<u8>, _> = cleaned_content.split(',')
+    let bytes: Result<Vec<u8>, _> = cleaned_content
+        .split(',')
         .map(|s| s.trim().parse::<u8>())
         .collect();
 
     match bytes {
         Ok(bytes) => Keypair::from_bytes(&bytes)
             .map_err(|_| Error::new(ErrorKind::InvalidData, "Failed to parse keypair")),
-        Err(_) => Err(Error::new(ErrorKind::InvalidData, "Invalid byte format in file")),
+        Err(_) => Err(Error::new(
+            ErrorKind::InvalidData,
+            "Invalid byte format in file",
+        )),
     }
 }
