@@ -4,7 +4,7 @@ mod solana;
 
 use bip::mnemonic::{generate_mnemonic, get_mnemonic_from_phrase, get_mnemonic_to_str};
 use bip::seed::{generate_seed, get_seed_bytes};
-use solana::address::{generate_keypair, write_keypair};
+use solana::address::{generate_keypair, write_keypair, read_keypair_from_file};
 use solana_sdk::signer::Signer;
 
 fn main() {
@@ -19,6 +19,8 @@ fn main() {
                 .help("A 12-word mnemonic phrase")
                 .required(true)
                 .index(1)))
+        .subcommand(Command::new("get_seed_from_file")
+            .about("Displays the public key from the keypair stored in file"))
         .get_matches();
 
     match matches.subcommand() {
@@ -33,6 +35,9 @@ fn main() {
                 generate_and_print_mnemonic_from_phrase(phrase);
                 println!("-------------- END generate_and_print_mnemonic_from_phrase --------------");
             }
+        },
+        Some(("get_seed_from_file", _sub_matches)) => {
+            get_seed_from_file();
         },
         _ => println!("Commande inconnue."),
     }
@@ -80,4 +85,13 @@ fn process_mnemonic(mnemonic: &bip39::Mnemonic) {
 
     // Clé public Solana (qui dans le cas de Solana, est également utilisée comme adresse publique du wallet).
     println!("--- Public key: {}", keypair.pubkey());
+}
+
+fn get_seed_from_file() {
+    let file_path = "./storage/keypair.txt";
+
+    match read_keypair_from_file(file_path) {
+        Ok(keypair) => println!("--- Public key: {}", keypair.pubkey()),
+        Err(e) => println!("Failed to read the keypair from file: {}", e),
+    }
 }

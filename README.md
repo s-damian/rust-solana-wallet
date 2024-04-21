@@ -36,6 +36,7 @@ cd [project-directory]
 
 These operations writes the generated keypair to ```[project-directory]/storage/keypair.txt```, allowing you to store or utilize the keypair in your Solana applications.
 
+
 ### ✦ "generate_seed": Generate and Display a Random Mnemonic
 
 This command generates a new mnemonic phrase randomly, calculates the corresponding seed, displays the seed, displays the Solana public key, and writes the keypair to a file:
@@ -43,6 +44,7 @@ This command generates a new mnemonic phrase randomly, calculates the correspond
 ```
 cargo run generate_seed
 ```
+
 
 ### ✦ "from_mnemonic": Generate and Display a Mnemonic from a Specific Phrase
 
@@ -61,6 +63,18 @@ Using words not in the BIP 39 list will lead to errors in generating a valid see
 
 Learn more about the **BIP 39** standard [here](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki).
 
+
+### ✦ "get_seed_from_file": Retrieve Public Key from Stored Keypair
+
+This command reads the keypair stored in ./storage/keypair.txt, extracts the public key, and displays it. This is useful for retrieving your Solana public key if you have already generated and stored your keypair locally.
+
+Command:
+
+```
+cargo run get_seed_from_file
+```
+
+
 ### ✦ "--help": Show Help
 
 ```
@@ -73,6 +87,7 @@ cargo run -- --help
 
 Maintain code quality and style consistency using the following tools:
 
+
 ### Code Formatting
 
 To format the codebase according to Rust's coding standards, use:
@@ -80,6 +95,7 @@ To format the codebase according to Rust's coding standards, use:
 ```
 cargo fmt
 ```
+
 
 ### Static Code Analysis
 
