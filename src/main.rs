@@ -31,7 +31,7 @@ fn main() {
     }
 }
 
-/// Générer un mnémonique (12 mots) aléatoire et afficher l'adresse publique Solana correspondante.
+/// Générer un mnémonique (12 mots) aléatoire et afficher la clé publique Solana correspondante.
 fn generate_and_print_random_mnemonic() {
     // Créer une nouvelle phrase mnémonique générée aléatoirement.
     // Il s'agit d'une mnémonique de 12 mots, ce qui est un standard commun pour de nombreux portefeuilles.
@@ -46,7 +46,7 @@ fn generate_and_print_random_mnemonic() {
     process_mnemonic(&mnemonic);
 }
 
-/// Générer un mnémonique à partir d'une phrase donnée (12 mots) et afficher l'adresse publique Solana correspondante.
+/// Générer un mnémonique à partir d'une phrase donnée (12 mots) et afficher la clé publique Solana correspondante.
 fn generate_and_print_mnemonic_from_phrase(phrase: &str) {
     println!("--- Phrase (donnée) : {}", phrase);
 
@@ -71,6 +71,6 @@ fn process_mnemonic(mnemonic: &bip39::Mnemonic) {
 
     write_keypair(&keypair, "./storage/keypair.txt");
 
-    // Adresse public solana.
+    // Clé public Solana (qui dans le cas de Solana, est également utilisée comme adresse publique du wallet).
     println!("--- Public key: {}", keypair.pubkey());
 }
