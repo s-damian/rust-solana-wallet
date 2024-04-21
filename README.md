@@ -37,7 +37,14 @@ Before running the project, make sure to clone the repository and navigate into 
 
 ```
 git clone [repository-url]
+```
+
+```
 cd [project-directory]
+```
+
+```
+cp .env.example .env
 ```
 
 
