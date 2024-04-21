@@ -122,6 +122,12 @@ cargo clippy
 
 
 
+## Env
+
+You can configure the ```KEYPAIR_PATH``` env variable in the ```.env file``` (default value: ```./storage/keypair/id.json```).
+
+
+
 ## Note
 
 Replace ```repository-url``` and ```project-directory``` with the actual URL of your Git repository and the name of the folder where your project is stored.
