@@ -25,7 +25,7 @@ cd [project-directory]
 
 ## Compilation and Execution
 
-These operations writes the generated keypair to ```[project-directory]/storage/keypair.txt```, allowing you to store or utilize the keypair in your Solana applications.
+These operations writes the generated keypair to ```[project-directory]/storage/keypair.txt``` , allowing you to store or utilize the keypair in your Solana applications.
 
 ### Generate and Display a Random Mnemonic
 
