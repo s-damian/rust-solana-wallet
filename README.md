@@ -79,7 +79,8 @@ cargo run get_pubkey_from_file
 ```
 
 
-### ✦ "--help": Show Help
+
+## Show Help
 
 ```
 cargo run -- --help
