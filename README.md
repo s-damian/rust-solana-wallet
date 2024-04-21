@@ -36,7 +36,7 @@ It provides functionalities to generate a new random mnemonic phrase or use a gi
 Before running the project, make sure to clone the repository and navigate into the project directory:
 
 ```
-git clone https://github.com/s-damian/rust-solana-wallet
+git clone https://github.com/s-damian/rust-solana-wallet.git
 ```
 
 ```
