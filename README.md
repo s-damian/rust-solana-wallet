@@ -54,7 +54,9 @@ This will also save the generated keypair to a file.
 cargo run "fit refuse hotel collect tortoise race rail weasel little medal couch remember"
 ```
 
-**Note**: The BIP 39 standard includes a predefined list of words used to generate cryptographic keys. Your custom mnemonic phrase must consist of words exclusively from this list to be valid. Using words not in the BIP 39 list will lead to errors in generating a valid seed.
+**Note**: The BIP 39 standard includes a predefined list of words used to generate cryptographic keys. Your custom mnemonic phrase must consist of words exclusively from this list to be valid.
+Using words not in the BIP 39 list will lead to errors in generating a valid seed.
+Learn more about the BIP 39 standard [here](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki).
 
 
 
