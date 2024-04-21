@@ -49,7 +49,7 @@ cargo run generate_seed
 To generate and display the seed and Solana public key from a specific 12-word mnemonic phrase, pass the phrase (12 words) as an argument.
 This will also save the generated keypair to a file.
 
-**Example** with the 12 words "fit refuse hotel collect tortoise race rail weasel little medal couch remember":
+**Example** with the 12 words ```fit refuse hotel collect tortoise race rail weasel little medal couch remember```:
 
 ```
 cargo run from_mnemonic "fit refuse hotel collect tortoise race rail weasel little medal couch remember"
@@ -60,6 +60,14 @@ cargo run from_mnemonic "fit refuse hotel collect tortoise race rail weasel litt
 Using words not in the BIP 39 list will lead to errors in generating a valid seed.
 
 Learn more about the **BIP 39** standard [here](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki).
+
+
+
+## Show help
+
+```
+cargo run -- --help
+```
 
 
 

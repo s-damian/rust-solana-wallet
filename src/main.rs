@@ -9,9 +9,8 @@ use solana_sdk::signer::Signer;
 
 fn main() {
     let matches = Command::new("Solana Wallet")
-        .version("1.0")
-        .author("Your Name. <email@example.com>")
-        .about("Handles Solana wallets")
+        .version("1.0.0")
+        .about("Example of a Solana Wallet in Rust")
         .subcommand(Command::new("generate_seed")
             .about("Generates a new random mnemonic"))
         .subcommand(Command::new("from_mnemonic")
