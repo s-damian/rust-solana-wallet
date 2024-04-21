@@ -12,22 +12,30 @@ fn main() {
         .version("1.0")
         .author("Your Name. <email@example.com>")
         .about("Handles Solana wallets")
-        .arg(
-            Arg::new("PHRASE")
+        .subcommand(Command::new("generate_seed")
+            .about("Generates a new random mnemonic"))
+        .subcommand(Command::new("from_mnemonic")
+            .about("Generates a mnemonic from a specified phrase")
+            .arg(Arg::new("PHRASE")
                 .help("A 12-word mnemonic phrase")
-                .required(false)
-                .index(1),
-        )
+                .required(true)
+                .index(1)))
         .get_matches();
 
-    if let Some(phrase) = matches.get_one::<String>("PHRASE") {
-        println!("-------------- START generate_and_print_mnemonic_from_phrase --------------");
-        generate_and_print_mnemonic_from_phrase(phrase);
-        println!("-------------- END generate_and_print_mnemonic_from_phrase --------------");
-    } else {
-        println!("-------------- START generate_and_print_random_mnemonic --------------");
-        generate_and_print_random_mnemonic();
-        println!("-------------- END generate_and_print_random_mnemonic --------------");
+    match matches.subcommand() {
+        Some(("generate_seed", _sub_matches)) => {
+            println!("-------------- START generate_and_print_random_mnemonic --------------");
+            generate_and_print_random_mnemonic();
+            println!("-------------- END generate_and_print_random_mnemonic --------------");
+        },
+        Some(("from_mnemonic", sub_matches)) => {
+            if let Some(phrase) = sub_matches.get_one::<String>("PHRASE") {
+                println!("-------------- START generate_and_print_mnemonic_from_phrase --------------");
+                generate_and_print_mnemonic_from_phrase(phrase);
+                println!("-------------- END generate_and_print_mnemonic_from_phrase --------------");
+            }
+        },
+        _ => println!("Please specify a command: 'generate_seed' or 'from_mnemonic [PHRASE]'"),
     }
 }
 

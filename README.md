@@ -41,7 +41,7 @@ These operations writes the generated keypair to ```[project-directory]/storage/
 This command generates a new mnemonic phrase randomly, calculates the corresponding seed, displays the seed, displays the Solana public key, and writes the keypair to a file:
 
 ```
-cargo run
+cargo run generate_seed
 ```
 
 ### Generate and Display a Mnemonic from a Specific Phrase
@@ -52,7 +52,7 @@ This will also save the generated keypair to a file.
 **Example** with the 12 words "fit refuse hotel collect tortoise race rail weasel little medal couch remember":
 
 ```
-cargo run "fit refuse hotel collect tortoise race rail weasel little medal couch remember"
+cargo run from_mnemonic "fit refuse hotel collect tortoise race rail weasel little medal couch remember"
 ```
 
 **Note**: The BIP 39 standard includes a predefined list of words used to generate cryptographic keys. Your custom mnemonic phrase must consist of words exclusively from this list to be valid.
