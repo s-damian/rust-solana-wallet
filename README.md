@@ -32,7 +32,7 @@ cd [project-directory]
 
 
 
-## Compilation and Execution
+## How to use?
 
 These operations writes the generated keypair to ```[project-directory]/storage/keypair.txt```, allowing you to store or utilize the keypair in your Solana applications.
 
