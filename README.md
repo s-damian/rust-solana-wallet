@@ -7,8 +7,8 @@ This project demonstrates how to create and manage a Solana wallet using Rust. I
 
 ## Requirements
 
-* Rust: Ensure Rust is installed on your system. You can install Rust using rustup.
-* Cargo: Rust's package manager, installed automatically with Rust.
+* **Rust**: Ensure Rust is installed on your system. You can install Rust using [rustup](https://rustup.rs/).
+* **Cargo**: Rust's package manager, installed automatically with Rust. Learn more about Cargo [here](https://doc.rust-lang.org/cargo/).
 
 
 
