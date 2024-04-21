@@ -25,7 +25,7 @@ cd [project-directory]
 
 ## Compilation and Execution
 
-These operations writes the generated keypair to ```[project-directory]/storage/keypair.txt``` , allowing you to store or utilize the keypair in your Solana applications.
+These operations writes the generated keypair to ```[project-directory]/storage/keypair.txt```, allowing you to store or utilize the keypair in your Solana applications.
 
 ### Generate and Display a Random Mnemonic
 
@@ -44,7 +44,7 @@ This will also save the generated keypair to a file.
 
 ```
 cargo run "fit refuse hotel collect tortoise race rail weasel little medal couch remember"
-```.
+```
 
 **Note**: The BIP 39 standard includes a predefined list of words used to generate cryptographic keys. Your custom mnemonic phrase must consist of words exclusively from this list to be valid. Using words not in the BIP 39 list will lead to errors in generating a valid seed.
 
