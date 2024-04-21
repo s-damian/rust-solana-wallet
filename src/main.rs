@@ -81,7 +81,7 @@ fn process_mnemonic(mnemonic: &bip39::Mnemonic) {
     let seed = generate_seed(mnemonic, "");
     println!("--- Seed SANS passphrase (format hexadécimal) : {:X}", seed);
 
-    let seed_with_passphrase = generate_seed(mnemonic, "stephen");
+    let seed_with_passphrase = generate_seed(mnemonic, "passphrase_for_test");
     println!(
         "--- Seed AVEC passphrase (format hexadécimal) : {:X}",
         seed_with_passphrase
@@ -99,9 +99,12 @@ fn process_mnemonic(mnemonic: &bip39::Mnemonic) {
     println!("--- Public key: {}", keypair.pubkey());
 }
 
+/// Récuperer la clé publique à partir d'une paire de clés stockée dans un fichier.
 fn get_pubkey_from_file() {
+    // Chemin vers le fichier où la paire de clés est stockée.
     let file_path = "./storage/keypair/id.json";
 
+    // Tentative de lecture de la paire de clés à partir du fichier spécifié.
     match read_keypair_from_file(file_path) {
         Ok(keypair) => println!("--- Public key: {}", keypair.pubkey()),
         Err(e) => println!("Failed to read the keypair from file: {}", e),
