@@ -81,14 +81,14 @@ fn process_mnemonic(mnemonic: &bip39::Mnemonic) {
 
     let keypair = generate_keypair(seed_bytes);
 
-    write_keypair(&keypair, "./storage/keypair.txt");
+    write_keypair(&keypair, "./storage/keypair.json");
 
     // Clé public Solana (qui dans le cas de Solana, est également utilisée comme adresse publique du wallet).
     println!("--- Public key: {}", keypair.pubkey());
 }
 
 fn get_pubkey_from_file() {
-    let file_path = "./storage/keypair.txt";
+    let file_path = "./storage/keypair.json";
 
     match read_keypair_from_file(file_path) {
         Ok(keypair) => println!("--- Public key: {}", keypair.pubkey()),
