@@ -83,13 +83,10 @@ fn process_mnemonic(mnemonic: &bip39::Mnemonic) {
     // Générer la seed de portefeuille HD (Hiérarchiquement Déterministe) à partir de la mnémonique.
     // Cette seed peut être utilisée pour générer des clés déterministes pour un portefeuille de cryptomonnaie.
     let seed = generate_seed(mnemonic, "");
-    println!("--- Seed SANS passphrase (format hexadécimal) : {:X}", seed);
+    //println!("--- Seed SANS passphrase (format hexadécimal) : {:X}", seed);
 
-    let seed_with_passphrase = generate_seed(mnemonic, "passphrase_for_test");
-    println!(
-        "--- Seed AVEC passphrase (format hexadécimal) : {:X}",
-        seed_with_passphrase
-    );
+    //let seed_with_passphrase = generate_seed(mnemonic, "passphrase_for_test");
+    //println!("--- Seed AVEC passphrase (format hexadécimal) : {:X}", seed_with_passphrase);
 
     // Récupérer la seed du portefeuille HD sous forme de bytes bruts.
     // Ce tableau de bytes représente la seed sous sa forme binaire la plus fondamentale.
