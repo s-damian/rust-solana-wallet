@@ -19,7 +19,7 @@ fn main() {
                 .help("A 12-word mnemonic phrase")
                 .required(true)
                 .index(1)))
-        .subcommand(Command::new("get_seed_from_file")
+        .subcommand(Command::new("get_pubkey_from_file")
             .about("Displays the public key from the keypair stored in file"))
         .get_matches();
 
@@ -36,8 +36,8 @@ fn main() {
                 println!("-------------- END generate_and_print_mnemonic_from_phrase --------------");
             }
         },
-        Some(("get_seed_from_file", _sub_matches)) => {
-            get_seed_from_file();
+        Some(("get_pubkey_from_file", _sub_matches)) => {
+            get_pubkey_from_file();
         },
         _ => println!("Commande inconnue."),
     }
@@ -87,7 +87,7 @@ fn process_mnemonic(mnemonic: &bip39::Mnemonic) {
     println!("--- Public key: {}", keypair.pubkey());
 }
 
-fn get_seed_from_file() {
+fn get_pubkey_from_file() {
     let file_path = "./storage/keypair.txt";
 
     match read_keypair_from_file(file_path) {
