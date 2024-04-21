@@ -14,6 +14,16 @@ It provides functionalities to generate a new random mnemonic phrase or use a gi
 
 
 
+## Summary
+
+* generate_seed: Generates a 12-word BIP 39 mnemonic phrase, derives the corresponding seed, saves the keypair, and displays the public key.
+
+* from_mnemonic: Accepts a user-provided 12-word BIP 39 mnemonic phrase, derives the corresponding seed, saves the keypair, and displays the public key.
+
+* get_pubkey_from_file: Displays the public key from a keypair stored in a JSON file, which is supplied by the user.
+
+
+
 ## Requirements
 
 * **Rust**: Ensure Rust is installed on your system. You can install Rust using [rustup](https://rustup.rs/).
