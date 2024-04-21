@@ -91,8 +91,9 @@ fn process_mnemonic(mnemonic: &bip39::Mnemonic) {
     // Ce tableau de bytes représente la seed sous sa forme binaire la plus fondamentale.
     let seed_bytes = get_seed_bytes(&seed);
 
+    // Génerer une paire de clés (clé publique et clé privée) à partir de la seed en bytes.
+    // Puis écrire cette paire de clés dans un fichier JSON.
     let keypair = generate_keypair(seed_bytes);
-
     write_keypair(&keypair, "./storage/keypair/id.json");
 
     // Clé public Solana (qui dans le cas de Solana, est également utilisée comme adresse publique du wallet).

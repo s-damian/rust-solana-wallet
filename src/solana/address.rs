@@ -3,7 +3,7 @@ use solana_sdk::signer::keypair::Keypair;
 use std::fs;
 use std::io::{self, Error, ErrorKind};
 
-// Fénerer une paire de clés Solana (clé publique et clé privée) à partir d'une seed.
+// Génerer une paire de clés Solana (clé publique et clé privée) à partir d'une seed.
 pub fn generate_keypair(seed_bytes: &[u8]) -> Keypair {
     keypair_from_seed(seed_bytes).unwrap()
 }
