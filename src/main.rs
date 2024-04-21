@@ -1,3 +1,5 @@
+use std::env;
+use dotenv::dotenv;
 use clap::{Arg, Command};
 mod bip;
 mod solana;
@@ -8,6 +10,8 @@ use solana::address::{generate_keypair, read_keypair_from_file, write_keypair};
 use solana_sdk::signer::Signer;
 
 fn main() {
+    dotenv().ok(); // Charge les variables d'environnement du fichier .env
+
     let matches = Command::new("Solana Wallet")
         .version("1.0.0")
         .about("Example of a Solana Wallet in Rust")
@@ -94,7 +98,8 @@ fn process_mnemonic(mnemonic: &bip39::Mnemonic) {
     // Génerer une paire de clés (clé publique et clé privée) à partir de la seed en bytes.
     // Puis écrire cette paire de clés dans un fichier JSON.
     let keypair = generate_keypair(seed_bytes);
-    write_keypair(&keypair, "./storage/keypair/id.json");
+    let keypair_path = get_keypair_path();
+    write_keypair(&keypair, &keypair_path);
 
     // Clé public Solana (qui dans le cas de Solana, est également utilisée comme adresse publique du wallet).
     println!("--- Public key: {}", keypair.pubkey());
@@ -103,11 +108,17 @@ fn process_mnemonic(mnemonic: &bip39::Mnemonic) {
 /// Récuperer la clé publique à partir d'une paire de clés stockée dans un fichier.
 fn get_pubkey_from_file() {
     // Chemin vers le fichier où la paire de clés est stockée.
-    let file_path = "./storage/keypair/id.json";
+    //let file_path = "./storage/keypair/id.json";
+    let keypair_path = get_keypair_path();
 
     // Tentative de lecture de la paire de clés à partir du fichier spécifié.
-    match read_keypair_from_file(file_path) {
+    match read_keypair_from_file(&keypair_path) {
         Ok(keypair) => println!("--- Public key: {}", keypair.pubkey()),
         Err(e) => println!("Failed to read the keypair from file: {}", e),
     }
+}
+
+/// Récupère le path dy fichier de paire de clés à partir des variables d'environnement ou utilise une valeur par défaut si elle n'est pas définie.
+fn get_keypair_path() -> String {
+    env::var("KEYPAIR_PATH").unwrap_or_else(|_| "./storage/keypair/id.json".to_string())
 }
