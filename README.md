@@ -1,7 +1,8 @@
 
 # Example of a Solana Wallet in Rust
 
-This project demonstrates how to create and manage a Solana wallet using Rust. It provides functionalities to generate a new random mnemonic phrase or use a given phrase to generate and display the corresponding Solana seed and public key.
+This project demonstrates how to create and manage a Solana wallet using Rust.
+It provides functionalities to generate a new random mnemonic phrase or use a given phrase to generate and display the corresponding Solana seed and public key.
 
 
 
