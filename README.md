@@ -21,13 +21,11 @@ git clone [repository-url]
 cd [project-directory]
 ```
 
-**Note**: Replace ```repository-url``` and ```project-directory``` with the actual URL of your Git repository and the name of the folder where your project is stored.
-
 
 
 ## Compilation and Execution
 
-These operations writes the generated keypair to ```[project-directory]/storage/keypair.txt```, allowing you to store or utilize the keypair in your Solana applications
+These operations writes the generated keypair to ```[project-directory]/storage/keypair.txt```, allowing you to store or utilize the keypair in your Solana applications.
 
 ### Generate and Display a Random Mnemonic
 
@@ -71,3 +69,9 @@ To perform static code analysis and catch common mistakes and inefficiencies, us
 ```
 cargo clippy
 ```
+
+
+
+## Note
+
+Replace ```repository-url``` and ```project-directory``` with the actual URL of your Git repository and the name of the folder where your project is stored.
