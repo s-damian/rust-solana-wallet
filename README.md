@@ -61,7 +61,7 @@ Using words not in the BIP 39 list will lead to errors in generating a valid see
 
 Learn more about the **BIP 39** standard [here](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki).
 
-### ✦ "--help": Show help
+### ✦ "--help": Show Help
 
 ```
 cargo run -- --help
