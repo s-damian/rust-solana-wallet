@@ -1,3 +1,4 @@
+use clap::{Arg, Command};
 mod bip;
 mod solana;
 
@@ -7,15 +8,27 @@ use solana::address::{generate_keypair, write_keypair};
 use solana_sdk::signer::Signer;
 
 fn main() {
-    println!("-------------- START generate_and_print_random_mnemonic --------------");
-    generate_and_print_random_mnemonic();
-    println!("-------------- END generate_and_print_random_mnemonic --------------");
+    let matches = Command::new("Solana Wallet")
+        .version("1.0")
+        .author("Your Name. <email@example.com>")
+        .about("Handles Solana wallets")
+        .arg(
+            Arg::new("PHRASE")
+                .help("A 12-word mnemonic phrase")
+                .required(false)
+                .index(1),
+        )
+        .get_matches();
 
-    let given_phrase =
-        "fit refuse hotel collect tortoise race rail weasel little medal couch remember";
-    println!("-------------- START generate_and_print_mnemonic_from_phrase --------------");
-    generate_and_print_mnemonic_from_phrase(given_phrase);
-    println!("-------------- END generate_and_print_mnemonic_from_phrase --------------");
+    if let Some(phrase) = matches.get_one::<String>("PHRASE") {
+        println!("-------------- START generate_and_print_mnemonic_from_phrase --------------");
+        generate_and_print_mnemonic_from_phrase(phrase);
+        println!("-------------- END generate_and_print_mnemonic_from_phrase --------------");
+    } else {
+        println!("-------------- START generate_and_print_random_mnemonic --------------");
+        generate_and_print_random_mnemonic();
+        println!("-------------- END generate_and_print_random_mnemonic --------------");
+    }
 }
 
 /// Générer un mnémonique (12 mots) aléatoire et afficher l'adresse publique Solana correspondante.
@@ -46,10 +59,9 @@ fn process_mnemonic(mnemonic: &bip39::Mnemonic) {
     // Cette seed peut être utilisée pour générer des clés déterministes pour un portefeuille de cryptomonnaie.
     let seed = generate_seed(mnemonic, "");
     println!("--- Seed SANS passphrase (format hexadécimal) : {:X}", seed);
-    let seed2 = generate_seed(mnemonic, "");
-    println!("--- Seed ENCORE SANS passphrase (format hexadécimal) : {:X}", seed2);
-    let seed3 = generate_seed(mnemonic, "stephen");
-    println!("--- Seed AVEC passphrase (format hexadécimal) : {:X}", seed3);
+
+    let seed_with_passphrase = generate_seed(mnemonic, "stephen");
+    println!("--- Seed AVEC passphrase (format hexadécimal) : {:X}", seed_with_passphrase);
 
     // Récupérer la seed du portefeuille HD sous forme de bytes bruts.
     // Ce tableau de bytes représente la seed sous sa forme binaire la plus fondamentale.
