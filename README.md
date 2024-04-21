@@ -36,7 +36,7 @@ It provides functionalities to generate a new random mnemonic phrase or use a gi
 Before running the project, make sure to clone the repository and navigate into the project directory:
 
 ```
-git clone [repository-url]
+git clone https://github.com/s-damian/rust-solana-wallet
 ```
 
 ```
@@ -132,9 +132,3 @@ cargo clippy
 ## Env
 
 You can configure the ```KEYPAIR_PATH``` env variable in the ```.env file``` (default value: ```./storage/keypair/id.json```).
-
-
-
-## Note
-
-Replace ```repository-url``` and ```project-directory``` with the actual URL of your Git repository and the name of the folder where your project is stored.
