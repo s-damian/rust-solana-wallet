@@ -2,10 +2,10 @@
 # Example of a Solana Wallet in Rust
 
 <a href="https://github.com/s-damian/rust-solana-wallet">
-<img src="https://raw.githubusercontent.com/s-damian/medias/main/solana-logo.webp" alt="Solana Logo" height="100px">
+<img src="https://raw.githubusercontent.com/s-damian/medias/main/technos-logos/solana-logo.webp" alt="Solana Logo" height="100px">
 </a>
 <a href="https://github.com/s-damian/rust-solana-wallet">
-<img src="https://raw.githubusercontent.com/s-damian/medias/main/rust-logo.webp" alt="Rust Logo" height="100px">
+<img src="https://raw.githubusercontent.com/s-damian/medias/main/technos-logos/rust-logo.webp" alt="Rust Logo" height="100px">
 </a>
 
 This project demonstrates how to create and manage a Solana wallet using Rust.
