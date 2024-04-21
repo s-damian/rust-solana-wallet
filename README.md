@@ -36,7 +36,7 @@ cd [project-directory]
 
 These operations writes the generated keypair to ```[project-directory]/storage/keypair.txt```, allowing you to store or utilize the keypair in your Solana applications.
 
-### * "generate_seed" Generate and Display a Random Mnemonic
+### - "generate_seed" Generate and Display a Random Mnemonic
 
 This command generates a new mnemonic phrase randomly, calculates the corresponding seed, displays the seed, displays the Solana public key, and writes the keypair to a file:
 
@@ -44,7 +44,7 @@ This command generates a new mnemonic phrase randomly, calculates the correspond
 cargo run generate_seed
 ```
 
-### * "from_mnemonic" Generate and Display a Mnemonic from a Specific Phrase
+### - "from_mnemonic" Generate and Display a Mnemonic from a Specific Phrase
 
 To generate and display the seed and Solana public key from a specific 12-word mnemonic phrase, pass the phrase (12 words) as an argument.
 This will also save the generated keypair to a file.
@@ -63,7 +63,7 @@ Learn more about the **BIP 39** standard [here](https://github.com/bitcoin/bips/
 
 
 
-### * Show help
+### - Show help
 
 ```
 cargo run -- --help
