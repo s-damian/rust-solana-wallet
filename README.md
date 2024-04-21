@@ -39,7 +39,9 @@ These operations writes the generated keypair to ```[project-directory]/storage/
 
 ### ✦ "generate_seed": Generate and Display a Random Mnemonic
 
-This command generates a new mnemonic phrase randomly, calculates the corresponding seed, displays the seed, displays the Solana public key, and writes the keypair to a file:
+This command generates a new mnemonic phrase randomly, calculates the corresponding seed, displays the seed, displays the Solana public key, and writes the keypair to a file.
+
+Command:
 
 ```
 cargo run generate_seed
@@ -51,7 +53,9 @@ cargo run generate_seed
 To generate and display the seed and Solana public key from a specific 12-word mnemonic phrase, pass the phrase (12 words) as an argument.
 This will also save the generated keypair to a file.
 
-**Example** with the 12 words ```fit refuse hotel collect tortoise race rail weasel little medal couch remember```:
+**Example** with the 12 words ```fit refuse hotel collect tortoise race rail weasel little medal couch remember```.
+
+Command:
 
 ```
 cargo run from_mnemonic "fit refuse hotel collect tortoise race rail weasel little medal couch remember"
