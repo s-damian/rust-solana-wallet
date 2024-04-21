@@ -1,7 +1,14 @@
 [package]
+edition = "2021"
 name = "rust-solana-wallet"
 version = "0.1.0"
-edition = "2021"
+authors = ["Stephen Damian <contact@damian-freelance.fr>"]
+homepage = "https://github.com/s-damian/rust-solana-wallet"
+documentation = "https://github.com/s-damian/rust-solana-wallet"
+readme = "README.md"
+keywords = ["rust", "solana", "wallet"]
+license = "MIT"
+repository = "https://github.com/s-damian/rust-solana-wallet"
 
 [dependencies]
 clap = {version = "4.5.4", features = ["derive"]}
