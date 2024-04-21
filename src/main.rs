@@ -34,7 +34,7 @@ fn main() {
                 println!("-------------- END generate_and_print_mnemonic_from_phrase --------------");
             }
         },
-        _ => println!("Please specify a command: 'generate_seed' or 'from_mnemonic [PHRASE]'"),
+        _ => println!("Commande inconnue."),
     }
 }
 
