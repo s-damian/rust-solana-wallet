@@ -29,21 +29,26 @@ cd [project-directory]
 
 ### Generate and Display a Random Mnemonic
 
-This command generates a new mnemonic phrase randomly, calculates the corresponding seed, displays the seed, and displays the Solana public key:
+This command generates a new mnemonic phrase randomly, calculates the corresponding seed, displays the seed, displays the Solana public key, and writes the keypair to a file:
 
 ```
 cargo run
 ```
 
+This operation writes the generated keypair to ./storage/keypair.txt, allowing you to store or utilize the keypair in your Solana applications.
+
 ### Generate and Display a Mnemonic from a Specific Phrase
 
 To generate and display the seed and Solana public key from a specific 12-word mnemonic phrase, pass the phrase (12 words) as an argument.
+This will also save the generated keypair to a file.
 
 **Example** with the 12 words "fit refuse hotel collect tortoise race rail weasel little medal couch remember":
 
 ```
 cargo run "fit refuse hotel collect tortoise race rail weasel little medal couch remember"
 ```
+
+This operation writes the generated keypair to ```[project-directory]/storage/keypair.txt```, allowing you to store or utilize the keypair in your Solana applications.
 
 **Note**: The BIP 39 standard includes a predefined list of words used to generate cryptographic keys. Your custom mnemonic phrase must consist of words exclusively from this list to be valid. Using words not in the BIP 39 list will lead to errors in generating a valid seed.
 
