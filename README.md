@@ -40,7 +40,7 @@ git clone https://github.com/s-damian/rust-solana-wallet.git
 ```
 
 ```
-cd [project-directory]
+cd /[your-path]/rust-solana-wallet
 ```
 
 ```
