@@ -52,7 +52,7 @@ cp .env.example .env
 
 ## How to use?
 
-These operations writes the generated keypair to the ```[project-directory]/storage/keypair/id.json``` file, allowing you to store or utilize the keypair in your Solana applications.
+"generate_seed" and "from_mnemonic" operations writes the generated keypair to the ```[project-directory]/storage/keypair/id.json``` file, allowing you to store or utilize the keypair in your Solana applications.
 
 
 ### 🌐 "generate_seed": Generate and Display a Random Mnemonic:
