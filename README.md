@@ -11,7 +11,8 @@
 This project demonstrates how to create and manage a Solana wallet using Rust.
 
 - **Generate Mnemonic**: Creates a new random BIP 39 mnemonic phrase.
-- **Seed Derivation**: Derives a seed from the mnemonic phrase.
+- **Seed**: Derives a seed from the mnemonic phrase.
+- **Passphrase**: You can optionally use a passphrase.
 - **Keypair Generation**: Generates a Solana keypair (public and private key) from the derived seed.
 - **Keypair Storage**: Saves the generated keypair to a local JSON file for future use.
 - **Public Key Display**: Retrieves and displays the public key from the locally stored keypair.
@@ -56,7 +57,9 @@ cp .env.example .env
 
 ## How to use?
 
-"generate_seed" and "from_mnemonic" operations writes the generated keypair to the ```[project-directory]/storage/keypair/id.json``` file, allowing you to store or utilize the keypair in your Solana applications.
+**Keypair storage**: "generate_seed" and "from_mnemonic" operations writes the generated keypair to the ```[project-directory]/storage/keypair/id.json``` file, allowing you to store or utilize the keypair in your Solana applications.
+
+**Passphrase**: For "generate_seed" and for "from_mnemonic", in the terminal, you will be prompted to optionally enter a passphrase (leave empty, and press enter to not use any).
 
 
 ### 🌐 "generate_seed": Generate and Display a Random Mnemonic:
@@ -160,4 +163,8 @@ cargo clippy
 
 Environment variables are configured in the ```.env``` file.
 
+You can custom your ```NB_DERIVATIONS``` env var (default value: ```1```).
+
 You can custom your ```KEYPAIR_PATH``` env var (default value: ```./storage/keypair/id.json```).
+
+You can custom your ```KEYPAIR_DIR``` env var (default value: ```./storage/keypair/derived```).
