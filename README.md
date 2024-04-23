@@ -12,11 +12,11 @@ This project demonstrates how to create and manage a Solana wallet using Rust.
 
 - **Generate Mnemonic**: Creates a new random BIP 39 mnemonic phrase.
 - **Seed**: Derives a seed from the mnemonic phrase.
+- **Key Derivation**: Supports generating multiple keypairs from a single seed by applying BIP44 derivation paths.
 - **Passphrase**: You can optionally use a passphrase.
 - **Keypair Generation**: Generates a Solana keypair (public and private key) from the derived seed.
 - **Keypair Storage**: Saves the generated keypair to a local JSON file for future use.
 - **Public Key Display**: Retrieves and displays the public key from the locally stored keypair.
-- **Key Derivation**: Supports generating multiple keypairs from a single seed by applying BIP44 derivation paths.
 
 
 
