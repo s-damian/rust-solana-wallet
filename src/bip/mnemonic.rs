@@ -12,5 +12,5 @@ pub fn get_mnemonic_to_str(mnemonic: &Mnemonic) -> &str {
 
 /// Créer une phrase mnémonique à partir d'une phrase (12/24/Etc. mots) donnée.
 pub fn get_mnemonic_from_phrase(phrase: &str) -> Mnemonic {
-    Mnemonic::from_phrase(phrase, Language::English).unwrap()
+    Mnemonic::from_phrase(phrase, Language::English).expect("Failed to get mnemonic from phrase")
 }

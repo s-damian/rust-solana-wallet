@@ -5,7 +5,7 @@ use std::io::{self, Error, ErrorKind};
 
 /// Génerer une paire de clés Solana (clé publique et clé privée) à partir d'une seed.
 pub fn generate_keypair(seed_bytes: &[u8]) -> Keypair {
-    keypair_from_seed(seed_bytes).unwrap()
+    keypair_from_seed(seed_bytes).expect("Failed to generate keypair to file")
 }
 
 /// Écrire la paire de clés générée dans un fichier.
@@ -14,7 +14,7 @@ pub fn generate_keypair(seed_bytes: &[u8]) -> Keypair {
 /// Et il y a une attention particulière à la sécurité sur les systèmes Unix, où le fichier est créé avec des permissions restreintes (0o600).
 /// Ce fichier peut être utilisé pour stocker la clé de manière sécurisée ou pour l'importer dans d'autres applications ou services compatibles avec Solana.
 pub fn write_keypair(keypair: &Keypair, file_path: &str) {
-    write_keypair_file(keypair, file_path).unwrap();
+    write_keypair_file(keypair, file_path).expect("Failed to write keypair to file");
 }
 
 pub fn read_keypair_from_file(file_path: &str) -> io::Result<Keypair> {
