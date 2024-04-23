@@ -69,7 +69,7 @@ cargo run generate_seed
 
 To generate and display the seed and Solana public key from a specific mnemonic phrase, pass the phrase (12 words or 24 words by example) as an argument.
 
-This will also save the generated keypair to a file.
+This will also save the generated keypair in ```[project-directory]/storage/keypair/id.json``` file.
 
 **Example** with this 12 words: ```fit``` ```refuse``` ```hotel``` ```collect``` ```tortoise``` ```race``` ```rail``` ```weasel``` ```little``` ```medal``` ```couch``` ```remember```.
 
