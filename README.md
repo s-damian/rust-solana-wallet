@@ -102,7 +102,9 @@ Public Key: EsiyKK61Ycv4XXqUoFJa2SuFJGHjVeWgAB5UvaNkb713
 
 ### 🌐 "get_pubkey_from_keypair_file": Retrieve Public Key from Stored Keypair:
 
-This command reads the keypair stored in ```[project-directory]/storage/keypair/id.json```, extracts the public key, and displays it. This is useful for retrieving your Solana public key if you have already generated and stored your keypair locally.
+This is useful for retrieving your Solana public key if you have already generated and stored your keypair locally.
+
+This command reads the keypair stored in ```[project-directory]/storage/keypair/id.json```, extracts the public key, and displays it.
 
 * Command:
 
