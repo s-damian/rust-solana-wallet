@@ -88,7 +88,7 @@ fn process_mnemonic(mnemonic: &bip39::Mnemonic) {
     write_keypair(&keypair, &keypair_path);
 
     // Clé public Solana (qui dans le cas de Solana, est également utilisée comme adresse publique du wallet).
-    println!("Public key: {}", keypair.pubkey());
+    println!("Public Key: {}", keypair.pubkey());
 }
 
 /// Récuperer la clé publique à partir d'une paire de clés stockée dans un fichier.
@@ -99,7 +99,7 @@ fn get_pubkey_from_keypair_file() {
 
     // Tentative de lecture de la paire de clés à partir du fichier spécifié.
     match read_keypair_from_file(&keypair_path) {
-        Ok(keypair) => println!("Public key: {}", keypair.pubkey()),
+        Ok(keypair) => println!("Public Key: {}", keypair.pubkey()),
         Err(e) => println!("Failed to read the keypair from file: {}", e),
     }
 }
