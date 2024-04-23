@@ -28,6 +28,7 @@ It provides functionalities to generate a new random mnemonic phrase or use a gi
 
 * **Rust**: Ensure Rust is installed on your system. You can install Rust using [rustup](https://rustup.rs/).
 * **Cargo**: Rust's package manager, installed automatically with Rust. Learn more about Cargo [here](https://doc.rust-lang.org/cargo/).
+* **BIP39 Basic knowledge**: Learn more about the **BIP 39** standard [here](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki).
 
 
 
@@ -79,11 +80,7 @@ Command:
 cargo run from_mnemonic "fit refuse hotel collect tortoise race rail weasel little medal couch remember"
 ```
 
-**Note**: The BIP 39 standard includes a predefined list of words used to generate cryptographic keys. Your custom mnemonic phrase must consist of words exclusively from this list to be valid.
-
-Using words not in the BIP 39 list will lead to errors in generating a valid seed.
-
-Learn more about the **BIP 39** standard [here](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki).
+**Note**: The BIP 39 standard includes a predefined list of words used to generate cryptographic keys. Your custom mnemonic phrase must consist of words exclusively from this list to be valid. Using words not in the BIP 39 list will lead to errors in generating a valid seed.
 
 
 ### 🌐 "get_pubkey_from_keypair_file": Retrieve Public Key from Stored Keypair:
