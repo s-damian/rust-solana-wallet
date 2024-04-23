@@ -160,4 +160,4 @@ cargo clippy
 
 Environment variables are configured in the ```.env``` file.
 
-You can configure the ```KEYPAIR_PATH``` (default value: ```./storage/keypair/id.json```).
+You can cusrom your ```KEYPAIR_PATH``` env var (default value: ```./storage/keypair/id.json```).
