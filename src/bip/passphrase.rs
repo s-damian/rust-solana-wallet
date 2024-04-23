@@ -1,6 +1,6 @@
 use std::io;
 
-/// Suggest that the user add a passprase to the seed (leave empty to not use any).
+/// Suggérez à l'utilisateur d'ajouter une passphrase à la seed (laisser vide pour ne pas en utiliser).
 pub fn prompt_for_passphrase() -> String {
     println!("Enter your passphrase:");
 
