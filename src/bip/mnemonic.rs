@@ -10,7 +10,7 @@ pub fn get_mnemonic_to_str(mnemonic: &Mnemonic) -> &str {
     mnemonic.phrase()
 }
 
-// Créer une phrase mnémonique à partir d'une phrase (12 mots) donnée.
+// Créer une phrase mnémonique à partir d'une phrase (12/24/Etc. mots) donnée.
 pub fn get_mnemonic_from_phrase(phrase: &str) -> Mnemonic {
     Mnemonic::from_phrase(phrase, Language::English).unwrap()
 }

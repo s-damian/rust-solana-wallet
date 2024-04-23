@@ -20,7 +20,7 @@ It provides functionalities to generate a new random mnemonic phrase or use a gi
 
 * [from_mnemonic](#-from_mnemonic-generate-and-display-a-mnemonic-from-a-specific-phrase): Accepts a user-provided 12-word BIP 39 mnemonic phrase, derives the corresponding seed, saves the keypair, and displays the public key.
 
-* [get_pubkey_from_file](#-get_pubkey_from_file-retrieve-public-key-from-stored-keypair): Displays the public key from a keypair stored in a JSON file, which is supplied by the user.
+* [get_pubkey_from_keypair_file](#-get_pubkey_from_keypair_file-retrieve-public-key-from-stored-keypair): Displays the public key from a keypair stored in a JSON file, which is supplied by the user.
 
 
 
@@ -86,14 +86,14 @@ Using words not in the BIP 39 list will lead to errors in generating a valid see
 Learn more about the **BIP 39** standard [here](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki).
 
 
-### 🌐 "get_pubkey_from_file": Retrieve Public Key from Stored Keypair:
+### 🌐 "get_pubkey_from_keypair_file": Retrieve Public Key from Stored Keypair:
 
 This command reads the keypair stored in ```[project-directory]/storage/keypair/id.json```, extracts the public key, and displays it. This is useful for retrieving your Solana public key if you have already generated and stored your keypair locally.
 
 Command:
 
 ```
-cargo run get_pubkey_from_file
+cargo run get_pubkey_from_keypair_file
 ```
 
 
