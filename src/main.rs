@@ -1,6 +1,6 @@
-use std::env;
-use dotenv::dotenv;
 use clap::{Arg, Command};
+use dotenv::dotenv;
+use std::env;
 mod bip;
 mod solana;
 
