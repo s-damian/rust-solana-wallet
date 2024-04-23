@@ -51,12 +51,12 @@ cp .env.example .env
 
 ## How to use?
 
-These operations writes the generated keypair to ```[project-directory]/storage/keypair/id.json```, allowing you to store or utilize the keypair in your Solana applications.
+These operations writes the generated keypair to the ```[project-directory]/storage/keypair/id.json``` file, allowing you to store or utilize the keypair in your Solana applications.
 
 
 ### 🌐 "generate_seed": Generate and Display a Random Mnemonic:
 
-This command generates a new mnemonic phrase randomly, calculates the corresponding seed, displays the seed, displays the Solana public key, and writes the keypair to a file.
+This command generates a new mnemonic phrase randomly, calculates the corresponding seed, displays the seed, displays the Solana public key, and generates and writes the keypair to the file.
 
 Command:
 
@@ -69,7 +69,7 @@ cargo run generate_seed
 
 To generate and display the seed and Solana public key from a specific mnemonic phrase, pass the phrase (12 words or 24 words by example) as an argument.
 
-This will also save the generated keypair in ```[project-directory]/storage/keypair/id.json``` file.
+This will also generates and writes the keypair to the file.
 
 **Example** with this 12 words: ```fit``` ```refuse``` ```hotel``` ```collect``` ```tortoise``` ```race``` ```rail``` ```weasel``` ```little``` ```medal``` ```couch``` ```remember```.
 
