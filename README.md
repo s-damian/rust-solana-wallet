@@ -67,7 +67,8 @@ cargo run generate_seed
 
 ### 🌐 "from_mnemonic": Generate and Display a Mnemonic from a Specific Phrase:
 
-To generate and display the seed and Solana public key from a specific 12-word mnemonic phrase, pass the phrase (12 words) as an argument.
+To generate and display the seed and Solana public key from a specific mnemonic phrase, pass the phrase (12 words or 24 words by example) as an argument.
+
 This will also save the generated keypair to a file.
 
 **Example** with this 12 words: ```fit``` ```refuse``` ```hotel``` ```collect``` ```tortoise``` ```race``` ```rail``` ```weasel``` ```little``` ```medal``` ```couch``` ```remember```.
