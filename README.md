@@ -10,7 +10,7 @@
 
 This project demonstrates how to create and manage a Solana wallet using Rust.
 
-- **Generate Mnemonic**: Creates a new random BIP 39 mnemonic phrase.
+- **Generate Mnemonic**: Creates a new random BIP39 mnemonic phrase.
 - **Seed**: Derives a seed from the mnemonic phrase.
 - **Key Derivation**: Supports generating multiple keypairs from a single seed by applying BIP44 derivation paths.
 - **Passphrase**: You can optionally use a passphrase.
@@ -22,9 +22,9 @@ This project demonstrates how to create and manage a Solana wallet using Rust.
 
 ## Summary
 
-* [generate_seed](#-generate_seed-generate-and-display-a-random-mnemonic): Generates a 12-word BIP 39 mnemonic phrase, derives the corresponding seed, saves the keypair, and displays the public key.
+* [generate_seed](#-generate_seed-generate-and-display-a-random-mnemonic): Generates a 12-word BIP39 mnemonic phrase, derives the corresponding seed, saves the keypair, and displays the public key.
 
-* [from_mnemonic](#-from_mnemonic-generate-and-display-a-mnemonic-from-a-specific-phrase): Accepts a user-provided 12-word BIP 39 mnemonic phrase, derives the corresponding seed, saves the keypair, and displays the public key.
+* [from_mnemonic](#-from_mnemonic-generate-and-display-a-mnemonic-from-a-specific-phrase): Accepts a user-provided 12-word BIP39 mnemonic phrase, derives the corresponding seed, saves the keypair, and displays the public key.
 
 * [get_pubkey_from_keypair_file](#-get_pubkey_from_keypair_file-retrieve-public-key-from-stored-keypair): Displays the public key from a keypair stored in a JSON file, which is supplied by the user.
 
@@ -34,7 +34,7 @@ This project demonstrates how to create and manage a Solana wallet using Rust.
 
 * **Rust**: Ensure Rust is installed on your system. You can install Rust using [rustup](https://rustup.rs/).
 * **Cargo**: Rust's package manager, installed automatically with Rust. Learn more about Cargo [here](https://doc.rust-lang.org/cargo/).
-* **BIP39 Basic knowledge**: Learn more about the **BIP 39** standard [here](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki).
+* **BIP39 Basic knowledge**: Learn more about the **BIP39** standard [here](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki).
 
 
 
@@ -76,8 +76,8 @@ cargo run generate_seed
 * Example of result:
 
 ```
-BIP39 Mnemonic (random phrase) : shed scorpion manual wheat monster phone winter toe dream kitchen salad column
-BIP39 Seed : 34A0EACFFDF41445C0B7E43C2D730C54F4CD1D8334528F73E3D5F2C2977FAABA7CAD88EBDA6A1F02CE6BB596F04036305A32B96303F93FF864D268539739AFF8
+BIP39 Mnemonic (random phrase): shed scorpion manual wheat monster phone winter toe dream kitchen salad column
+BIP39 Seed: 34A0EACFFDF41445C0B7E43C2D730C54F4CD1D8334528F73E3D5F2C2977FAABA7CAD88EBDA6A1F02CE6BB596F04036305A32B96303F93FF864D268539739AFF8
 Public Key: FTGJPL5hia749v3jhNWJA7uE2VoVGyofB7BBL2cLwoPc
 ```
 
@@ -100,12 +100,12 @@ cargo run from_mnemonic "fit refuse hotel collect tortoise race rail weasel litt
 * Example of result:
 
 ```
-BIP39 Mnemonic (given phrase) : fit refuse hotel collect tortoise race rail weasel little medal couch remember
-BIP39 Seed : 2C9AE93C7FA7D5296472B6E0F8928F94963E96ACAFDF1924AF8B7A8471B04FA15F49C98023FDC84BBB5979085F91A577E1A36A7BAC9C4C735D44379D7A915D59
+BIP39 Mnemonic (given phrase): fit refuse hotel collect tortoise race rail weasel little medal couch remember
+BIP39 Seed: 2C9AE93C7FA7D5296472B6E0F8928F94963E96ACAFDF1924AF8B7A8471B04FA15F49C98023FDC84BBB5979085F91A577E1A36A7BAC9C4C735D44379D7A915D59
 Public Key: EsiyKK61Ycv4XXqUoFJa2SuFJGHjVeWgAB5UvaNkb713
 ```
 
-**Note**: The BIP 39 standard includes a predefined list of words used to generate cryptographic keys. Your custom mnemonic phrase must consist of words exclusively from this list to be valid. Using words not in the BIP 39 list will lead to errors in generating a valid seed.
+**Note**: The BIP39 standard includes a predefined list of words used to generate cryptographic keys. Your custom mnemonic phrase must consist of words exclusively from this list to be valid. Using words not in the BIP39 list will lead to errors in generating a valid seed.
 
 
 ### 🌐 "get_pubkey_from_keypair_file": Retrieve Public Key from Stored Keypair:

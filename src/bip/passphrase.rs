@@ -9,5 +9,6 @@ pub fn prompt_for_passphrase() -> String {
         .read_line(&mut passphrase)
         .expect("Failed to read passphrase");
 
-    passphrase.trim().to_string() // Return the passphrase.
+    // Retourner la passphrase.
+    passphrase.trim().to_string()
 }

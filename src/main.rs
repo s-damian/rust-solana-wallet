@@ -60,14 +60,14 @@ fn generate_and_print_random_mnemonic() {
     // Cette phrase est utilisée pour générer une seed et peut être utilisée pour la récupération d'un portefeuille.
     let phrase = get_mnemonic_to_str(&mnemonic);
 
-    println!("BIP39 Mnemonic (random phrase) : {}", phrase);
+    println!("BIP39 Mnemonic (random phrase): {}", phrase);
 
     process_mnemonic(&mnemonic);
 }
 
 /// Générer un mnémonique à partir d'une phrase donnée (12/24/Etc. mots) et afficher la clé publique Solana correspondante.
 fn generate_and_print_mnemonic_from_phrase(phrase: &str) {
-    println!("BIP39 Mnemonic (given phrase) : {}", phrase);
+    println!("BIP39 Mnemonic (given phrase): {}", phrase);
 
     let mnemonic = get_mnemonic_from_phrase(phrase);
     process_mnemonic(&mnemonic);
@@ -81,7 +81,7 @@ fn process_mnemonic(mnemonic: &bip39::Mnemonic) {
     // Cette seed peut être utilisée pour générer des clés déterministes pour un portefeuille de cryptomonnaie.
     let seed = generate_seed(mnemonic, &passphrase);
     //let seed = generate_seed(mnemonic, "");
-    println!("BIP39 Seed : {:X}", seed);
+    println!("BIP39 Seed: {:X}", seed);
 
     // Récupérer la seed du portefeuille HD sous forme de bytes bruts.
     // Ce tableau de bytes représente la seed sous sa forme binaire la plus fondamentale.
