@@ -65,6 +65,14 @@ Command:
 cargo run generate_seed
 ```
 
+Example of result:
+```
+BIP39 Mnemonic (random phrase) : shed scorpion manual wheat monster phone winter toe dream kitchen salad column
+BIP39 Seed : 34A0EACFFDF41445C0B7E43C2D730C54F4CD1D8334528F73E3D5F2C2977FAABA7CAD88EBDA6A1F02CE6BB596F04036305A32B96303F93FF864D268539739AFF8
+Public Key: FTGJPL5hia749v3jhNWJA7uE2VoVGyofB7BBL2cLwoPc
+```
+
+
 
 ### 🌐 "from_mnemonic": Generate and Display a Mnemonic from a Specific Phrase:
 
@@ -78,6 +86,13 @@ Command:
 
 ```
 cargo run from_mnemonic "fit refuse hotel collect tortoise race rail weasel little medal couch remember"
+```
+
+You will see this result:
+```
+BIP39 Mnemonic (given phrase) : fit refuse hotel collect tortoise race rail weasel little medal couch remember
+BIP39 Seed : 2C9AE93C7FA7D5296472B6E0F8928F94963E96ACAFDF1924AF8B7A8471B04FA15F49C98023FDC84BBB5979085F91A577E1A36A7BAC9C4C735D44379D7A915D59
+Public Key: EsiyKK61Ycv4XXqUoFJa2SuFJGHjVeWgAB5UvaNkb713
 ```
 
 **Note**: The BIP 39 standard includes a predefined list of words used to generate cryptographic keys. Your custom mnemonic phrase must consist of words exclusively from this list to be valid. Using words not in the BIP 39 list will lead to errors in generating a valid seed.
