@@ -1,5 +1,5 @@
 
-# Example of a Solana Wallet in Rust
+# Solana Wallet in Rust - Example
 
 <a href="https://github.com/s-damian/rust-solana-wallet">
 <img src="https://raw.githubusercontent.com/s-damian/medias/main/technos-logos/solana-logo.webp" alt="Solana Logo" height="100px">
@@ -8,15 +8,17 @@
 <img src="https://raw.githubusercontent.com/s-damian/medias/main/technos-logos/rust-logo.webp" alt="Rust Logo" height="100px">
 </a>
 
-This project demonstrates how to create and manage a Solana wallet using Rust.
+> This is an example of a Solana Wallet in Rust
 
-- **Generate Mnemonic**: Creates a new random BIP39 mnemonic phrase.
-- **Seed**: Derives a seed from the mnemonic phrase.
-- **Key Derivation**: Supports generating multiple keypairs from a single seed by applying BIP44 derivation paths.
-- **Passphrase**: You can optionally use a passphrase.
-- **Keypair Generation**: Generates a Solana keypair (public and private key) from the derived seed.
-- **Keypair Storage**: Saves the generated keypair to a local JSON file for future use.
-- **Public Key Display**: Retrieves and displays the public key from the locally stored keypair.
+> This project demonstrates how to create and manage a Solana Wallet using Rust.
+
+* **Generate Mnemonic**: Creates a new random BIP39 mnemonic phrase.
+* **Seed**: Derives a seed from the mnemonic phrase.
+* **Key Derivation**: Supports generating multiple keypairs from a single seed by applying BIP44 derivation paths.
+* **Passphrase**: You can optionally use a passphrase.
+* **Keypair Generation**: Generates a Solana keypair (public and private key) from the derived seed.
+* **Keypair Storage**: Saves the generated keypair to a local JSON file for future use.
+* **Public Key Display**: Retrieves and displays the public key from the locally stored keypair.
 
 
 
@@ -34,7 +36,6 @@ This project demonstrates how to create and manage a Solana wallet using Rust.
 
 * **Rust**: Ensure Rust is installed on your system. You can install Rust using [rustup](https://rustup.rs/).
 * **Cargo**: Rust's package manager, installed automatically with Rust. Learn more about Cargo [here](https://doc.rust-lang.org/cargo/).
-* **BIP39 Basic knowledge**: Learn more about the **BIP39** standard [here](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki).
 
 
 
@@ -78,7 +79,7 @@ cargo run generate_seed
 ```
 BIP39 Mnemonic (random phrase): shed scorpion manual wheat monster phone winter toe dream kitchen salad column
 BIP39 Seed: 34A0EACFFDF41445C0B7E43C2D730C54F4CD1D8334528F73E3D5F2C2977FAABA7CAD88EBDA6A1F02CE6BB596F04036305A32B96303F93FF864D268539739AFF8
-Public Key: FTGJPL5hia749v3jhNWJA7uE2VoVGyofB7BBL2cLwoPc
+Solana Public Key: FTGJPL5hia749v3jhNWJA7uE2VoVGyofB7BBL2cLwoPc
 ```
 
 
@@ -102,7 +103,7 @@ cargo run from_mnemonic "fit refuse hotel collect tortoise race rail weasel litt
 ```
 BIP39 Mnemonic (given phrase): fit refuse hotel collect tortoise race rail weasel little medal couch remember
 BIP39 Seed: 2C9AE93C7FA7D5296472B6E0F8928F94963E96ACAFDF1924AF8B7A8471B04FA15F49C98023FDC84BBB5979085F91A577E1A36A7BAC9C4C735D44379D7A915D59
-Public Key: EsiyKK61Ycv4XXqUoFJa2SuFJGHjVeWgAB5UvaNkb713
+Solana Public Key: EsiyKK61Ycv4XXqUoFJa2SuFJGHjVeWgAB5UvaNkb713
 ```
 
 **Note**: The BIP39 standard includes a predefined list of words used to generate cryptographic keys. Your custom mnemonic phrase must consist of words exclusively from this list to be valid. Using words not in the BIP39 list will lead to errors in generating a valid seed.
@@ -123,7 +124,7 @@ cargo run get_pubkey_from_keypair_file
 * Example of result:
 
 ```
-Public Key: EsiyKK61Ycv4XXqUoFJa2SuFJGHjVeWgAB5UvaNkb713
+Solana Public Key: EsiyKK61Ycv4XXqUoFJa2SuFJGHjVeWgAB5UvaNkb713
 ```
 
 
@@ -164,8 +165,17 @@ cargo clippy
 
 Environment variables are configured in the ```.env``` file.
 
-You can custom your ```NB_DERIVATIONS``` env var (default value: ```1```).
+* You can custom your ```NB_DERIVATIONS``` env var (default value: ```1```).
 
-You can custom your ```KEYPAIR_PATH``` env var (default value: ```./storage/keypair/id.json```).
+* You can custom your ```KEYPAIR_PATH``` env var (default value: ```./storage/keypair/id.json```).
 
-You can custom your ```KEYPAIR_DIR``` env var (default value: ```./storage/keypair/derived```).
+* You can custom your ```KEYPAIR_DIR``` env var (default value: ```./storage/keypair/derived```).
+
+```KEYPAIR_DIR``` is only useful if ```NB_DERIVATIONS is``` > ```1```.
+
+
+
+## Some interesting links
+
+* **BIP39**: Learn more about the **BIP39** standard [here](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki).
+* **SLIP-44**: Learn more about the **SLIP-44** [here](https://github.com/satoshilabs/slips/blob/master/slip-0044.md).

@@ -1,6 +1,6 @@
 [package]
 edition = "2021"
-name = "rust-solana-wallet"
+name = "rust_solana_wallet"
 version = "1.0.0"
 authors = ["Stephen Damian <contact@damian-freelance.fr>"]
 homepage = "https://github.com/s-damian/rust-solana-wallet"

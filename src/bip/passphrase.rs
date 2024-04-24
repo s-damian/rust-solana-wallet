@@ -1,14 +1,15 @@
 use std::io;
 
-/// Suggérez à l'utilisateur d'ajouter une passphrase à la seed (laisser vide pour ne pas en utiliser).
+/// Demande à l'utilisateur d'entrer une passphrase optionnelle pour renforcer la sécurité de la seed.
+/// Laisser vide si aucune passphrase n'est souhaitée.
 pub fn prompt_for_passphrase() -> String {
-    println!("Enter your passphrase:");
+    println!("Enter passphrase (optional):");
 
     let mut passphrase = String::new();
     io::stdin()
         .read_line(&mut passphrase)
         .expect("Failed to read passphrase");
 
-    // Retourner la passphrase.
+    // Nettoyer et retourner la passphrase saisie, en éliminant les espaces avant et après.
     passphrase.trim().to_string()
 }

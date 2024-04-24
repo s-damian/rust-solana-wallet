@@ -3,23 +3,29 @@ use solana_sdk::signer::keypair::Keypair;
 use std::fs;
 use std::io::{self, Error, ErrorKind};
 
-/// Génerer une paire de clés Solana (clé publique et clé privée) à partir d'une seed.
+/// Génère une paire de clés Solana (clé publique et clé privée) à partir d'octets de seed.
+/// @param seed_bytes Les octets de la seed à partir de laquelle la paire de clés est générée.
+/// @return Retourne la paire de clés générée ou interrompt l'exécution en cas d'erreur.
 pub fn generate_keypair(seed_bytes: &[u8]) -> Keypair {
     keypair_from_seed(seed_bytes).expect("Failed to generate keypair to file")
 }
 
-/// Écrire la paire de clés générée dans un fichier.
-/// Cette paire de clés (avec un encodage JSON) contient la clé publique et la clé privée.
-/// Ce qu'il y aura dans le fichier qui sera dans file_path, sera une représentation sous forme d'octets de cette paire de clés.
-/// Et il y a une attention particulière à la sécurité sur les systèmes Unix, où le fichier est créé avec des permissions restreintes (0o600).
-/// Ce fichier peut être utilisé pour stocker la clé de manière sécurisée ou pour l'importer dans d'autres applications ou services compatibles avec Solana.
+/// Écrit la paire de clés générée dans un fichier.
+/// La paire de clés, contenant la clé publique et la clé privée, est encodée en JSON.
+/// Le fichier créé possède des permissions restreintes (0o600) sur les systèmes Unix, assurant une sécurité accrue.
+/// @param keypair La paire de clés à écrire.
+/// @param file_path Le chemin du fichier où écrire la paire de clés.
+/// @note Ce fichier peut être utilisé pour stocker de manière sécurisée la paire de clés ou pour l'importer dans d'autres applications ou services compatibles avec Solana.
 pub fn write_keypair(keypair: &Keypair, file_path: &str) {
     write_keypair_file(keypair, file_path).expect("Failed to write keypair to file");
 }
 
+/// Lit une paire de clés à partir d'un fichier et la retourne.
+/// @param file_path Le chemin du fichier contenant la paire de clés.
+/// @return Retourne une paire de clés si la lecture et l'interprétation des données sont réussies, sinon une erreur.
 pub fn read_keypair_from_file(file_path: &str) -> io::Result<Keypair> {
     let content = fs::read_to_string(file_path)?;
-    // Retirer les crochets et espaces blancs, puis diviser par les virgules
+    // Nettoie le contenu du fichier en retirant les crochets, espaces et en séparant les éléments par virgules.
     let cleaned_content = content.trim_matches(|c: char| c == '[' || c == ']' || c.is_whitespace());
     let bytes: Result<Vec<u8>, _> = cleaned_content
         .split(',')
