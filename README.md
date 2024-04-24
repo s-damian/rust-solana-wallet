@@ -8,7 +8,7 @@
 <img src="https://raw.githubusercontent.com/s-damian/medias/main/technos-logos/rust-logo.webp" alt="Rust Logo" height="100px">
 </a>
 
-> This is an example of a Solana Wallet in Rust
+> This is an example of a **Solana Wallet** in Rust
 
 > This project demonstrates how to create and manage a Solana Wallet using Rust.
 
@@ -178,4 +178,4 @@ Environment variables are configured in the ```.env``` file.
 ## Some interesting links
 
 * **BIP39**: Learn more about the **BIP39** standard [here](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki).
-* **SLIP-44**: Learn more about the **SLIP-44** [here](https://github.com/satoshilabs/slips/blob/master/slip-0044.md).
+* **SLIP44**: Learn more about the **SLIP44** [here](https://github.com/satoshilabs/slips/blob/master/slip-0044.md).
