@@ -69,11 +69,11 @@ cp .env.example .env
 
 **Multiple keypairs (derivations)**:
 
-If you want to generate several keypairs and several public keys with a single mnemonic phrase, you must set the ```NB_DERIVATIONS``` environment variable to a value greater than 1.
+If you want to generate several keypairs and several public keys with a single mnemonic phrase, you must set the ```NB_DERIVATIONS``` environment variable to a value greater than ```1```.
 
 Your non-derived keypair will be created in your ```KEYPAIR_PATH``` JSON file.
 
-And the other keypairs (which will be derived from your seed) will be created in files in your ```KEYPAIR_DIR``` directory.
+And the other keypairs (which will be derived from your seed) will be created in JSON files in your ```KEYPAIR_DIR``` directory.
 
 
 ### 🌐 ```generate_seed``` operation:
