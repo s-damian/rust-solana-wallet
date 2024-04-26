@@ -67,8 +67,12 @@ cp .env.example .env
 
 ```generate_seed``` and ```from_mnemonic``` operations writes the generated keypair to the ```[project-directory]/storage/keypair/id.json``` file, allowing you to store or utilize the keypair in your Solana applications.
 
+**Multiple keypairs (derivation)**:
+
 If you want to generate several seeds with a single mnemonic phrase, you must set the ```NB_DERIVATIONS``` environment variable to a value greater than 1.
+
 Your non-derived keypair will be created in your ```KEYPAIR_PATH``` JSON file.
+
 And the other keypairs (which will be derived from your seed) will be created in files in your ```KEYPAIR_DIR``` directory.
 
 
