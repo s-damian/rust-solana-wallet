@@ -63,10 +63,18 @@ cp .env.example .env
 
 ## How to use?
 
-**Keypair storage**: "generate_seed" and "from_mnemonic" operations writes the generated keypair to the ```[project-directory]/storage/keypair/id.json``` file, allowing you to store or utilize the keypair in your Solana applications.
+**Keypair storage**:
+
+```generate_seed``` and ```from_mnemonic``` operations writes the generated keypair to the ```[project-directory]/storage/keypair/id.json``` file, allowing you to store or utilize the keypair in your Solana applications.
+
+If you want to generate several seeds with a single mnemonic phrase, you must set the ```NB_DERIVATIONS``` environment variable to a value greater than 1.
+Your non-derived keypair will be created in your ```KEYPAIR_PATH``` JSON file.
+And the other keypairs (which will be derived from your seed) will be created in files in your ```KEYPAIR_DIR``` directory.
 
 
-### 🌐 "generate_seed": Generate and Display a Random Mnemonic:
+### 🌐 ```generate_seed``` operation:
+
+> Generate and Display a Random Mnemonic.
 
 This command generates a new mnemonic phrase randomly, calculates the corresponding seed, displays the seed, displays the Solana public key, and generates and writes the keypair to the file.
 
@@ -88,7 +96,9 @@ Solana Public Key: FTGJPL5hia749v3jhNWJA7uE2VoVGyofB7BBL2cLwoPc
 
 
 
-### 🌐 "from_mnemonic": Generate and Display a Mnemonic from a Specific Phrase:
+### 🌐 ```from_mnemonic``` operation:
+
+> Generate and Display a Mnemonic from a Specific Phrase.
 
 To generate and display the seed and Solana public key from a specific mnemonic phrase, pass the phrase (12 words or 24 words by example) as an argument.
 
@@ -115,7 +125,9 @@ Solana Public Key: EsiyKK61Ycv4XXqUoFJa2SuFJGHjVeWgAB5UvaNkb713
 **Note**: The BIP39 standard includes a predefined list of words used to generate cryptographic keys. Your custom mnemonic phrase must consist of words exclusively from this list to be valid. Using words not in the BIP39 list will lead to errors in generating a valid seed.
 
 
-### 🌐 "get_pubkey_from_keypair_file": Retrieve Public Key from Stored Keypair:
+### 🌐 ```get_pubkey_from_keypair_file``` operation:
+
+> Retrieve Public Key from Stored Keypair.
 
 This is useful for retrieving your Solana public key if you have already generated and stored your keypair locally.
 
