@@ -69,7 +69,7 @@ cp .env.example .env
 
 **Multiple keypairs (derivation)**:
 
-If you want to generate several seeds with a single mnemonic phrase, you must set the ```NB_DERIVATIONS``` environment variable to a value greater than 1.
+If you want to generate several keypairs and keypairs pubkey with a single mnemonic phrase, you must set the ```NB_DERIVATIONS``` environment variable to a value greater than 1.
 
 Your non-derived keypair will be created in your ```KEYPAIR_PATH``` JSON file.
 
