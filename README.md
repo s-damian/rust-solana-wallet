@@ -14,10 +14,10 @@
 
 * **Generate Mnemonic**: Creates a new random BIP39 mnemonic phrase.
 * **Seed**: Derives a seed from the mnemonic phrase.
-* **Key Derivation**: Supports generating multiple keypairs from a single seed by applying BIP44 derivation paths.
 * **Passphrase**: You can optionally use a passphrase.
 * **Keypair Generation**: Generates a Solana keypair (public and private key) from the derived seed.
 * **Keypair Storage**: Saves the generated keypair to a local JSON file for future use.
+* **Key Derivation**: Supports generating multiple keypairs from a single seed by applying BIP44 derivation paths.
 * **Public Key Display**: Retrieves and displays the public key from the locally stored keypair.
 
 
@@ -26,9 +26,9 @@
 
 * [generate_seed](#-generate_seed-generate-and-display-a-random-mnemonic): Generates a 12-word BIP39 mnemonic phrase, derives the corresponding seed, saves the keypair, and displays the public key.
 
-* [from_mnemonic](#-from_mnemonic-generate-and-display-a-mnemonic-from-a-specific-phrase): Accepts a user-provided 12-word BIP39 mnemonic phrase, derives the corresponding seed, saves the keypair, and displays the public key.
+* [from_mnemonic](#-from_mnemonic-generate-and-display-a-mnemonic-from-a-specific-phrase): Accepts a user-provided BIP39 mnemonic phrase, derives the corresponding seed, saves the keypair, and displays the public key.
 
-* [get_pubkey_from_keypair_file](#-get_pubkey_from_keypair_file-retrieve-public-key-from-stored-keypair): Displays the public key from a keypair stored in a JSON file, which is supplied by the user.
+* [get_pubkey_from_keypair_file](#-get_pubkey_from_keypair_file-retrieve-public-key-from-stored-keypair): Displays the public key from a keypair stored in a JSON file.
 
 
 
@@ -78,7 +78,7 @@ cargo run generate_seed
 
 ```
 BIP39 Mnemonic (random phrase): shed scorpion manual wheat monster phone winter toe dream kitchen salad column
-BIP39 Seed: 34A0EACFFDF41445C0B7E43C2D730C54F4CD1D8334528F73E3D5F2C2977FAABA7CAD88EBDA6A1F02CE6BB596F04036305A32B96303F93FF864D268539739AFF8
+Seed: 34A0EACFFDF41445C0B7E43C2D730C54F4CD1D8334528F73E3D5F2C2977FAABA7CAD88EBDA6A1F02CE6BB596F04036305A32B96303F93FF864D268539739AFF8
 Solana Public Key: FTGJPL5hia749v3jhNWJA7uE2VoVGyofB7BBL2cLwoPc
 ```
 
@@ -104,7 +104,7 @@ cargo run from_mnemonic "fit refuse hotel collect tortoise race rail weasel litt
 
 ```
 BIP39 Mnemonic (given phrase): fit refuse hotel collect tortoise race rail weasel little medal couch remember
-BIP39 Seed: 2C9AE93C7FA7D5296472B6E0F8928F94963E96ACAFDF1924AF8B7A8471B04FA15F49C98023FDC84BBB5979085F91A577E1A36A7BAC9C4C735D44379D7A915D59
+Seed: 2C9AE93C7FA7D5296472B6E0F8928F94963E96ACAFDF1924AF8B7A8471B04FA15F49C98023FDC84BBB5979085F91A577E1A36A7BAC9C4C735D44379D7A915D59
 Solana Public Key: EsiyKK61Ycv4XXqUoFJa2SuFJGHjVeWgAB5UvaNkb713
 ```
 

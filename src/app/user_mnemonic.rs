@@ -14,7 +14,7 @@ pub fn process_mnemonic(mnemonic: &bip39::Mnemonic) {
     // Génère une seed en format hexadécimal à partir de la phrase mnémonique et de la passphrase.
     // Cette seed de portefeuille HD (Hiérarchiquement Déterministe) permettra de produire une suite cohérente de clés dérivées.
     let seed = generate_seed(mnemonic, &passphrase);
-    println!("BIP39 Seed: {:X}", seed);
+    println!("Seed: {:X}", seed);
 
     // Convertit la seed en un tableau de bytes bruts, qui servira de base pour la génération de clés dérivées.
     let seed_bytes = get_seed_bytes(&seed);
