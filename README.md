@@ -41,19 +41,19 @@
 
 ## Setup
 
-Before running the project, make sure to clone the repository:
+* Clone the repository:
 
 ```
 git clone https://github.com/s-damian/rust-solana-wallet.git
 ```
 
-Navigate into the project directory:
+* Navigate into the project directory:
 
 ```
 cd /[your-path]/rust-solana-wallet
 ```
 
-Create your ```.env``` file:
+* Create your ```.env``` file:
 
 ```
 cp .env.example .env
