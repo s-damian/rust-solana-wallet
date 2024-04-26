@@ -72,7 +72,7 @@ This command generates a new mnemonic phrase randomly, calculates the correspond
 cargo run generate_seed
 ```
 
-You will be prompted to enter a passphrase (leave blank to not use one).
+**Optional passphrase:** You will be prompted to enter a passphrase (leave blank to not use one).
 
 * Example of result:
 
@@ -98,7 +98,7 @@ This will also generates and writes the keypair to the file.
 cargo run from_mnemonic "fit refuse hotel collect tortoise race rail weasel little medal couch remember"
 ```
 
-You will be prompted to enter a passphrase (leave blank to not use one).
+**Optional passphrase:** You will be prompted to enter a passphrase (leave blank to not use one).
 
 * Example of result:
 
