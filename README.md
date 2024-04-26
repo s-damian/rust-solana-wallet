@@ -8,7 +8,7 @@
 <img src="https://raw.githubusercontent.com/s-damian/medias/main/technos-logos/rust-logo.webp" alt="Rust Logo" height="100px">
 </a>
 
-> This is an example of a **Solana Wallet** in Rust
+> This is an example of a **Solana Wallet** in **Rust**.
 
 > This project demonstrates how to create and manage a Solana Wallet using Rust.
 
@@ -61,8 +61,6 @@ cp .env.example .env
 
 **Keypair storage**: "generate_seed" and "from_mnemonic" operations writes the generated keypair to the ```[project-directory]/storage/keypair/id.json``` file, allowing you to store or utilize the keypair in your Solana applications.
 
-**Passphrase**: For "generate_seed" and for "from_mnemonic", in the terminal, you will be prompted to optionally enter a passphrase (leave empty, and press enter to not use any).
-
 
 ### 🌐 "generate_seed": Generate and Display a Random Mnemonic:
 
@@ -73,6 +71,8 @@ This command generates a new mnemonic phrase randomly, calculates the correspond
 ```
 cargo run generate_seed
 ```
+
+You will be prompted to enter a passphrase (leave blank to not use one).
 
 * Example of result:
 
@@ -97,6 +97,8 @@ This will also generates and writes the keypair to the file.
 ```
 cargo run from_mnemonic "fit refuse hotel collect tortoise race rail weasel little medal couch remember"
 ```
+
+You will be prompted to enter a passphrase (leave blank to not use one).
 
 * Example of result:
 
@@ -171,7 +173,7 @@ Environment variables are configured in the ```.env``` file.
 
 * You can custom your ```KEYPAIR_DIR``` env var (default value: ```./storage/keypair/derived```).
 
-```KEYPAIR_DIR``` is only useful if ```NB_DERIVATIONS is``` > ```1```.
+```KEYPAIR_DIR``` is only useful if ```NB_DERIVATIONS``` is > ```1```.
 
 
 
