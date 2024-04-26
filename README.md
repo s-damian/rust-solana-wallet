@@ -167,11 +167,13 @@ cargo clippy
 
 Environment variables are configured in the ```.env``` file.
 
-* You can custom your ```NB_DERIVATIONS``` env var (default value: ```1```).
+You can configure these environment variables:
 
-* You can custom your ```KEYPAIR_PATH``` env var (default value: ```./storage/keypair/id.json```).
+* ```NB_DERIVATIONS``` env var (default value: ```1```).
 
-* You can custom your ```KEYPAIR_DIR``` env var (default value: ```./storage/keypair/derived```).
+* ```KEYPAIR_PATH``` env var (default value: ```./storage/keypair/id.json```).
+
+* ```KEYPAIR_DIR``` env var (default value: ```./storage/keypair/derived```).
 
 ```KEYPAIR_DIR``` is only useful if ```NB_DERIVATIONS``` is > ```1```.
 
