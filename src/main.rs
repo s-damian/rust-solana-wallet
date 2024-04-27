@@ -15,9 +15,16 @@ fn main() {
     // Charge les variables d'environnement depuis le fichier ".env".
     dotenv().ok();
 
+    // Charge la configuration du wallet (selon les données du fichier .env).
     let wallet_config = WalletConfig::new();
 
-    let matches = Command::new("Solana Wallet")
+    let matches = setup_cli().get_matches();
+
+    handle_matches(matches, &wallet_config);
+}
+
+fn setup_cli() -> Command {
+    Command::new("Solana Wallet")
         .version("1.0.0")
         .about("Example of a Solana Wallet in Rust")
         .subcommand(Command::new("generate_seed").about("Generates a new random mnemonic"))
@@ -26,7 +33,7 @@ fn main() {
                 .about("Generates a mnemonic from a specified phrase")
                 .arg(
                     Arg::new("PHRASE")
-                        .help("A 12-word mnemonic phrase")
+                        .help("A mnemonic phrase")
                         .required(true)
                         .index(1),
                 ),
@@ -35,19 +42,20 @@ fn main() {
             Command::new("get_pubkey_from_keypair_file")
                 .about("Displays the public key from the keypair stored in file"),
         )
-        .get_matches();
+}
 
+fn handle_matches(matches: clap::ArgMatches, config: &WalletConfig) {
     match matches.subcommand() {
-        Some(("generate_seed", _sub_matches)) => {
-            generate_and_print_random_mnemonic(&wallet_config);
+        Some(("generate_seed", _)) => {
+            generate_and_print_random_mnemonic(config);
         }
         Some(("from_mnemonic", sub_matches)) => {
             if let Some(phrase) = sub_matches.get_one::<String>("PHRASE") {
-                generate_and_print_mnemonic_from_phrase(&wallet_config, phrase);
+                generate_and_print_mnemonic_from_phrase(config, phrase);
             }
         }
-        Some(("get_pubkey_from_keypair_file", _sub_matches)) => {
-            get_pubkey_from_keypair_file(&wallet_config);
+        Some(("get_pubkey_from_keypair_file", _)) => {
+            get_pubkey_from_keypair_file(config);
         }
         _ => println!("Unknown command."),
     }
