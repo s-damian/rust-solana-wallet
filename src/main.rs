@@ -44,18 +44,18 @@ fn setup_cli() -> Command {
         )
 }
 
-fn handle_matches(matches: clap::ArgMatches, config: &WalletConfig) {
+fn handle_matches(matches: clap::ArgMatches, wallet_config: &WalletConfig) {
     match matches.subcommand() {
         Some(("generate_seed", _)) => {
-            generate_and_print_random_mnemonic(config);
+            generate_and_print_random_mnemonic(wallet_config);
         }
         Some(("from_mnemonic", sub_matches)) => {
             if let Some(phrase) = sub_matches.get_one::<String>("PHRASE") {
-                generate_and_print_mnemonic_from_phrase(config, phrase);
+                generate_and_print_mnemonic_from_phrase(phrase, wallet_config);
             }
         }
         Some(("get_pubkey_from_keypair_file", _)) => {
-            get_pubkey_from_keypair_file(config);
+            get_pubkey_from_keypair_file(wallet_config);
         }
         _ => println!("Unknown command."),
     }

@@ -15,17 +15,17 @@ pub fn generate_and_print_random_mnemonic(wallet_config: &WalletConfig) {
 
     println!("BIP39 Mnemonic (random phrase): {}", phrase);
 
-    process_mnemonic(wallet_config, &mnemonic);
+    process_mnemonic(&mnemonic, wallet_config);
 }
 
 /// Génère une phrase mnémonique à partir d'une phrase donnée (12/24/Etc. mots) et affiche la clé publique Solana correspondante.
 /// Cette méthode permet d'utiliser une phrase existante pour récupérer ou accéder à un portefeuille.
-pub fn generate_and_print_mnemonic_from_phrase(wallet_config: &WalletConfig, phrase: &str) {
+pub fn generate_and_print_mnemonic_from_phrase(phrase: &str, wallet_config: &WalletConfig) {
     println!("BIP39 Mnemonic (given phrase): {}", phrase);
 
     // Convertit la chaîne de caractères fournie en une structure mnémonique valide.
     // Cette étape vérifie que la phrase correspond aux critères du standard BIP39 et qu'elle peut être utilisée pour générer une seed.
     let mnemonic = get_mnemonic_from_phrase(phrase);
 
-    process_mnemonic(wallet_config, &mnemonic);
+    process_mnemonic(&mnemonic, wallet_config);
 }

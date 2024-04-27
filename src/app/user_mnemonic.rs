@@ -7,7 +7,7 @@ use solana_sdk::signer::Signer;
 
 /// Traite une mnémonique pour générer et afficher la clé publique correspondante, en prenant en compte les dérivations spécifiées.
 /// Cette fonction sert de point central pour la création de clés Solana à partir d'une phrase mnémonique.
-pub fn process_mnemonic(wallet_config: &WalletConfig, mnemonic: &Mnemonic) {
+pub fn process_mnemonic(mnemonic: &Mnemonic, wallet_config: &WalletConfig) {
     // Demande à l'utilisateur d'entrer une passphrase optionnelle qui sera utilisée lors de la génération de la seed.
     // (laisser vide pour ne pas utiliser de passphrase)
     let passphrase = prompt_for_passphrase();
