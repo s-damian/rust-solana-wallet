@@ -3,7 +3,7 @@ use crate::app::create_wallet::{
 };
 use crate::app::keypair_file::get_pubkey_from_keypair_file;
 use crate::config::wallet_config::WalletConfig;
-use clap::{Arg, Command};
+use clap::{Arg, ArgMatches, Command};
 
 pub fn setup_cli() -> Command {
     Command::new("Solana Wallet")
@@ -26,7 +26,7 @@ pub fn setup_cli() -> Command {
         )
 }
 
-pub fn handle_matches(matches: clap::ArgMatches, wallet_config: &WalletConfig) {
+pub fn handle_matches(matches: ArgMatches, wallet_config: &WalletConfig) {
     match matches.subcommand() {
         Some(("generate_seed", _)) => {
             generate_and_print_random_mnemonic(wallet_config);
