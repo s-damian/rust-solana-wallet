@@ -1,18 +1,21 @@
 mod app;
 mod bip;
+mod config;
 mod solana;
-mod utils;
 
 use app::create_wallet::{
     generate_and_print_mnemonic_from_phrase, generate_and_print_random_mnemonic,
 };
 use app::keypair_file::get_pubkey_from_keypair_file;
 use clap::{Arg, Command};
+use config::wallet_config::WalletConfig;
 use dotenv::dotenv;
 
 fn main() {
     // Charge les variables d'environnement depuis le fichier ".env".
     dotenv().ok();
+
+    let wallet_config = WalletConfig::new();
 
     let matches = Command::new("Solana Wallet")
         .version("1.0.0")
@@ -36,15 +39,15 @@ fn main() {
 
     match matches.subcommand() {
         Some(("generate_seed", _sub_matches)) => {
-            generate_and_print_random_mnemonic();
+            generate_and_print_random_mnemonic(&wallet_config);
         }
         Some(("from_mnemonic", sub_matches)) => {
             if let Some(phrase) = sub_matches.get_one::<String>("PHRASE") {
-                generate_and_print_mnemonic_from_phrase(phrase);
+                generate_and_print_mnemonic_from_phrase(&wallet_config, phrase);
             }
         }
         Some(("get_pubkey_from_keypair_file", _sub_matches)) => {
-            get_pubkey_from_keypair_file();
+            get_pubkey_from_keypair_file(&wallet_config);
         }
         _ => println!("Unknown command."),
     }
