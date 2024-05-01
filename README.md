@@ -24,11 +24,11 @@
 
 ## Summary
 
-* [generate_seed](#-generate_seed-generate-and-display-a-random-mnemonic): Generates a 12-word BIP39 mnemonic phrase, derives the corresponding seed, saves the keypair, and displays the public key.
+* [generate_seed](#-generate_seed-operation): Generates a 12-word BIP39 mnemonic phrase, derives the corresponding seed, saves the keypair, and displays the public key.
 
-* [from_mnemonic](#-from_mnemonic-generate-and-display-a-mnemonic-from-a-specific-phrase): Accepts a user-provided BIP39 mnemonic phrase, derives the corresponding seed, saves the keypair, and displays the public key.
+* [from_mnemonic](#-from_mnemonic-operation): Accepts a user-provided BIP39 mnemonic phrase, derives the corresponding seed, saves the keypair, and displays the public key.
 
-* [get_pubkey_from_keypair_file](#-get_pubkey_from_keypair_file-retrieve-public-key-from-stored-keypair): Displays the public key from a keypair stored in a JSON file.
+* [get_pubkey_from_keypair_file](#-get_pubkey_from_keypair_file-operation): Displays the public key from a keypair stored in a JSON file.
 
 
 
