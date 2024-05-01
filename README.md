@@ -2,10 +2,10 @@
 # Solana Wallet in Rust - Example
 
 <a href="https://github.com/s-damian/rust-solana-wallet">
-<img src="https://raw.githubusercontent.com/s-damian/medias/main/technos-logos/solana-logo.webp" alt="Solana Logo" height="100px">
+<img src="https://raw.githubusercontent.com/s-damian/medias/main/technos-logos/solana.webp" alt="Solana Logo" height="100px">
 </a>
 <a href="https://github.com/s-damian/rust-solana-wallet">
-<img src="https://raw.githubusercontent.com/s-damian/medias/main/technos-logos/rust-logo.webp" alt="Rust Logo" height="100px">
+<img src="https://raw.githubusercontent.com/s-damian/medias/main/technos-logos/rust.webp" alt="Rust Logo" height="100px">
 </a>
 
 > This is an example of a **Solana Wallet** in **Rust**.
