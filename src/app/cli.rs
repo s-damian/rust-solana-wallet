@@ -1,7 +1,7 @@
 use crate::app::create_wallet::{
     generate_and_print_mnemonic_from_phrase, generate_and_print_random_mnemonic,
 };
-use crate::app::keypair_file::get_pubkey_from_keypair_file;
+use crate::app::keypair_manager::get_pubkey_from_keypair_file;
 use crate::app::transaction_manager::TransactionManager;
 use crate::config::wallet_config::WalletConfig;
 use clap::{Arg, ArgMatches, Command};
