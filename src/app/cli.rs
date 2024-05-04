@@ -39,8 +39,8 @@ pub fn setup_cli() -> Command {
         )
 }
 
-pub fn handle_matches(matches: ArgMatches, wallet_config: &WalletConfig) {
-    let wallet_manager = WalletManager::new(wallet_config.clone());
+pub fn handle_matches(matches: ArgMatches, config: &WalletConfig) {
+    let wallet_manager = WalletManager::new(config.clone());
 
     match matches.subcommand() {
         Some(("generate_seed", _)) => {
@@ -52,11 +52,11 @@ pub fn handle_matches(matches: ArgMatches, wallet_config: &WalletConfig) {
             }
         }
         Some(("get_pubkey_from_keypair_file", _)) => {
-            let keypair_manager = KeypairManager::new(wallet_config.clone());
+            let keypair_manager = KeypairManager::new(config.clone());
             keypair_manager.get_pubkey_from_keypair_file();
         }
         Some(("send", sub_matches)) => {
-            let transaction_manager = TransactionManager::new(wallet_config.clone());
+            let transaction_manager = TransactionManager::new(config.clone());
             transaction_manager.send_transaction(sub_matches);
         }
         _ => println!("Unknown command."),

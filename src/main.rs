@@ -12,9 +12,9 @@ fn main() {
     dotenv().ok();
 
     // Charge la configuration du wallet (selon les données du fichier .env).
-    let wallet_config = WalletConfig::new();
+    let config = WalletConfig::new();
 
     let matches = setup_cli().get_matches();
 
-    handle_matches(matches, &wallet_config);
+    handle_matches(matches, &config);
 }

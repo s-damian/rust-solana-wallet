@@ -22,10 +22,7 @@ impl KeypairManager {
         // Err: En cas d'échec, affiche une erreur indiquant que la lecture a échoué.
         match read_keypair_from_file(keypair_path) {
             Ok(keypair) => println!("Clé publique : {}", keypair.pubkey()),
-            Err(e) => println!(
-                "Échec de la lecture de la paire de clés depuis le fichier : {}",
-                e
-            ),
+            Err(e) => println!("Failed to read key pair from file: {}", e),
         }
     }
 }
