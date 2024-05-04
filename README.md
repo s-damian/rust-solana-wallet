@@ -29,9 +29,12 @@
 
 * [from_mnemonic](#-from_mnemonic-command): Accepts a user-provided BIP39 mnemonic phrase, derives the corresponding seed, saves the keypair, and displays the public key.
 
+* [send](#-send_command): Send SOL to a recipient address.
+
+* [get_balance_by_pubkey](#-get_balance_by_pubkey_command): Get balance by public key.
+
 * [get_pubkey_from_keypair_file](#-get_pubkey_from_keypair_file-command): Displays the public key from a keypair stored in a JSON file.
 
-* [send](#-send_command): Send SOL to a recipient address.
 
 
 
@@ -132,29 +135,6 @@ Solana Public Key: FTGJPL5hia749v3jhNWJA7uE2VoVGyofB7BBL2cLwoPc
 ```
 
 
-### 🌐 ```get_pubkey_from_keypair_file``` command:
-
-> Retrieve public key from stored keypair.
-
-This is useful for retrieving your Solana public key if you have already generated and stored your keypair locally.
-
-This command reads your JSON keypair file stored, extracts the public key, and displays it.
-
-* Command:
-
-```
-cargo run -- get_pubkey_from_keypair_file
-```
-
-This command reads the keypair stored in ```[project-directory]/storage/keypair/id.json``` file (```KEYPAIR_PATH``` env var).
-
-* Example of result:
-
-```
-Solana Public Key: FTGJPL5hia749v3jhNWJA7uE2VoVGyofB7BBL2cLwoPc
-```
-
-
 ### 🌐 ```send``` command:
 
 > Send SOL (lamports) to a recipient address (sign outgoing transaction).
@@ -184,6 +164,54 @@ Transaction sent successfully!
 ```
 Failed to send transaction: ...
 
+```
+
+
+### 🌐 ```get_balance_by_pubkey``` command:
+
+> Get balance by public key.
+
+> Command with arguments: cargo run -- get_balance_by_pubkey ```PUBKEY```
+
+This command allows you to see the balance (in SOL and in lamports) of a public address.
+
+**Example** to see the balance of the public address ```EMLY3VvNZ41yMWyPQy2AiEfJTPpZdzeGNG5zaaq3Lihb```.
+
+* Command:
+
+```
+cargo run -- get_balance_by_pubkey EMLY3VvNZ41yMWyPQy2AiEfJTPpZdzeGNG5zaaq3Lihb
+```
+```
+
+* Example of result:
+
+```
+Balance: 0.005910000 SOL, 5910000 lamports
+
+```
+
+
+### 🌐 ```get_pubkey_from_keypair_file``` command:
+
+> Retrieve public key from stored keypair.
+
+This is useful for retrieving your Solana public key if you have already generated and stored your keypair locally.
+
+This command reads your JSON keypair file stored, extracts the public key, and displays it.
+
+* Command:
+
+```
+cargo run -- get_pubkey_from_keypair_file
+```
+
+This command reads the keypair stored in ```[project-directory]/storage/keypair/id.json``` file (```KEYPAIR_PATH``` env var).
+
+* Example of result:
+
+```
+Solana Public Key: FTGJPL5hia749v3jhNWJA7uE2VoVGyofB7BBL2cLwoPc
 ```
 
 
