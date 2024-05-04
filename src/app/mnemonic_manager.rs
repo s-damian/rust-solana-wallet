@@ -1,5 +1,5 @@
 use crate::bip::passphrase::BipPassphrase;
-use crate::bip::seed::{derive_seed_bytes, generate_seed, get_seed_bytes};
+use crate::bip::seed::BipSeed;
 use crate::config::wallet_config::WalletConfig;
 use crate::solana::address::{generate_keypair, write_keypair};
 use bip39::Mnemonic;
@@ -25,11 +25,11 @@ impl MnemonicManager {
 
         // Génère une seed en format hexadécimal à partir de la phrase mnémonique et de la passphrase.
         // Cette seed de portefeuille HD (Hiérarchiquement Déterministe) permettra de produire une suite cohérente de clés dérivées.
-        let seed = generate_seed(mnemonic, &passphrase);
+        let seed = BipSeed::generate_seed(mnemonic, &passphrase);
         println!("Seed: {:X}", seed);
 
         // Convertit la seed en un tableau de bytes bruts, qui servira de base pour la génération de clés dérivées.
-        let seed_bytes = get_seed_bytes(&seed);
+        let seed_bytes = BipSeed::get_seed_bytes(&seed);
 
         // Récupère le nombre de dérivations souhaitées (est de 1 par défaut).
         let nb_derivations = config.nb_derivations;
@@ -46,7 +46,7 @@ impl MnemonicManager {
             // Gère les dérivations multiples pour générer plusieurs paires de clés.
             for index in 0..nb_derivations {
                 // Dériver la seed pour chaque index spécifié (sauf pour l'index 0 qui utilise la seed originale).
-                match derive_seed_bytes(seed_bytes, index) {
+                match BipSeed::derive_seed_bytes(seed_bytes, index) {
                     Ok(derived_seed_bytes) => {
                         // Génerer une paire de clés (clé publique et clé privée) à partir de la seed en bytes.
                         // Puis écrire cette paire de clés dans un fichier JSON.
