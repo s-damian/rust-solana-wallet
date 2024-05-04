@@ -1,4 +1,4 @@
-use crate::bip::passphrase::prompt_for_passphrase;
+use crate::bip::passphrase::BipPassphrase;
 use crate::bip::seed::{derive_seed_bytes, generate_seed, get_seed_bytes};
 use crate::config::wallet_config::WalletConfig;
 use crate::solana::address::{generate_keypair, write_keypair};
@@ -21,7 +21,7 @@ impl MnemonicManager {
 
         // Demande à l'utilisateur d'entrer une passphrase optionnelle qui sera utilisée lors de la génération de la seed.
         // (laisser vide pour ne pas utiliser de passphrase)
-        let passphrase = prompt_for_passphrase();
+        let passphrase = BipPassphrase::prompt_for_passphrase();
 
         // Génère une seed en format hexadécimal à partir de la phrase mnémonique et de la passphrase.
         // Cette seed de portefeuille HD (Hiérarchiquement Déterministe) permettra de produire une suite cohérente de clés dérivées.
