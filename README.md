@@ -25,13 +25,13 @@
 
 ## Summary
 
-* [generate_seed](#-generate_seed-operation): Generates a 12-word BIP39 mnemonic phrase, derives the corresponding seed, saves the keypair, and displays the public key.
+* [generate_seed](#-generate_seed-command): Generates a 12-word BIP39 mnemonic phrase, derives the corresponding seed, saves the keypair, and displays the public key.
 
-* [from_mnemonic](#-from_mnemonic-operation): Accepts a user-provided BIP39 mnemonic phrase, derives the corresponding seed, saves the keypair, and displays the public key.
+* [from_mnemonic](#-from_mnemonic-command): Accepts a user-provided BIP39 mnemonic phrase, derives the corresponding seed, saves the keypair, and displays the public key.
 
-* [get_pubkey_from_keypair_file](#-get_pubkey_from_keypair_file-operation): Displays the public key from a keypair stored in a JSON file.
+* [get_pubkey_from_keypair_file](#-get_pubkey_from_keypair_file-command): Displays the public key from a keypair stored in a JSON file.
 
-* [send_sols](#-send_sols-operation): Send SOLs to a recipient address.
+* [send_sols](#-send_sols-command): Send SOLs to a recipient address.
 
 
 
@@ -68,7 +68,7 @@ cp .env.example .env
 
 **Keypair storage**:
 
-```generate_seed``` and ```from_mnemonic``` operations writes the generated keypair to the ```[project-directory]/storage/keypair/id.json``` file, allowing you to store or utilize the keypair in your Solana applications.
+```generate_seed``` and ```from_mnemonic``` commands writes the generated keypair to the ```[project-directory]/storage/keypair/id.json``` file, allowing you to store or utilize the keypair in your Solana applications.
 
 **Multiple keypairs (derivations)**:
 
@@ -79,7 +79,7 @@ Your non-derived keypair will be created in your ```KEYPAIR_PATH``` JSON file.
 And the other keypairs (which will be derived from your seed) will be created in JSON files in your ```KEYPAIR_DIR``` directory.
 
 
-### 🌐 ```generate_seed``` operation:
+### 🌐 ```generate_seed``` command:
 
 > Generate and Display a Random Mnemonic.
 
@@ -103,7 +103,7 @@ Solana Public Key: FTGJPL5hia749v3jhNWJA7uE2VoVGyofB7BBL2cLwoPc
 
 
 
-### 🌐 ```from_mnemonic``` operation:
+### 🌐 ```from_mnemonic``` command:
 
 > Generate and Display a Mnemonic from a Specific Phrase.
 
@@ -132,7 +132,7 @@ Solana Public Key: FTGJPL5hia749v3jhNWJA7uE2VoVGyofB7BBL2cLwoPc
 **Note**: The BIP39 standard includes a predefined list of words used to generate cryptographic keys. Your custom mnemonic phrase must consist of words exclusively from this list to be valid. Using words not in the BIP39 list will lead to errors in generating a valid seed.
 
 
-### 🌐 ```get_pubkey_from_keypair_file``` operation:
+### 🌐 ```get_pubkey_from_keypair_file``` command:
 
 > Retrieve Public Key from Stored Keypair.
 
@@ -153,7 +153,7 @@ Solana Public Key: FTGJPL5hia749v3jhNWJA7uE2VoVGyofB7BBL2cLwoPc
 ```
 
 
-### 🌐 ```send_sols``` operation:
+### 🌐 ```send_sols``` command:
 
 > Send SOLs (lamports) to a recipient address.
 
