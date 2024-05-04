@@ -19,7 +19,7 @@
 * **Keypair Storage**: Saves the generated keypair to a local JSON file for future use.
 * **Key Derivation**: Supports generating multiple keypairs from a single seed by applying BIP44 derivation paths.
 * **Public Key Display**: Retrieves and displays the public key from the locally stored keypair.
-* **Send SOLs (lamports)**: Send SOLs to a recipient address.
+* **Send SOLs (lamports)**: Send SOLs to a recipient address (outgoing transaction).
 
 
 
@@ -217,13 +217,15 @@ Environment variables are configured in the ```.env``` file.
 
 You can configure these environment variables:
 
-* ```NB_DERIVATIONS``` env var (default value: ```1```).
+* ```NB_DERIVATIONS``` (default value: ```1```).
 
-* ```KEYPAIR_PATH``` env var (default value: ```./storage/keypair/id.json```).
+* ```KEYPAIR_PATH``` (default value: ```./storage/keypair/id.json```).
 
-* ```KEYPAIR_DIR``` env var (default value: ```./storage/keypair/derived```).
+* ```KEYPAIR_DIR``` (default value: ```./storage/keypair/derived```).
 
 ```KEYPAIR_DIR``` is only useful if ```NB_DERIVATIONS``` is > ```1```.
+
+* ```RPC_URL``` (default value: ```https://api.testnet.solana.com```).
 
 
 
