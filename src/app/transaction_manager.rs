@@ -14,7 +14,7 @@ impl TransactionManager {
 
     pub fn send_transaction(&self, matches: &ArgMatches) {
         let wallet_config = &self.config;
-        
+
         let recipient = matches
             .get_one::<String>("RECIPIENT")
             .expect("Recipient required");
