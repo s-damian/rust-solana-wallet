@@ -107,6 +107,8 @@ Solana Public Key: FTGJPL5hia749v3jhNWJA7uE2VoVGyofB7BBL2cLwoPc
 
 > Generate and Display a Mnemonic from a Specific Phrase.
 
+> Command: cargo run -- from_mnemonic ```PHRASE```
+
 To generate and display the seed and Solana public key from a specific mnemonic phrase, pass the phrase (12 words or 24 words by example) as an argument.
 
 This will also generates and writes the keypair to the file.
@@ -157,9 +159,9 @@ Solana Public Key: FTGJPL5hia749v3jhNWJA7uE2VoVGyofB7BBL2cLwoPc
 
 > Send SOLs (lamports) to a recipient address.
 
-cargo run -- send RECIPIENT AMOUNT
+> Command: cargo run -- send ```RECIPIENT``` ```AMOUNT```
 
-Example to Send 0.002 SOLs (```2000000``` lamports) to recipient address ```EMLY3VvNZ41yMWyPQy2AiEfJTPpZdzeGNG5zaaq3Lihb```:
+Example to send ```0.002``` SOLs (```2000000``` lamports) to recipient address ```EMLY3VvNZ41yMWyPQy2AiEfJTPpZdzeGNG5zaaq3Lihb```:
 
 ```
 cargo run -- send EMLY3VvNZ41yMWyPQy2AiEfJTPpZdzeGNG5zaaq3Lihb 2000000
