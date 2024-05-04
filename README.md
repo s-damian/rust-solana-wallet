@@ -29,7 +29,7 @@
 
 * [from_mnemonic](#-from_mnemonic-command): Accepts a user-provided BIP39 mnemonic phrase, derives the corresponding seed, saves the keypair, and displays the public key.
 
-* [send](#-send_command): Send SOL to a recipient address.
+* [send](#-send-command): Send SOL to a recipient address.
 
 * [get_balance_by_pubkey](#-get_balance_by_pubkey_command): Get balance by public key.
 
@@ -181,7 +181,6 @@ This command allows you to see the balance (in SOL and in lamports) of a public 
 
 ```
 cargo run -- get_balance_by_pubkey EMLY3VvNZ41yMWyPQy2AiEfJTPpZdzeGNG5zaaq3Lihb
-```
 ```
 
 * Example of result:
