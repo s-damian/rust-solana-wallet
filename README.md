@@ -19,7 +19,7 @@
 * **Keypair Storage**: Saves the generated keypair to a local JSON file for future use.
 * **Key Derivation**: Supports generating multiple keypairs from a single seed by applying BIP44 derivation paths.
 * **Public Key Display**: Retrieves and displays the public key from the locally stored keypair.
-* **Send SOLs (lamports)**: Send SOLs to a recipient address (outgoing transaction).
+* **Send SOLs (lamports)**: Send SOLs to a recipient address (sign outgoing transaction).
 
 
 
@@ -157,7 +157,7 @@ Solana Public Key: FTGJPL5hia749v3jhNWJA7uE2VoVGyofB7BBL2cLwoPc
 
 ### 🌐 ```send_sols``` command:
 
-> Send SOLs (lamports) to a recipient address.
+> Send SOLs (lamports) to a recipient address (sign outgoing transaction).
 
 > Command: cargo run -- send ```RECIPIENT``` ```AMOUNT```
 
@@ -175,6 +175,13 @@ cargo run -- send EMLY3VvNZ41yMWyPQy2AiEfJTPpZdzeGNG5zaaq3Lihb 2000000
 
 ```
 Transaction sent successfully!
+```
+
+* Example of result (when it fails):
+
+```
+Failed to send transaction: unable to confirm transaction. This can happen in situations such as transaction expiration and insufficient fee-payer funds
+
 ```
 
 
