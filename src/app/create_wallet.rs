@@ -1,4 +1,4 @@
-use crate::app::user_mnemonic::process_mnemonic;
+use crate::app::mnemonic_manager::process_mnemonic;
 use crate::bip::mnemonic::{generate_mnemonic, get_mnemonic_from_phrase, get_mnemonic_to_str};
 use crate::config::wallet_config::WalletConfig;
 

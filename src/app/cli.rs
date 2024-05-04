@@ -2,8 +2,8 @@ use crate::app::create_wallet::{
     generate_and_print_mnemonic_from_phrase, generate_and_print_random_mnemonic,
 };
 use crate::app::keypair_file::get_pubkey_from_keypair_file;
-use crate::app::transaction::send_lamports;
 use crate::config::wallet_config::WalletConfig;
+use crate::solana::transaction::send_lamports;
 use clap::{Arg, ArgMatches, Command};
 use solana_sdk::pubkey::Pubkey;
 use solana_sdk::signature::read_keypair_file;
