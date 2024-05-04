@@ -1,5 +1,6 @@
 use std::env;
 
+#[derive(Clone)] // Cette ligne est utile pour implémenter automatiquement Clone.
 pub struct WalletConfig {
     pub keypair_path: String,
     pub keypair_dir: String,
