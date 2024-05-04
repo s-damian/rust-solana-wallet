@@ -68,15 +68,15 @@ cp .env.example .env
 
 **Keypair storage**:
 
-```generate_seed``` and ```from_mnemonic``` commands writes the generated keypair to the ```[project-directory]/storage/keypair/id.json``` file, allowing you to store or utilize the keypair in your Solana applications.
+```generate_seed``` and ```from_mnemonic``` commands writes the generated keypair to the ```[project-directory]/storage/keypair/id.json``` file (```KEYPAIR_PATH``` env var), allowing you to store or utilize the keypair in your Solana applications.
 
 **Multiple keypairs (derivations)**:
 
 If you want to generate several keypairs and several public keys with a single mnemonic phrase, you must set the ```NB_DERIVATIONS``` environment variable to a value greater than ```1```.
 
-Your non-derived keypair will be created in your ```KEYPAIR_PATH``` JSON file.
+Your non-derived keypair will be created in your ```[project-directory]/storage/keypair/id.json``` file (```KEYPAIR_PATH``` env var) JSON file.
 
-And the other keypairs (which will be derived from your seed) will be created in JSON files in your ```KEYPAIR_DIR``` directory.
+And the other keypairs (which will be derived from your seed) will be created in JSON files in your ```[project-directory]/storage/keypair/derived``` (```KEYPAIR_DIR``` env var) directory.
 
 
 ### 🌐 ```generate_seed``` command:
@@ -140,7 +140,7 @@ Solana Public Key: FTGJPL5hia749v3jhNWJA7uE2VoVGyofB7BBL2cLwoPc
 
 This is useful for retrieving your Solana public key if you have already generated and stored your keypair locally.
 
-This command reads the keypair stored in ```[project-directory]/storage/keypair/id.json```, extracts the public key, and displays it.
+This command reads the keypair stored in ```[project-directory]/storage/keypair/id.json``` file (```KEYPAIR_PATH``` env var), extracts the public key, and displays it.
 
 * Command:
 
@@ -163,7 +163,7 @@ Solana Public Key: FTGJPL5hia749v3jhNWJA7uE2VoVGyofB7BBL2cLwoPc
 
 **Example** to send ```0.002``` SOLs (```2000000``` lamports) to recipient address ```EMLY3VvNZ41yMWyPQy2AiEfJTPpZdzeGNG5zaaq3Lihb```.
 
-This command will sign the transaction with the keypair which is stored in the file ```[project-directory]/storage/keypair/id.json```.
+This command will sign the transaction with the keypair which is stored in the file ```[project-directory]/storage/keypair/id.json``` file (```KEYPAIR_PATH``` env var).
 
 * Command:
 
