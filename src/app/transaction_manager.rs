@@ -3,10 +3,18 @@ use clap::ArgMatches;
 use solana_sdk::{pubkey::Pubkey, signature::read_keypair_file};
 use std::str::FromStr;
 
-pub struct TransactionManager;
+pub struct TransactionManager {
+    config: WalletConfig,
+}
 
 impl TransactionManager {
-    pub fn send_transaction(matches: &ArgMatches, wallet_config: &WalletConfig) {
+    pub fn new(config: WalletConfig) -> Self {
+        Self { config }
+    }
+
+    pub fn send_transaction(&self, matches: &ArgMatches) {
+        let wallet_config = &self.config;
+        
         let recipient = matches
             .get_one::<String>("RECIPIENT")
             .expect("Recipient required");
