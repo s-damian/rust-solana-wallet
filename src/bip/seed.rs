@@ -3,25 +3,37 @@ use bip39::{Mnemonic, Seed};
 use std::str::FromStr;
 
 /// Génère la seed à partir de la phrase mnémonique (mnemonic param).
-/// @param mnemonic La mnémonique à partir de laquelle la seed est générée.
-/// @param passphrase La passphrase optionnelle pour ajouter une couche de sécurité supplémentaire à la seed.
-/// @return Retourne la seed générée.
+///
+/// # Arguments:
+/// * mnemonic - La mnémonique à partir de laquelle la seed est générée.
+/// * passphrase - La passphrase optionnelle pour ajouter une couche de sécurité supplémentaire à la seed.
+///
+/// # Returns:
+/// Retourne la seed générée.
 pub fn generate_seed(mnemonic: &Mnemonic, passphrase: &str) -> Seed {
     Seed::new(mnemonic, passphrase)
 }
 
 /// Récupère la seed sous forme d'octets bruts.
-/// @param seed La seed dont les octets bruts doivent être récupérés.
-/// @return Retourne une référence vers un tableau d'octets.
+///
+/// # Arguments:
+/// * seed - La seed dont les octets bruts doivent être récupérés.
+///
+/// # Returns:
+/// Retourne une référence vers un tableau d'octets.
 pub fn get_seed_bytes(seed: &Seed) -> &[u8] {
     seed.as_bytes()
 }
 
 /// Dérive la seed (seed_bytes param) pour générer différentes clés privées en fonction de l'index spécifié (index param).
 /// Utilise le chemin de dérivation BIP44 spécifique à Solana.
-/// @param seed_bytes Les octets de la seed à partir de laquelle les clés seront dérivées.
-/// @param index L'index de dérivation utilisé pour générer différentes clés privées.
-/// @return Retourne un vecteur contenant les octets de la clé privée dérivée. Ou retourne une erreur en cas de problème lors de la dérivation.
+///
+/// # Arguments:
+/// * seed_bytes - Les octets de la seed à partir de laquelle les clés seront dérivées.
+/// * index - L'index de dérivation utilisé pour générer différentes clés privées.
+///
+/// # Returns:
+/// Retourne un vecteur contenant les octets de la clé privée dérivée. Ou retourne une erreur en cas de problème lors de la dérivation.
 pub fn derive_seed_bytes(seed_bytes: &[u8], index: usize) -> Result<Vec<u8>, Bip32Error> {
     // Si l'index est 0, retourne directement les octets de la seed originale sans modification.
     // Cela garantit que la clé principale reste inchangée si aucune dérivation n'est requise.
