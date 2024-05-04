@@ -140,13 +140,13 @@ Solana Public Key: FTGJPL5hia749v3jhNWJA7uE2VoVGyofB7BBL2cLwoPc
 
 This is useful for retrieving your Solana public key if you have already generated and stored your keypair locally.
 
-This command reads the keypair stored in ```[project-directory]/storage/keypair/id.json``` file (```KEYPAIR_PATH``` env var), extracts the public key, and displays it.
-
 * Command:
 
 ```
 cargo run -- get_pubkey_from_keypair_file
 ```
+
+This command reads the keypair stored in ```[project-directory]/storage/keypair/id.json``` file (```KEYPAIR_PATH``` env var), extracts the public key, and displays it.
 
 * Example of result:
 
@@ -163,13 +163,13 @@ Solana Public Key: FTGJPL5hia749v3jhNWJA7uE2VoVGyofB7BBL2cLwoPc
 
 **Example** to send ```0.002``` SOLs (```2000000``` lamports) to recipient address ```EMLY3VvNZ41yMWyPQy2AiEfJTPpZdzeGNG5zaaq3Lihb```.
 
-This command will sign the transaction with the keypair which is stored in the file ```[project-directory]/storage/keypair/id.json``` file (```KEYPAIR_PATH``` env var).
-
 * Command:
 
 ```
 cargo run -- send EMLY3VvNZ41yMWyPQy2AiEfJTPpZdzeGNG5zaaq3Lihb 2000000
 ```
+
+This command will sign the transaction with the keypair which is stored in the file ```[project-directory]/storage/keypair/id.json``` file (```KEYPAIR_PATH``` env var).
 
 * Example of result (when successfully):
 
