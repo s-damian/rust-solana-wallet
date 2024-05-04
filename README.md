@@ -76,14 +76,14 @@ If you want to generate several keypairs and several public keys with a single m
 
 Your non-derived keypair will be created in your ```[project-directory]/storage/keypair/id.json``` file (```KEYPAIR_PATH``` env var) JSON file.
 
-And the other keypairs (which will be derived from your seed) will be created in JSON files in your ```[project-directory]/storage/keypair/derived``` (```KEYPAIR_DIR``` env var) directory.
+And the other keypairs (which will be derived from your seed) will be created in JSON files in your ```[project-directory]/storage/keypair/derived``` directory (```KEYPAIR_DIR``` env var).
 
 
 ### 🌐 ```generate_seed``` command:
 
-> Generate and Display a Random Mnemonic.
+> Generate and display a random mnemonic phrase.
 
-This command generates a new mnemonic phrase randomly, calculates the corresponding seed, displays the seed, displays the Solana public key, and generates and writes the keypair to the file.
+This command generates a new mnemonic phrase randomly, calculates the corresponding seed, displays the seed, displays the Solana public key, and generates and writes the keypair to the JSON file.
 
 * Command:
 
@@ -105,13 +105,13 @@ Solana Public Key: FTGJPL5hia749v3jhNWJA7uE2VoVGyofB7BBL2cLwoPc
 
 ### 🌐 ```from_mnemonic``` command:
 
-> Generate and Display a Mnemonic from a Specific Phrase.
+> Generate and display a mnemonic from a specific phrase.
 
 > Command with arguments: cargo run -- from_mnemonic ```PHRASE```
 
-To generate and display the seed and Solana public key from a specific mnemonic phrase, pass the phrase (12 words or 24 words by example) as an argument.
+To generate and display the seed and Solana public key from a specific mnemonic phrase, pass the phrase (12 words or 24 words for examples) as an argument.
 
-This will also generates and writes the keypair to the file.
+This will also generates and writes the keypair to the JSON file.
 
 **Example** with this 12 words: ```shed``` ```scorpion``` ```manual``` ```wheat``` ```monster``` ```phone``` ```winter``` ```toe``` ```dream``` ```kitchen``` ```salad``` ```column```.
 
@@ -131,14 +131,14 @@ Seed: 34A0EACFFDF41445C0B7E43C2D730C54F4CD1D8334528F73E3D5F2C2977FAABA7CAD88EBDA
 Solana Public Key: FTGJPL5hia749v3jhNWJA7uE2VoVGyofB7BBL2cLwoPc
 ```
 
-**Note**: The BIP39 standard includes a predefined list of words used to generate cryptographic keys. Your custom mnemonic phrase must consist of words exclusively from this list to be valid. Using words not in the BIP39 list will lead to errors in generating a valid seed.
-
 
 ### 🌐 ```get_pubkey_from_keypair_file``` command:
 
-> Retrieve Public Key from Stored Keypair.
+> Retrieve public key from stored keypair.
 
 This is useful for retrieving your Solana public key if you have already generated and stored your keypair locally.
+
+This command reads your JSON keypair file stored, extracts the public key, and displays it.
 
 * Command:
 
@@ -146,7 +146,7 @@ This is useful for retrieving your Solana public key if you have already generat
 cargo run -- get_pubkey_from_keypair_file
 ```
 
-This command reads the keypair stored in ```[project-directory]/storage/keypair/id.json``` file (```KEYPAIR_PATH``` env var), extracts the public key, and displays it.
+This command reads the keypair stored in ```[project-directory]/storage/keypair/id.json``` file (```KEYPAIR_PATH``` env var).
 
 * Example of result:
 
@@ -160,6 +160,8 @@ Solana Public Key: FTGJPL5hia749v3jhNWJA7uE2VoVGyofB7BBL2cLwoPc
 > Send SOLs (lamports) to a recipient address (sign outgoing transaction).
 
 > Command with arguments: cargo run -- send ```RECIPIENT``` ```AMOUNT```
+
+This command allows you to sign a transaction leaving your wallet to a destination address.
 
 **Example** to send ```0.002``` SOLs (```2000000``` lamports) to recipient address ```EMLY3VvNZ41yMWyPQy2AiEfJTPpZdzeGNG5zaaq3Lihb```.
 
