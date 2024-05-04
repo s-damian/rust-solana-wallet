@@ -66,7 +66,10 @@ impl AppCli {
             }
             Some(("send", sub_matches)) => {
                 let transaction_manager = TransactionManager::new(self.config.clone());
-                transaction_manager.send_transaction(sub_matches);
+                match transaction_manager.send_transaction(sub_matches) {
+                    Ok(_) => println!("Transaction sent successfully!"),
+                    Err(e) => println!("Failed to send transaction: {}", e),
+                }
             }
             _ => println!("Unknown command."),
         }

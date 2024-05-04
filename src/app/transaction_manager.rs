@@ -13,30 +13,40 @@ impl TransactionManager {
         Self { config }
     }
 
-    pub fn send_transaction(&self, matches: &ArgMatches) {
-        let recipient = matches
-            .get_one::<String>("RECIPIENT")
-            .expect("Recipient required");
-        let amount = matches
-            .get_one::<String>("AMOUNT")
-            .expect("Amount required")
-            .parse::<u64>()
-            .expect("Amount needs to be a number");
+    pub fn send_transaction(&self, matches: &ArgMatches) -> Result<(), Box<dyn std::error::Error>> {
+        let sender_keypair = read_keypair_file(&self.config.keypair_path)
+            .map_err(|_| "Failed to read keypair from file")?;
+        let recipient_pubkey = self.get_pubkey_from_matches(matches)?;
+        let amount = self.get_amount_from_matches(matches)?;
 
-        let recipient_pubkey = Pubkey::from_str(recipient).expect("Invalid public key format");
-        let sender_keypair_path = &self.config.keypair_path;
-
-        let sender_keypair =
-            read_keypair_file(sender_keypair_path).expect("Failed to read keypair from file");
-
-        match SolanaTransaction::send_lamports(
+        SolanaTransaction::send_lamports(
             &self.config.rpc_url,
             &sender_keypair,
             &recipient_pubkey,
             amount,
-        ) {
-            Ok(_) => println!("Transaction sent successfully!"),
-            Err(e) => println!("Failed to send transaction: {}", e),
-        }
+        )
+        .map_err(Into::into)
+    }
+
+    fn get_pubkey_from_matches(
+        &self,
+        matches: &ArgMatches,
+    ) -> Result<Pubkey, Box<dyn std::error::Error>> {
+        let recipient = matches
+            .get_one::<String>("RECIPIENT")
+            .ok_or("Recipient required")?;
+        Pubkey::from_str(recipient).map_err(|_| "Invalid public key format".into())
+    }
+
+    fn get_amount_from_matches(
+        &self,
+        matches: &ArgMatches,
+    ) -> Result<u64, Box<dyn std::error::Error>> {
+        let amount_str = matches
+            .get_one::<String>("AMOUNT")
+            .ok_or("Amount required")?;
+        amount_str
+            .parse::<u64>()
+            .map_err(|_| "Amount needs to be a number".into())
     }
 }

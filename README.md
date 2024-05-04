@@ -183,6 +183,7 @@ Transaction sent successfully!
 
 ```
 Failed to send transaction: unable to confirm transaction. This can happen in situations such as transaction expiration and insufficient fee-payer funds
+Failed to send transaction: RPC response error -32002: Transaction simulation failed: Error processing Instruction 0: custom program error: 0x1 [3 log messages]
 
 ```
 
