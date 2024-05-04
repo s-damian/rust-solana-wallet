@@ -45,7 +45,7 @@ impl WalletManager {
     }
 
     pub fn get_balance_by_pubkey(&self, pubkey: &str) -> Result<u64, Box<dyn std::error::Error>> {
-        let solana_balance = SolanaBalance::new(self.config.rpc_url.clone());
+        let solana_balance = SolanaBalance::new(self.config.clone());
         solana_balance.get_balance_by_pubkey(pubkey)
     }
 }
