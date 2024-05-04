@@ -8,7 +8,7 @@ pub struct WalletConfig {
     pub rpc_url: String,
 }
 
-/// # Returns:
+/// # Assignments:
 ///
 /// * nb_derivations:
 /// Récupère le nombre de dérivations à effectuer à partir de la variable d'environnement `NB_DERIVATIONS`.
