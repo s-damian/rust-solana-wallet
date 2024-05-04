@@ -1,4 +1,5 @@
 use crate::config::wallet_config::WalletConfig;
+use crate::solana::transaction::SolanaTransaction;
 use clap::ArgMatches;
 use solana_sdk::{pubkey::Pubkey, signature::read_keypair_file};
 use std::str::FromStr;
@@ -30,7 +31,7 @@ impl TransactionManager {
         let sender_keypair =
             read_keypair_file(sender_keypair_path).expect("Failed to read keypair from file");
 
-        match crate::solana::transaction::send_lamports(
+        match SolanaTransaction::send_lamports(
             &config.rpc_url,
             &sender_keypair,
             &recipient_pubkey,
