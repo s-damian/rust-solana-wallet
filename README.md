@@ -161,7 +161,7 @@ Solana Public Key: FTGJPL5hia749v3jhNWJA7uE2VoVGyofB7BBL2cLwoPc
 
 > Command with arguments: cargo run -- send ```RECIPIENT``` ```AMOUNT```
 
-This command allows you to sign a transaction leaving your wallet to a destination address.
+This command allows you to sign an outgoing transaction from your wallet to a destination address.
 
 **Example** to send ```0.002``` SOLs (```2000000``` lamports) to recipient address ```EMLY3VvNZ41yMWyPQy2AiEfJTPpZdzeGNG5zaaq3Lihb```.
 
