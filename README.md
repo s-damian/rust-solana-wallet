@@ -31,7 +31,7 @@
 
 * [send](#-send-command): Send SOL to a recipient address.
 
-* [get_balance_by_pubkey](#-get_balance_by_pubkey-command): Get balance by public key.
+* [get_pubkey_balance](#-get_pubkey_balance-command): Get balance by public key.
 
 * [get_pubkey_from_keypair_file](#-get_pubkey_from_keypair_file-command): Displays the public key from a keypair stored in a JSON file.
 
@@ -167,11 +167,11 @@ Failed to send transaction: ...
 ```
 
 
-### 🌐 get_balance_by_pubkey command:
+### 🌐 get_pubkey_balance command:
 
 > Get balance by public key.
 
-> Command with arguments: cargo run -- get_balance_by_pubkey ```PUBKEY```
+> Command with arguments: cargo run -- get_pubkey_balance ```PUBKEY```
 
 This command allows you to see the balance (in SOL and in lamports) of a public address.
 
@@ -180,7 +180,7 @@ This command allows you to see the balance (in SOL and in lamports) of a public 
 * Command:
 
 ```
-cargo run -- get_balance_by_pubkey EMLY3VvNZ41yMWyPQy2AiEfJTPpZdzeGNG5zaaq3Lihb
+cargo run -- get_pubkey_balance EMLY3VvNZ41yMWyPQy2AiEfJTPpZdzeGNG5zaaq3Lihb
 ```
 
 * Example of result:
