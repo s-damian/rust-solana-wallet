@@ -1,5 +1,5 @@
 use crate::config::wallet_config::WalletConfig;
-use crate::solana::address::read_keypair_from_file;
+use crate::solana::address::SolanaAddress;
 use solana_sdk::signer::Signer;
 
 pub struct KeypairManager {
@@ -20,7 +20,7 @@ impl KeypairManager {
         // La fonction "read_keypair_from_file" gère le chargement et la désérialisation de la paire de clés à partir du fichier.
         // Ok: En cas de succès, extrait la clé publique de la paire de clés et l'affiche.
         // Err: En cas d'échec, affiche une erreur indiquant que la lecture a échoué.
-        match read_keypair_from_file(keypair_path) {
+        match SolanaAddress::read_keypair_from_file(keypair_path) {
             Ok(keypair) => println!("Clé publique : {}", keypair.pubkey()),
             Err(e) => println!("Failed to read key pair from file: {}", e),
         }

@@ -1,7 +1,7 @@
 use crate::bip::passphrase::BipPassphrase;
 use crate::bip::seed::BipSeed;
 use crate::config::wallet_config::WalletConfig;
-use crate::solana::address::{generate_keypair, write_keypair};
+use crate::solana::address::SolanaAddress;
 use bip39::Mnemonic;
 use solana_sdk::signer::Signer;
 
@@ -36,9 +36,9 @@ impl MnemonicManager {
         if nb_derivations == 1 {
             // Génerer une paire de clés (clé publique et clé privée) à partir de la seed en bytes.
             // Puis écrire cette paire de clés dans un fichier JSON.
-            let keypair = generate_keypair(seed_bytes);
+            let keypair = SolanaAddress::generate_keypair(seed_bytes);
             let keypair_path = &config.keypair_path;
-            write_keypair(&keypair, keypair_path);
+            SolanaAddress::write_keypair(&keypair, keypair_path);
 
             // Affiche la clé publique (qui dans le cas de Solana, est également utilisée comme adresse publique du wallet).
             println!("Solana Public Key: {}", keypair.pubkey());
@@ -50,13 +50,13 @@ impl MnemonicManager {
                     Ok(derived_seed_bytes) => {
                         // Génerer une paire de clés (clé publique et clé privée) à partir de la seed en bytes.
                         // Puis écrire cette paire de clés dans un fichier JSON.
-                        let keypair = generate_keypair(&derived_seed_bytes);
+                        let keypair = SolanaAddress::generate_keypair(&derived_seed_bytes);
                         let keypair_path = if index == 0 {
                             config.keypair_path.clone() // (cloner pour éviter le mouvement).
                         } else {
                             format!("{}/keypair-{}.json", &config.keypair_dir, index)
                         };
-                        write_keypair(&keypair, &keypair_path);
+                        SolanaAddress::write_keypair(&keypair, &keypair_path);
 
                         // Affiche la clé publique (qui dans le cas de Solana, est également utilisée comme adresse publique du wallet).
                         println!("Solana Public Key {}: {}", index, keypair.pubkey());
