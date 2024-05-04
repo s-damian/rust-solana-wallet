@@ -3,7 +3,7 @@ mod bip;
 mod config;
 mod solana;
 
-use app::cli::{handle_matches, setup_cli};
+use app::cli::AppCli;
 use config::wallet_config::WalletConfig;
 use dotenv::dotenv;
 
@@ -14,7 +14,9 @@ fn main() {
     // Charge la configuration du wallet (selon les données du fichier .env).
     let config = WalletConfig::new();
 
-    let matches = setup_cli().get_matches();
+    let app_cli = AppCli::new(config.clone());
 
-    handle_matches(matches, &config);
+    let matches = app_cli.setup_cli().get_matches();
+
+    app_cli.handle_matches(matches);
 }
