@@ -1,4 +1,4 @@
-use crate::app::keypair_manager::get_pubkey_from_keypair_file;
+use crate::app::keypair_manager::KeypairManager;
 use crate::app::transaction_manager::TransactionManager;
 use crate::app::wallet_manager::WalletManager;
 use crate::config::wallet_config::WalletConfig;
@@ -41,6 +41,7 @@ pub fn setup_cli() -> Command {
 
 pub fn handle_matches(matches: ArgMatches, wallet_config: &WalletConfig) {
     let wallet_manager = WalletManager::new(wallet_config.clone());
+    let keypair_manager = KeypairManager::new(wallet_config.clone());
 
     match matches.subcommand() {
         Some(("generate_seed", _)) => {
@@ -52,7 +53,7 @@ pub fn handle_matches(matches: ArgMatches, wallet_config: &WalletConfig) {
             }
         }
         Some(("get_pubkey_from_keypair_file", _)) => {
-            get_pubkey_from_keypair_file(wallet_config);
+            keypair_manager.get_pubkey_from_keypair_file();
         }
         Some(("send", sub_matches)) => {
             TransactionManager::send_transaction(sub_matches, wallet_config);
