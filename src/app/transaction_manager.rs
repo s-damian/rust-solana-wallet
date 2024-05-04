@@ -14,8 +14,6 @@ impl TransactionManager {
     }
 
     pub fn send_transaction(&self, matches: &ArgMatches) {
-        let config = &self.config;
-
         let recipient = matches
             .get_one::<String>("RECIPIENT")
             .expect("Recipient required");
@@ -26,13 +24,13 @@ impl TransactionManager {
             .expect("Amount needs to be a number");
 
         let recipient_pubkey = Pubkey::from_str(recipient).expect("Invalid public key format");
-        let sender_keypair_path = &config.keypair_path;
+        let sender_keypair_path = &self.config.keypair_path;
 
         let sender_keypair =
             read_keypair_file(sender_keypair_path).expect("Failed to read keypair from file");
 
         match SolanaTransaction::send_lamports(
-            &config.rpc_url,
+            &self.config.rpc_url,
             &sender_keypair,
             &recipient_pubkey,
             amount,
