@@ -33,6 +33,16 @@ impl AppCli {
                     .about("Displays the public key from the keypair stored in file"),
             )
             .subcommand(
+                Command::new("get_balance_by_pubkey")
+                    .about("Displays the balance for the public key")
+                    .arg(
+                        Arg::new("PUBKEY")
+                            .help("A public key")
+                            .required(true)
+                            .index(1),
+                    ),
+            )
+            .subcommand(
                 Command::new("send")
                     .about("Send SOL to a specific address")
                     .arg(
@@ -63,6 +73,17 @@ impl AppCli {
             Some(("get_pubkey_from_keypair_file", _)) => {
                 let keypair_manager = KeypairManager::new(self.config.clone());
                 keypair_manager.get_pubkey_from_keypair_file();
+            }
+            Some(("get_balance_by_pubkey", sub_matches)) => {
+                if let Some(pubkey) = sub_matches.get_one::<String>("PUBKEY") {
+                    match wallet_manager.get_balance_by_pubkey(pubkey) {
+                        Ok(balance) => {
+                            let sol_value = balance as f64 / 1_000_000_000_f64; // Convert lamports to SOL
+                            println!("Balance: {:.9} SOL, {} lamports", sol_value, balance);
+                        }
+                        Err(e) => println!("Failed to retrieve balance: {}", e),
+                    }
+                }
             }
             Some(("send", sub_matches)) => {
                 let transaction_manager = TransactionManager::new(self.config.clone());

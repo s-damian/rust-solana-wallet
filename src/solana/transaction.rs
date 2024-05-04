@@ -10,12 +10,12 @@ use solana_sdk::{
 pub struct SolanaTransaction {}
 
 impl SolanaTransaction {
-    /// Envoyer des SOLs à une adresse spécifique.
+    /// Envoyer des SOL à une adresse spécifique.
     ///
     /// # Arguments:
     /// * rpc_url - L'URL du point de terminaison RPC pour se connecter au réseau Solana.
     /// * sender_keypair - La paire de clés du compte expéditeur utilisée pour signer la transaction.
-    /// * recipient_pubkey - La clé publique du destinataire qui recevra les SOLs.
+    /// * recipient_pubkey - La clé publique du destinataire qui recevra les SOL.
     /// * lamports - Le montant en lamports à envoyer (1 SOL = 1_000_000_000 lamports).
     ///
     /// # Returns:

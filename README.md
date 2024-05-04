@@ -19,7 +19,7 @@
 * **Keypair Storage**: Saves the generated keypair to a local JSON file for future use.
 * **Key Derivation**: Supports generating multiple keypairs from a single seed by applying BIP44 derivation paths.
 * **Public Key Display**: Retrieves and displays the public key from the locally stored keypair.
-* **Send SOLs (lamports)**: Send SOLs to a recipient address (sign outgoing transaction).
+* **Send SOL (lamports)**: Send SOL to a recipient address (sign outgoing transaction).
 
 
 
@@ -31,7 +31,7 @@
 
 * [get_pubkey_from_keypair_file](#-get_pubkey_from_keypair_file-command): Displays the public key from a keypair stored in a JSON file.
 
-* [send_sols](#-send_sols-command): Send SOLs to a recipient address.
+* [send](#-send_command): Send SOL to a recipient address.
 
 
 
@@ -155,15 +155,15 @@ Solana Public Key: FTGJPL5hia749v3jhNWJA7uE2VoVGyofB7BBL2cLwoPc
 ```
 
 
-### 🌐 ```send_sols``` command:
+### 🌐 ```send``` command:
 
-> Send SOLs (lamports) to a recipient address (sign outgoing transaction).
+> Send SOL (lamports) to a recipient address (sign outgoing transaction).
 
 > Command with arguments: cargo run -- send ```RECIPIENT``` ```AMOUNT```
 
 This command allows you to sign an outgoing transaction from your wallet to a destination address.
 
-**Example** to send ```0.002``` SOLs (```2000000``` lamports) to recipient address ```EMLY3VvNZ41yMWyPQy2AiEfJTPpZdzeGNG5zaaq3Lihb```.
+**Example** to send ```0.002``` SOL (```2000000``` lamports) to recipient address ```EMLY3VvNZ41yMWyPQy2AiEfJTPpZdzeGNG5zaaq3Lihb```.
 
 * Command:
 

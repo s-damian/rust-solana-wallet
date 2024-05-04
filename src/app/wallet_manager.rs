@@ -1,6 +1,7 @@
 use crate::app::mnemonic_manager::MnemonicManager;
 use crate::bip::mnemonic::BipMnemonic;
 use crate::config::wallet_config::WalletConfig;
+use crate::solana::balance::SolanaBalance;
 
 pub struct WalletManager {
     config: WalletConfig,
@@ -41,5 +42,10 @@ impl WalletManager {
         let mnemonic = BipMnemonic::get_mnemonic_from_phrase(phrase);
 
         mnemonic_manager.process_mnemonic(&mnemonic);
+    }
+
+    pub fn get_balance_by_pubkey(&self, pubkey: &str) -> Result<u64, Box<dyn std::error::Error>> {
+        let solana_balance = SolanaBalance::new(self.config.rpc_url.clone());
+        solana_balance.get_balance_by_pubkey(pubkey)
     }
 }
