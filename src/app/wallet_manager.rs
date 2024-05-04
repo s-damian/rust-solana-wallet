@@ -8,7 +8,7 @@ pub struct WalletManager {
 
 impl WalletManager {
     pub fn new(config: WalletConfig) -> Self {
-        WalletManager { config }
+        Self { config }
     }
 
     /// Génère une phrase mnémonique aléatoire de 12 mots et affiche la clé publique Solana correspondante.

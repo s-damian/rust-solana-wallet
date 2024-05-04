@@ -8,7 +8,7 @@ pub struct KeypairManager {
 
 impl KeypairManager {
     pub fn new(config: WalletConfig) -> Self {
-        KeypairManager { config }
+        Self { config }
     }
 
     /// Récupère et affiche la clé publique à partir d'une paire de clés stockée localement dans un fichier.
