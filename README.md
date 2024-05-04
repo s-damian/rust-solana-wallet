@@ -19,6 +19,7 @@
 * **Keypair Storage**: Saves the generated keypair to a local JSON file for future use.
 * **Key Derivation**: Supports generating multiple keypairs from a single seed by applying BIP44 derivation paths.
 * **Public Key Display**: Retrieves and displays the public key from the locally stored keypair.
+* **Send SOLs (lamports)**: Send SOLs to a recipient address.
 
 
 
@@ -29,6 +30,8 @@
 * [from_mnemonic](#-from_mnemonic-operation): Accepts a user-provided BIP39 mnemonic phrase, derives the corresponding seed, saves the keypair, and displays the public key.
 
 * [get_pubkey_from_keypair_file](#-get_pubkey_from_keypair_file-operation): Displays the public key from a keypair stored in a JSON file.
+
+* [send_sols](#-send_sols-operation): Send SOLs to a recipient address.
 
 
 
@@ -108,12 +111,12 @@ To generate and display the seed and Solana public key from a specific mnemonic 
 
 This will also generates and writes the keypair to the file.
 
-**Example** with this 12 words: ```fit``` ```refuse``` ```hotel``` ```collect``` ```tortoise``` ```race``` ```rail``` ```weasel``` ```little``` ```medal``` ```couch``` ```remember```.
+**Example** with this 12 words: ```shed``` ```scorpion``` ```manual``` ```wheat``` ```monster``` ```phone``` ```winter``` ```toe``` ```dream``` ```kitchen``` ```salad``` ```column```.
 
 * Command:
 
 ```
-cargo run -- from_mnemonic "fit refuse hotel collect tortoise race rail weasel little medal couch remember"
+cargo run -- from_mnemonic "shed scorpion manual wheat monster phone winter toe dream kitchen salad column"
 ```
 
 **Optional passphrase:** You will be prompted to enter a passphrase (leave blank to not use one).
@@ -121,9 +124,9 @@ cargo run -- from_mnemonic "fit refuse hotel collect tortoise race rail weasel l
 * Example of result:
 
 ```
-BIP39 Mnemonic (given phrase): fit refuse hotel collect tortoise race rail weasel little medal couch remember
-Seed: 2C9AE93C7FA7D5296472B6E0F8928F94963E96ACAFDF1924AF8B7A8471B04FA15F49C98023FDC84BBB5979085F91A577E1A36A7BAC9C4C735D44379D7A915D59
-Solana Public Key: EsiyKK61Ycv4XXqUoFJa2SuFJGHjVeWgAB5UvaNkb713
+BIP39 Mnemonic (given phrase): shed scorpion manual wheat monster phone winter toe dream kitchen salad column
+Seed: 34A0EACFFDF41445C0B7E43C2D730C54F4CD1D8334528F73E3D5F2C2977FAABA7CAD88EBDA6A1F02CE6BB596F04036305A32B96303F93FF864D268539739AFF8
+Solana Public Key: FTGJPL5hia749v3jhNWJA7uE2VoVGyofB7BBL2cLwoPc
 ```
 
 **Note**: The BIP39 standard includes a predefined list of words used to generate cryptographic keys. Your custom mnemonic phrase must consist of words exclusively from this list to be valid. Using words not in the BIP39 list will lead to errors in generating a valid seed.
@@ -146,7 +149,20 @@ cargo run -- get_pubkey_from_keypair_file
 * Example of result:
 
 ```
-Solana Public Key: EsiyKK61Ycv4XXqUoFJa2SuFJGHjVeWgAB5UvaNkb713
+Solana Public Key: FTGJPL5hia749v3jhNWJA7uE2VoVGyofB7BBL2cLwoPc
+```
+
+
+### 🌐 ```send_sols``` operation:
+
+> Send SOLs (lamports) to a recipient address.
+
+cargo run -- send RECIPIENT AMOUNT
+
+Example to Send 0.002 SOLs (```2000000``` lamports) to recipient address ```EMLY3VvNZ41yMWyPQy2AiEfJTPpZdzeGNG5zaaq3Lihb```:
+
+```
+cargo run -- send EMLY3VvNZ41yMWyPQy2AiEfJTPpZdzeGNG5zaaq3Lihb 2000000
 ```
 
 
