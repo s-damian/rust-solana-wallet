@@ -161,10 +161,20 @@ Solana Public Key: FTGJPL5hia749v3jhNWJA7uE2VoVGyofB7BBL2cLwoPc
 
 > Command: cargo run -- send ```RECIPIENT``` ```AMOUNT```
 
-Example to send ```0.002``` SOLs (```2000000``` lamports) to recipient address ```EMLY3VvNZ41yMWyPQy2AiEfJTPpZdzeGNG5zaaq3Lihb```:
+**Example** to send ```0.002``` SOLs (```2000000``` lamports) to recipient address ```EMLY3VvNZ41yMWyPQy2AiEfJTPpZdzeGNG5zaaq3Lihb```.
+
+This command will sign the transaction with the keypair which is stored in the file ```[project-directory]/storage/keypair/id.json```.
+
+* Command:
 
 ```
 cargo run -- send EMLY3VvNZ41yMWyPQy2AiEfJTPpZdzeGNG5zaaq3Lihb 2000000
+```
+
+* Example of result (when successfully):
+
+```
+Transaction sent successfully!
 ```
 
 
