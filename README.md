@@ -31,7 +31,7 @@
 
 * [send](#-send-command): Send SOL to a recipient address.
 
-* [get_balance_by_pubkey](#-get_balance_by_pubkey_command): Get balance by public key.
+* [get_balance_by_pubkey](#-get_balance_by_pubkey-command): Get balance by public key.
 
 * [get_pubkey_from_keypair_file](#-get_pubkey_from_keypair_file-command): Displays the public key from a keypair stored in a JSON file.
 
