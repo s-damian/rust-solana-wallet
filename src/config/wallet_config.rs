@@ -4,6 +4,7 @@ pub struct WalletConfig {
     pub keypair_path: String,
     pub keypair_dir: String,
     pub nb_derivations: usize,
+    pub rpc_url: String,
 }
 
 /// - nb_derivations :
@@ -29,6 +30,8 @@ impl WalletConfig {
                 .unwrap_or_else(|_| "./storage/keypair/id.json".to_string()),
             keypair_dir: env::var("KEYPAIR_DIR")
                 .unwrap_or_else(|_| "./storage/keypair/derived".to_string()),
+            rpc_url: env::var("RPC_URL") // Lire l'URL RPC de l'environnement
+                .unwrap_or_else(|_| "https://api.testnet.solana.com".to_string()),
         }
     }
 }

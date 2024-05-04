@@ -85,7 +85,7 @@ This command generates a new mnemonic phrase randomly, calculates the correspond
 * Command:
 
 ```
-cargo run generate_seed
+cargo run -- generate_seed
 ```
 
 **Optional passphrase:** You will be prompted to enter a passphrase (leave blank to not use one).
@@ -113,7 +113,7 @@ This will also generates and writes the keypair to the file.
 * Command:
 
 ```
-cargo run from_mnemonic "fit refuse hotel collect tortoise race rail weasel little medal couch remember"
+cargo run -- from_mnemonic "fit refuse hotel collect tortoise race rail weasel little medal couch remember"
 ```
 
 **Optional passphrase:** You will be prompted to enter a passphrase (leave blank to not use one).
@@ -140,7 +140,7 @@ This command reads the keypair stored in ```[project-directory]/storage/keypair/
 * Command:
 
 ```
-cargo run get_pubkey_from_keypair_file
+cargo run -- get_pubkey_from_keypair_file
 ```
 
 * Example of result:
