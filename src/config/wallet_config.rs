@@ -8,6 +8,12 @@ pub struct WalletConfig {
     pub rpc_url: String,
 }
 
+impl Default for WalletConfig {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 /// # Assignments:
 ///
 /// * nb_derivations:
