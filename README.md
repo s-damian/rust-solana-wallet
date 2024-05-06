@@ -8,9 +8,9 @@
 <img src="https://raw.githubusercontent.com/s-damian/medias/main/technos-logos/rust.webp" alt="Rust Logo" height="100px">
 </a>
 
-> This is an example of a **Solana Wallet** in **Rust** 🦀
+> #Solana / #Wallet / #Rust / #BIP39
 
-> This project demonstrates how to create and manage a Solana Wallet using Rust.
+> This is an example of a **Solana Wallet** in **Rust** 🦀
 
 This **example of a Solana Wallet** is developed by [Stephen Damian](https://github.com/s-damian)
 
