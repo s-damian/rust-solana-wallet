@@ -8,7 +8,7 @@
 <img src="https://raw.githubusercontent.com/s-damian/medias/main/technos-logos/rust.webp" alt="Rust Logo" height="100px">
 </a>
 
-> #Solana / #Wallet / #Rust / #BIP39
+> #Solana #Wallet #Rust #BIP39 #Web3 #Blockchain
 
 > This is an example of a **Solana Wallet** in **Rust** 🦀
 
