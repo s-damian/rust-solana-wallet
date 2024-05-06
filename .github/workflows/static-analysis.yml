@@ -25,5 +25,5 @@ jobs:
           override: true
           components: clippy
 
-      - name: Run Clippy
+      - name: Analyze
         run: cargo clippy --all-targets -- -D warnings
