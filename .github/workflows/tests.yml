@@ -22,7 +22,7 @@ jobs:
         with:
           toolchain: stable
           default: true
-          profile: minimal # minimal installation, only the components necessary for compilation will be installed
+          profile: minimal
           override: true
 
       - name: Cache Cargo dependencies
