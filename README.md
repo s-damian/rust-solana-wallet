@@ -8,9 +8,13 @@
 <img src="https://raw.githubusercontent.com/s-damian/medias/main/technos-logos/rust.webp" alt="Rust Logo" height="100px">
 </a>
 
-> This is an example of a **Solana Wallet** in **Rust**.
+> This is an example of a **Solana Wallet** in **Rust** 🦀
 
 > This project demonstrates how to create and manage a Solana Wallet using Rust.
+
+This **example of a Solana Wallet** is developed by [Stephen Damian](https://github.com/s-damian)
+
+### This wallet manages:
 
 * **Generate Mnemonic**: Creates a new random BIP39 mnemonic phrase.
 * **Seed**: Derives a seed from the mnemonic phrase.
@@ -18,8 +22,9 @@
 * **Keypair Generation**: Generates a Solana keypair (public and private key) from the derived seed.
 * **Keypair Storage**: Saves the generated keypair to a local JSON file for future use.
 * **Key Derivation**: Supports generating multiple keypairs from a single seed by applying BIP44 derivation paths.
-* **Public Key Display**: Retrieves and displays the public key from the locally stored keypair.
 * **Send SOL (lamports)**: Send SOL to a recipient address (sign outgoing transaction).
+* **Get balance**: Get balance (in SOL and in lamports) by public key.
+* **Public Key Display**: Retrieves and displays the public key from the locally stored keypair.
 
 
 
