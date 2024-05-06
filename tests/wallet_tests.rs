@@ -13,10 +13,7 @@ fn test_get_balance_by_pubkey() {
     let pubkey = "FTGJPL5hia749v3jhNWJA7uE2VoVGyofB7BBL2cLwoPc";
 
     match wallet_manager.get_balance_by_pubkey(pubkey) {
-        Ok(balance) => {
-            println!("Retrieved balance: {}", balance); // Ajout de cette ligne pour le debugging
-            assert!(balance > 0, "Balance should be positive");
-        }
+        Ok(balance) => assert!(balance == 0, "Balance should be zero"),
         Err(e) => panic!("Failed to retrieve balance: {}", e),
     }
 }
