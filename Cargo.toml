@@ -6,7 +6,7 @@ edition = "2021"
 homepage = "https://github.com/s-damian/rust-solana-wallet"
 documentation = "https://github.com/s-damian/rust-solana-wallet/blob/main/README.md"
 readme = "README.md"
-keywords = ["rust", "solana", "wallet"]
+keywords = ["rust", "solana", "wallet", "bip39", "crypto", "blockchain"]
 license = "MIT"
 repository = "https://github.com/s-damian/rust-solana-wallet"
 
