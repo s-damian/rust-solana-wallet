@@ -21,7 +21,7 @@ impl KeypairManager {
         // Ok: En cas de succès, extrait la clé publique de la paire de clés et l'affiche.
         // Err: En cas d'échec, affiche une erreur indiquant que la lecture a échoué.
         match SolanaAddress::read_keypair_from_file(keypair_path) {
-            Ok(keypair) => println!("Clé publique : {}", keypair.pubkey()),
+            Ok(keypair) => println!("Solana Public Key: {}", keypair.pubkey()),
             Err(e) => println!("Failed to read key pair from file: {}", e),
         }
     }

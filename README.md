@@ -23,7 +23,7 @@ This **example of a Solana Wallet** is developed by [Stephen Damian](https://git
 * **Keypair Storage**: Saves the generated keypair to a local JSON file for future use.
 * **Key Derivation**: Supports generating multiple keypairs from a single seed by applying BIP44 derivation paths.
 * **Send SOL (lamports)**: Send SOL to a recipient address (sign outgoing transaction).
-* **Get balance**: Get balance (in SOL and in lamports) by public key.
+* **Get Balance**: Get balance (in SOL and in lamports) by public key.
 * **Public Key Display**: Retrieves and displays the public key from the locally stored keypair.
 
 
@@ -191,7 +191,7 @@ cargo run -- get_pubkey_balance EMLY3VvNZ41yMWyPQy2AiEfJTPpZdzeGNG5zaaq3Lihb
 * Example of result:
 
 ```
-Balance: 0.005910000 SOL, 5910000 lamports
+Balance: 0.005910000 SOL (5910000 lamports)
 
 ```
 
