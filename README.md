@@ -28,7 +28,7 @@ This **example of a Solana Wallet** is developed by [Stephen Damian](https://git
 
 
 
-## Summary
+## Summary of commands
 
 * [generate_seed](#-generate_seed-command): Generates a 12-word BIP39 mnemonic phrase, derives the corresponding seed, saves the keypair, and displays the public key.
 
