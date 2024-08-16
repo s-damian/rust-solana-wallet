@@ -10,7 +10,6 @@
 # Solana Wallet in Rust - Example
 
 ![Build](https://github.com/s-damian/rust-solana-wallet/actions/workflows/tests.yml/badge.svg)
-![Clippy](https://github.com/s-damian/rust-solana-wallet/actions/workflows/static-analysis.yml/badge.svg)
 ![License](https://img.shields.io/badge/License-MIT-blue)
 
 > #Solana #Wallet #Rust #BIP39 #Web3 #Blockchain
