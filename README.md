@@ -276,11 +276,6 @@ You can configure these environment variables:
 * **SLIP44**: Learn more about the **SLIP44** [here](https://github.com/satoshilabs/slips/blob/master/slip-0044.md).
 
 
-## Contributing
-
-Contributions are welcome! Please check [CONTRIBUTING.md](CONTRIBUTING.md) for more details on our pull request submission process.
-
-
 ## Security
 
 This wallet is an example and should not be used to store large amounts of SOL without a thorough security review. Always make sure to back up your mnemonic phrases and private keys in a secure location.
