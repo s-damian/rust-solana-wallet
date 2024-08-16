@@ -1,22 +1,23 @@
-
-# Solana Wallet in Rust - Example
-
+<p align="center">
 <a href="https://github.com/s-damian/rust-solana-wallet">
 <img src="https://raw.githubusercontent.com/s-damian/medias/main/technos-logos/solana.webp" alt="Solana Logo" height="100px">
 </a>
 <a href="https://github.com/s-damian/rust-solana-wallet">
 <img src="https://raw.githubusercontent.com/s-damian/medias/main/technos-logos/rust.webp" alt="Rust Logo" height="100px">
 </a>
+</p>
+
+# Solana Wallet in Rust - Example
+
+![Build](https://github.com/s-damian/rust-solana-wallet/actions/workflows/tests.yml/badge.svg)
+![Clippy](https://github.com/s-damian/rust-solana-wallet/actions/workflows/static-analysis.yml/badge.svg)
+![License](https://img.shields.io/badge/License-MIT-blue)
 
 > #Solana #Wallet #Rust #BIP39 #Web3 #Blockchain
 
 > This is an example of a **Solana Wallet** in **Rust** 🦀
 
 This **example of a Solana Wallet** is developed by [Stephen Damian](https://github.com/s-damian)
-
-![Build](https://github.com/s-damian/rust-solana-wallet/actions/workflows/tests.yml/badge.svg)
-![Clippy](https://github.com/s-damian/rust-solana-wallet/actions/workflows/static-analysis.yml/badge.svg)
-![License](https://img.shields.io/badge/License-MIT-blue)
 
 ### This wallet manages:
 
