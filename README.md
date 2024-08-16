@@ -274,3 +274,30 @@ You can configure these environment variables:
 
 * **BIP39**: Learn more about the **BIP39** standard [here](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki).
 * **SLIP44**: Learn more about the **SLIP44** [here](https://github.com/satoshilabs/slips/blob/master/slip-0044.md).
+
+
+## Contributing
+
+Contributions are welcome! Please check [CONTRIBUTING.md](CONTRIBUTING.md) for more details on our pull request submission process.
+
+
+## Security
+
+This wallet is an example and should not be used to store large amounts of SOL without a thorough security review. Always make sure to back up your mnemonic phrases and private keys in a secure location.
+
+
+## Roadmap
+
+- [ ] Add support for SPL tokens.
+- [ ] Implement a graphical user interface.
+
+
+## FAQ
+
+Q: Can this wallet be used on the Solana mainnet?
+A: While technically possible, this wallet is designed as an educational example and is not recommended for use on the mainnet without a thorough security review.
+
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
