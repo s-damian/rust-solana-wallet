@@ -287,8 +287,8 @@ This wallet is an example and should not be used to store large amounts of SOL w
 
 ## Roadmap
 
-- [ ] Add support for SPL tokens.
-- [ ] Implement a graphical user interface.
+* [ ] Implement a graphical user interface.
+* [ ] Add support for SPL tokens.
 
 
 ## FAQ
