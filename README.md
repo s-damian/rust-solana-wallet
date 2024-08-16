@@ -290,6 +290,7 @@ This wallet is an example and should not be used to store large amounts of SOL w
 ## FAQ
 
 Q: Can this wallet be used on the Solana mainnet?
+
 A: While technically possible, this wallet is designed as an educational example and is not recommended for use on the mainnet without a thorough security review.
 
 
