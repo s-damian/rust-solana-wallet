@@ -14,6 +14,9 @@
 
 This **example of a Solana Wallet** is developed by [Stephen Damian](https://github.com/s-damian)
 
+![Build](https://github.com/s-damian/rust-solana-wallet/actions/workflows/tests.yml/badge.svg)
+![Clippy](https://github.com/s-damian/rust-solana-wallet/actions/workflows/static-analysis.yml/badge.svg)
+
 ### This wallet manages:
 
 * **Generate Mnemonic**: Creates a new random BIP39 mnemonic phrase.
