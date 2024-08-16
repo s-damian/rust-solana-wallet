@@ -16,6 +16,8 @@ This **example of a Solana Wallet** is developed by [Stephen Damian](https://git
 
 ![Build](https://github.com/s-damian/rust-solana-wallet/actions/workflows/tests.yml/badge.svg)
 ![Clippy](https://github.com/s-damian/rust-solana-wallet/actions/workflows/static-analysis.yml/badge.svg)
+![Rust](https://img.shields.io/badge/Rust-1.79.0-orange)
+![License](https://img.shields.io/badge/License-MIT-blue)
 
 ### This wallet manages:
 
