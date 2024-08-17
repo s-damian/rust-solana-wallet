@@ -40,6 +40,13 @@ This **example of a Solana Wallet** is developed by [Stephen Damian](https://git
 
 
 
+## Project Overview
+
+Rust Solana Wallet - A lightweight Solana wallet developed in Rust.
+
+**Status**: Under development 🚧
+
+
 
 ## Prerequisites
 
