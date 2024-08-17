@@ -30,7 +30,6 @@ This **example of a Solana Wallet** is developed by [Stephen Damian](https://git
 - **Public Key Display**: Retrieves and displays the public key from the locally stored keypair.
 
 
-
 ## Summary of commands
 
 - [generate_seed](#-generate_seed-command): Generates a 12-word BIP39 mnemonic phrase, derives the corresponding seed, saves the keypair, and displays the public key.
@@ -38,7 +37,6 @@ This **example of a Solana Wallet** is developed by [Stephen Damian](https://git
 - [send](#-send-command): Send SOL to a recipient address.
 - [get_pubkey_balance](#-get_pubkey_balance-command): Get balance by public key.
 - [get_pubkey_from_keypair_file](#-get_pubkey_from_keypair_file-command): Displays the public key from a keypair stored in a JSON file.
-
 
 
 ## Project Overview
@@ -50,12 +48,16 @@ Rust Solana Wallet - A lightweight Solana wallet developed in Rust.
 ![Img](./img/img-1.png)
 
 
+## Roadmap
+
+- [ ] Implement a graphical user interface.
+- [ ] Add support for SPL tokens.
+
 
 ## Prerequisites
 
 - **Rust** ```>= 1.75.0```: Ensure Rust is installed on your system. You can install Rust using [Rustup](https://rustup.rs/).
 - **Cargo**: Rust's package manager, installed automatically with Rust. Learn more about Cargo [here](https://doc.rust-lang.org/cargo/).
-
 
 
 ## Setup
@@ -79,7 +81,6 @@ cp .env.example .env
 ```
 
 
-
 ## How to use?
 
 **Keypair storage**:
@@ -93,7 +94,6 @@ If you want to generate several keypairs and several public keys with a single m
 Your non-derived keypair will be created in your ```[project-directory]/storage/keypair/id.json``` file (```KEYPAIR_PATH``` env var) JSON file.
 
 And the other keypairs (which will be derived from your seed) will be created in JSON files in your ```[project-directory]/storage/keypair/derived``` directory (```KEYPAIR_DIR``` env var).
-
 
 ### 🌐 generate_seed command:
 
@@ -116,8 +116,6 @@ BIP39 Mnemonic (random phrase): shed scorpion manual wheat monster phone winter 
 Seed: 34A0EACFFDF41445C0B7E43C2D730C54F4CD1D8334528F73E3D5F2C2977FAABA7CAD88EBDA6A1F02CE6BB596F04036305A32B96303F93FF864D268539739AFF8
 Solana Public Key: FTGJPL5hia749v3jhNWJA7uE2VoVGyofB7BBL2cLwoPc
 ```
-
-
 
 ### 🌐 from_mnemonic command:
 
@@ -146,7 +144,6 @@ BIP39 Mnemonic (given phrase): shed scorpion manual wheat monster phone winter t
 Seed: 34A0EACFFDF41445C0B7E43C2D730C54F4CD1D8334528F73E3D5F2C2977FAABA7CAD88EBDA6A1F02CE6BB596F04036305A32B96303F93FF864D268539739AFF8
 Solana Public Key: FTGJPL5hia749v3jhNWJA7uE2VoVGyofB7BBL2cLwoPc
 ```
-
 
 ### 🌐 send command:
 
@@ -179,7 +176,6 @@ Failed to send transaction: ...
 
 ```
 
-
 ### 🌐 get_pubkey_balance command:
 
 > Get balance by public key.
@@ -202,7 +198,6 @@ cargo run -- get_pubkey_balance EMLY3VvNZ41yMWyPQy2AiEfJTPpZdzeGNG5zaaq3Lihb
 Balance: 0.005910000 SOL (5910000 lamports)
 
 ```
-
 
 ### 🌐 get_pubkey_from_keypair_file command:
 
@@ -227,7 +222,6 @@ Solana Public Key: FTGJPL5hia749v3jhNWJA7uE2VoVGyofB7BBL2cLwoPc
 ```
 
 
-
 ## Show Help
 
 ```bash
@@ -235,11 +229,9 @@ cargo run -- --help
 ```
 
 
-
 ## Lint and Static Analysis
 
 Maintain code quality and style consistency using the following tools:
-
 
 ### Code Formatting:
 
@@ -249,7 +241,6 @@ To format the codebase according to Rust's coding standards, use:
 cargo fmt
 ```
 
-
 ### Static Code Analysis:
 
 To perform static code analysis and catch common mistakes and inefficiencies, use:
@@ -257,7 +248,6 @@ To perform static code analysis and catch common mistakes and inefficiencies, us
 ```bash
 cargo clippy
 ```
-
 
 
 ## Environment variables
@@ -272,7 +262,6 @@ You can configure these environment variables:
 - ```RPC_URL``` (default value: ```https://api.testnet.solana.com```).
 
 
-
 ## Some interesting links
 
 - **BIP39**: Learn more about the **BIP39** standard [here](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki).
@@ -282,12 +271,6 @@ You can configure these environment variables:
 ## Security
 
 This wallet is an example and should not be used to store large amounts of SOL without a thorough security review. Always make sure to back up your mnemonic phrases and private keys in a secure location.
-
-
-## Roadmap
-
-- [ ] Implement a graphical user interface.
-- [ ] Add support for SPL tokens.
 
 
 ## FAQ

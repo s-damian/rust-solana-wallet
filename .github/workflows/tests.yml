@@ -15,7 +15,7 @@ jobs:
 
     strategy:
       matrix:
-        # https://releases.rs/
+        # Rust releases: https://releases.rs/
         rust-version: [1.75.0, 1.80.0]
 
     steps:
