@@ -1,0 +1,29 @@
+name: Static analysis
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  clippy:
+    name: Run Clippy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          profile: minimal
+          override: true
+          components: clippy
+
+      - name: Analyze
+        run: cargo clippy --all-targets -- -D warnings
