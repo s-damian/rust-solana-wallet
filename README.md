@@ -47,6 +47,8 @@ Rust Solana Wallet - A lightweight Solana wallet developed in Rust.
 
 **Status**: Under development 🚧
 
+![Img](./img/img-1.png)
+
 
 
 ## Prerequisites
