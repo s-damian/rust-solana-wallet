@@ -12,6 +12,7 @@
 > This is an example of a **Solana Wallet** in **Rust** 🦀
 
 ![Build](https://github.com/s-damian/rust-solana-wallet/actions/workflows/tests.yml/badge.svg)
+![Clippy](https://github.com/s-damian/rust-solana-wallet/actions/workflows/static-analysis.yml/badge.svg)
 ![License](https://img.shields.io/badge/License-MIT-blue)
 
 This **example of a Solana Wallet** is developed by [Stephen Damian](https://github.com/s-damian)
