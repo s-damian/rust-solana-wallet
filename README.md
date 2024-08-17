@@ -51,7 +51,7 @@ Rust Solana Wallet - A lightweight Solana wallet developed in Rust.
 
 ## Prerequisites
 
-- **Rust**: Ensure Rust is installed on your system. You can install Rust using [rustup](https://rustup.rs/).
+- **Rust**: Ensure Rust is installed on your system. You can install Rust using [Rustup](https://rustup.rs/).
 - **Cargo**: Rust's package manager, installed automatically with Rust. Learn more about Cargo [here](https://doc.rust-lang.org/cargo/).
 
 

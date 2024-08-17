@@ -13,6 +13,10 @@ jobs:
     name: Run Clippy
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        rust-version: [1.78.0, 1.79.0, 1.80.0]
+
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -20,7 +24,7 @@ jobs:
       - name: Setup Rust
         uses: actions-rs/toolchain@v1
         with:
-          toolchain: 1.79.0 # Rust Version.
+          toolchain: ${{ matrix.rust-version }}
           profile: minimal
           override: true
           components: clippy
