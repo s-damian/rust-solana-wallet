@@ -21,7 +21,6 @@ jobs:
         uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
-          default: true
           profile: minimal
           override: true
 
@@ -37,5 +36,5 @@ jobs:
       - name: Build with Cargo
         run: cargo build --verbose
 
-      - name: Execute tests
+      - name: Run Rust Tests
         run: cargo test --verbose
