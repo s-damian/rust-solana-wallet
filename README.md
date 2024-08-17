@@ -258,7 +258,7 @@ You can configure these environment variables:
 - ```NB_DERIVATIONS``` (default value: ```1```).
 - ```KEYPAIR_PATH``` (default value: ```./storage/keypair/id.json```).
 - ```KEYPAIR_DIR``` (default value: ```./storage/keypair/derived```).
-  - ```KEYPAIR_DIR``` is only useful if ```NB_DERIVATIONS``` is > ```1```.
+  - PS: ```KEYPAIR_DIR``` is only useful if ```NB_DERIVATIONS``` is > ```1```.
 - ```RPC_URL``` (default value: ```https://api.testnet.solana.com```).
 
 
