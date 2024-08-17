@@ -222,34 +222,6 @@ Solana Public Key: FTGJPL5hia749v3jhNWJA7uE2VoVGyofB7BBL2cLwoPc
 ```
 
 
-## Show Help
-
-```bash
-cargo run -- --help
-```
-
-
-## Lint and Static Analysis
-
-Maintain code quality and style consistency using the following tools:
-
-### Code Formatting:
-
-To format the codebase according to Rust's coding standards, use:
-
-```bash
-cargo fmt
-```
-
-### Static Code Analysis:
-
-To perform static code analysis and catch common mistakes and inefficiencies, use:
-
-```bash
-cargo clippy
-```
-
-
 ## Environment variables
 
 Environment variables are configured in the ```.env``` file.
