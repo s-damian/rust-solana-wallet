@@ -24,7 +24,7 @@ impl SolanaAddress {
     /// # Arguments:
     /// * keypair - La paire de clés à écrire.
     /// * file_path - Le chemin du fichier où écrire la paire de clés.
-    /// @note Ce fichier peut être utilisé pour stocker de manière sécurisée la paire de clés ou pour l'importer dans d'autres applications ou services compatibles avec Solana.
+    ///   @note Ce fichier peut être utilisé pour stocker de manière sécurisée la paire de clés ou pour l'importer dans d'autres applications ou services compatibles avec Solana.
     pub fn write_keypair(keypair: &Keypair, file_path: &str) {
         write_keypair_file(keypair, file_path).expect("Failed to write keypair to file");
     }

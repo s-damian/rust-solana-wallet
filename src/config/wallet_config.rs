@@ -17,20 +17,20 @@ impl Default for WalletConfig {
 /// # Assignments:
 ///
 /// * nb_derivations:
-/// Récupère le nombre de dérivations à effectuer à partir de la variable d'environnement `NB_DERIVATIONS`.
-/// Retourne 1 par défaut si la variable n'est pas définie ou si sa valeur n'est pas un entier valide.
+///   Récupère le nombre de dérivations à effectuer à partir de la variable d'environnement `NB_DERIVATIONS`.
+///   Retourne 1 par défaut si la variable n'est pas définie ou si sa valeur n'est pas un entier valide.
 ///
 /// * keypair_path:
-/// Récupère le chemin d'accès au fichier où la paire de clés principale est stockée à partir de la variable d'environnement `KEYPAIR_PATH`.
-/// Retourne un chemin par défaut si la variable d'environnement n'est pas définie.
+///   Récupère le chemin d'accès au fichier où la paire de clés principale est stockée à partir de la variable d'environnement `KEYPAIR_PATH`.
+///   Retourne un chemin par défaut si la variable d'environnement n'est pas définie.
 ///
 /// * keypair_dir:
-/// Récupère le chemin d'accès au dossier où les paires de clés dérivées sont stockées, spécifié par la variable d'environnement `KEYPAIR_DIR`.
-/// Retourne un chemin par défaut si la variable d'environnement n'est pas définie.
+///   Récupère le chemin d'accès au dossier où les paires de clés dérivées sont stockées, spécifié par la variable d'environnement `KEYPAIR_DIR`.
+///   Retourne un chemin par défaut si la variable d'environnement n'est pas définie.
 ///
 /// * rpc_url:
-/// Récupère l'URL du serveur RPC pour l'accès au réseau Solana à partir de la variable d'environnement `RPC_URL`.
-/// Retourne "https://api.testnet.solana.com" par défaut, indiquant que le réseau Testnet est utilisé si la variable d'environnement n'est pas définie.
+///   Récupère l'URL du serveur RPC pour l'accès au réseau Solana à partir de la variable d'environnement `RPC_URL`.
+///   Retourne "https://api.testnet.solana.com" par défaut, indiquant que le réseau Testnet est utilisé si la variable d'environnement n'est pas définie.
 
 impl WalletConfig {
     /// Charge la configuration depuis les variables d'environnement ou utilise les valeurs par défaut.
