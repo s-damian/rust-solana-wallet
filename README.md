@@ -52,19 +52,19 @@ This **example of a Solana Wallet** is developed by [Stephen Damian](https://git
 
 - Clone the repository:
 
-```
+```bash
 git clone https://github.com/s-damian/rust-solana-wallet.git
 ```
 
 - Navigate into the project directory:
 
-```
+```bash
 cd /[your-path]/rust-solana-wallet
 ```
 
 - Create your ```.env``` file:
 
-```
+```bash
 cp .env.example .env
 ```
 
@@ -93,7 +93,7 @@ This command generates a new mnemonic phrase randomly, calculates the correspond
 
 - Command:
 
-```
+```bash
 cargo run -- generate_seed
 ```
 
@@ -101,7 +101,7 @@ cargo run -- generate_seed
 
 - Example of result:
 
-```
+```bash
 BIP39 Mnemonic (random phrase): shed scorpion manual wheat monster phone winter toe dream kitchen salad column
 Seed: 34A0EACFFDF41445C0B7E43C2D730C54F4CD1D8334528F73E3D5F2C2977FAABA7CAD88EBDA6A1F02CE6BB596F04036305A32B96303F93FF864D268539739AFF8
 Solana Public Key: FTGJPL5hia749v3jhNWJA7uE2VoVGyofB7BBL2cLwoPc
@@ -123,7 +123,7 @@ This will also generates and writes the keypair to the JSON file.
 
 - Command:
 
-```
+```bash
 cargo run -- from_mnemonic "shed scorpion manual wheat monster phone winter toe dream kitchen salad column"
 ```
 
@@ -131,7 +131,7 @@ cargo run -- from_mnemonic "shed scorpion manual wheat monster phone winter toe 
 
 - Example of result:
 
-```
+```bash
 BIP39 Mnemonic (given phrase): shed scorpion manual wheat monster phone winter toe dream kitchen salad column
 Seed: 34A0EACFFDF41445C0B7E43C2D730C54F4CD1D8334528F73E3D5F2C2977FAABA7CAD88EBDA6A1F02CE6BB596F04036305A32B96303F93FF864D268539739AFF8
 Solana Public Key: FTGJPL5hia749v3jhNWJA7uE2VoVGyofB7BBL2cLwoPc
@@ -150,7 +150,7 @@ This command allows you to sign an outgoing transaction from your wallet to a de
 
 - Command:
 
-```
+```bash
 cargo run -- send EMLY3VvNZ41yMWyPQy2AiEfJTPpZdzeGNG5zaaq3Lihb 2000000
 ```
 
@@ -158,13 +158,13 @@ This command will sign the transaction with the keypair which is stored in the f
 
 - Example of result (when successfully):
 
-```
+```bash
 Transaction sent successfully!
 ```
 
 - Example of result (when it fails):
 
-```
+```bash
 Failed to send transaction: ...
 
 ```
@@ -182,13 +182,13 @@ This command allows you to see the balance (in SOL and in lamports) of a public 
 
 - Command:
 
-```
+```bash
 cargo run -- get_pubkey_balance EMLY3VvNZ41yMWyPQy2AiEfJTPpZdzeGNG5zaaq3Lihb
 ```
 
 - Example of result:
 
-```
+```bash
 Balance: 0.005910000 SOL (5910000 lamports)
 
 ```
@@ -204,7 +204,7 @@ This command reads your JSON keypair file stored, extracts the public key, and d
 
 - Command:
 
-```
+```bash
 cargo run -- get_pubkey_from_keypair_file
 ```
 
@@ -212,7 +212,7 @@ This command reads the keypair stored in ```[project-directory]/storage/keypair/
 
 - Example of result:
 
-```
+```bash
 Solana Public Key: FTGJPL5hia749v3jhNWJA7uE2VoVGyofB7BBL2cLwoPc
 ```
 
@@ -220,7 +220,7 @@ Solana Public Key: FTGJPL5hia749v3jhNWJA7uE2VoVGyofB7BBL2cLwoPc
 
 ## Show Help
 
-```
+```bash
 cargo run -- --help
 ```
 
@@ -235,7 +235,7 @@ Maintain code quality and style consistency using the following tools:
 
 To format the codebase according to Rust's coding standards, use:
 
-```
+```bash
 cargo fmt
 ```
 
@@ -244,7 +244,7 @@ cargo fmt
 
 To perform static code analysis and catch common mistakes and inefficiencies, use:
 
-```
+```bash
 cargo clippy
 ```
 
