@@ -20,7 +20,7 @@ jobs:
       - name: Setup Rust
         uses: actions-rs/toolchain@v1
         with:
-          toolchain: stable
+          toolchain: 1.79.0 # Rust Version.
           profile: minimal
           override: true
           components: clippy
