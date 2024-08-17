@@ -41,7 +41,7 @@ This **example of a Solana Wallet** is developed by [Stephen Damian](https://git
 
 
 
-## Requirements
+## Prerequisites
 
 - **Rust**: Ensure Rust is installed on your system. You can install Rust using [rustup](https://rustup.rs/).
 - **Cargo**: Rust's package manager, installed automatically with Rust. Learn more about Cargo [here](https://doc.rust-lang.org/cargo/).
