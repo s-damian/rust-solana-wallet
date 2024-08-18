@@ -50,6 +50,7 @@ Rust Solana Wallet - A lightweight Solana wallet developed in Rust.
 
 ## Roadmap
 
+- [x] Initial command-line interface (CLI) implementation.
 - [ ] Implement a graphical user interface.
 - [ ] Add support for SPL tokens.
 
