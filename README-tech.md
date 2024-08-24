@@ -8,7 +8,7 @@ cargo run -- --help
 ## Lint and Static Analysis
 
 ```bash
-cd /[your-path]/rust-solana-wallet
+cd /<your-path>/rust-solana-wallet
 ```
 
 Format the code:

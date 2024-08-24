@@ -72,7 +72,7 @@ git clone https://github.com/s-damian/rust-solana-wallet.git
 - Navigate into the project directory:
 
 ```bash
-cd /[your-path]/rust-solana-wallet
+cd /<your-path>/rust-solana-wallet
 ```
 
 - Create your ```.env``` file:
@@ -86,15 +86,15 @@ cp .env.example .env
 
 **Keypair storage**:
 
-```generate_seed``` and ```from_mnemonic``` commands writes the generated keypair to the ```[project-directory]/storage/keypair/id.json``` file (```KEYPAIR_PATH``` env var), allowing you to store or utilize the keypair in your Solana applications.
+```generate_seed``` and ```from_mnemonic``` commands writes the generated keypair to the ```<project-directory>/storage/keypair/id.json``` file (```KEYPAIR_PATH``` env var), allowing you to store or utilize the keypair in your Solana applications.
 
 **Multiple keypairs (derivations)**:
 
 If you want to generate several keypairs and several public keys with a single mnemonic phrase, you must set the ```NB_DERIVATIONS``` environment variable to a value greater than ```1```.
 
-Your non-derived keypair will be created in your ```[project-directory]/storage/keypair/id.json``` file (```KEYPAIR_PATH``` env var) JSON file.
+Your non-derived keypair will be created in your ```<project-directory>/storage/keypair/id.json``` file (```KEYPAIR_PATH``` env var) JSON file.
 
-And the other keypairs (which will be derived from your seed) will be created in JSON files in your ```[project-directory]/storage/keypair/derived``` directory (```KEYPAIR_DIR``` env var).
+And the other keypairs (which will be derived from your seed) will be created in JSON files in your ```<project-directory>/storage/keypair/derived``` directory (```KEYPAIR_DIR``` env var).
 
 ### 🌐 generate_seed command:
 
@@ -162,7 +162,7 @@ This command allows you to sign an outgoing transaction from your wallet to a de
 cargo run -- send EMLY3VvNZ41yMWyPQy2AiEfJTPpZdzeGNG5zaaq3Lihb 2000000
 ```
 
-This command will sign the transaction with the keypair which is stored in the file ```[project-directory]/storage/keypair/id.json``` file (```KEYPAIR_PATH``` env var).
+This command will sign the transaction with the keypair which is stored in the file ```<project-directory>/storage/keypair/id.json``` file (```KEYPAIR_PATH``` env var).
 
 - Example of result (when successfully):
 
@@ -214,7 +214,7 @@ This command reads your JSON keypair file stored, extracts the public key, and d
 cargo run -- get_pubkey_from_keypair_file
 ```
 
-This command reads the keypair stored in ```[project-directory]/storage/keypair/id.json``` file (```KEYPAIR_PATH``` env var).
+This command reads the keypair stored in ```<project-directory>/storage/keypair/id.json``` file (```KEYPAIR_PATH``` env var).
 
 - Example of result:
 
@@ -255,4 +255,4 @@ A: While technically possible, this wallet is designed as an educational example
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for more details.
