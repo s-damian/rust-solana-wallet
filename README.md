@@ -156,7 +156,7 @@ Solana Public Key: FTGJPL5hia749v3jhNWJA7uE2VoVGyofB7BBL2cLwoPc
 
 > Send SOL (lamports) to a recipient address (sign outgoing transaction).
 
-> Command with arguments: cargo run -- send `RECIPIENT` `AMOUNT`
+> Command with arguments: cargo run -- send `<RECIPIENT>` `<AMOUNT>`
 
 This command allows you to sign an outgoing transaction from your wallet to a destination address.
 
@@ -187,7 +187,7 @@ Failed to send transaction: ...
 
 > Get balance by public key.
 
-> Command with arguments: cargo run -- get_pubkey_balance `PUBKEY`
+> Command with arguments: cargo run -- get_pubkey_balance `<PUBKEY>`
 
 This command allows you to see the balance (in SOL and in lamports) of a public address.
 
