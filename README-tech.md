@@ -11,13 +11,13 @@ cargo run -- --help
 cd /<your-path>/rust-solana-wallet
 ```
 
-### Format the code:
+### Format the code
 
 ```bash
 cargo fmt
 ```
 
-### Lint :
+### Lint
 
 ```bash
 cargo clippy

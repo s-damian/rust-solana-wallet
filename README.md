@@ -17,7 +17,7 @@
 
 This **example of a Solana Wallet** is developed by [Stephen Damian](https://github.com/s-damian)
 
-### This wallet manages:
+### This wallet manages
 
 - **Generate Mnemonic**: Creates a new random BIP39 mnemonic phrase.
 - **Seed**: Derives a seed from the mnemonic phrase.
@@ -102,7 +102,7 @@ Your non-derived keypair will be created in your `<project-directory>/storage/ke
 
 And the other keypairs (which will be derived from your seed) will be created in JSON files in your `<project-directory>/storage/keypair/derived` directory (`KEYPAIR_DIR` env var).
 
-### 🌐 generate_seed command:
+### 🌐 generate_seed command
 
 > Generate and display a random mnemonic phrase.
 
@@ -124,7 +124,7 @@ Seed: 34A0EACFFDF41445C0B7E43C2D730C54F4CD1D8334528F73E3D5F2C2977FAABA7CAD88EBDA
 Solana Public Key: FTGJPL5hia749v3jhNWJA7uE2VoVGyofB7BBL2cLwoPc
 ```
 
-### 🌐 from_mnemonic command:
+### 🌐 from_mnemonic command
 
 > Generate and display a mnemonic from a specific phrase.
 
@@ -152,7 +152,7 @@ Seed: 34A0EACFFDF41445C0B7E43C2D730C54F4CD1D8334528F73E3D5F2C2977FAABA7CAD88EBDA
 Solana Public Key: FTGJPL5hia749v3jhNWJA7uE2VoVGyofB7BBL2cLwoPc
 ```
 
-### 🌐 send command:
+### 🌐 send command
 
 > Send SOL (lamports) to a recipient address (sign outgoing transaction).
 
@@ -183,7 +183,7 @@ Failed to send transaction: ...
 
 ```
 
-### 🌐 get_pubkey_balance command:
+### 🌐 get_pubkey_balance command
 
 > Get balance by public key.
 
@@ -206,7 +206,7 @@ Balance: 0.005910000 SOL (5910000 lamports)
 
 ```
 
-### 🌐 get_pubkey_from_keypair_file command:
+### 🌐 get_pubkey_from_keypair_file command
 
 > Retrieve public key from stored keypair.
 
