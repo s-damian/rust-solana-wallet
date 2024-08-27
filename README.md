@@ -33,7 +33,7 @@ This **example of a Solana Wallet** is developed by [Stephen Damian](https://git
 
 ## Summary
 
-- [Summary of commands](#summary-of-commands)
+- [Summary of Wallet commands](#summary-of-wallet-commands)
 - [Project Overview](#project-overview)
 - [Roadmap](#roadmap)
 - [Prerequisites](#prerequisites)
@@ -52,7 +52,7 @@ This **example of a Solana Wallet** is developed by [Stephen Damian](https://git
 
 
 
-## Summary of commands
+## Summary of Wallet commands
 
 - [generate_seed](#-generate_seed-command): Generates a 12-word BIP39 mnemonic phrase, derives the corresponding seed, saves the keypair, and displays the public key.
 - [from_mnemonic](#-from_mnemonic-command): Accepts a user-provided BIP39 mnemonic phrase, derives the corresponding seed, saves the keypair, and displays the public key.
