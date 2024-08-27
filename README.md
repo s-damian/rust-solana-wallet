@@ -31,6 +31,27 @@ This **example of a Solana Wallet** is developed by [Stephen Damian](https://git
 
 
 
+## Summary
+
+- [Summary of commands](#summary-of-commands)
+- [Project Overview](#project-overview)
+- [Roadmap](#roadmap)
+- [Prerequisites](#prerequisites)
+- [Setup](#setup)
+- [How to use?](#how-to-use)
+  - [generate_seed command](#-generate_seed-command)
+  - [from_mnemonic command](#-from_mnemonic-command)
+  - [send command](#-send-command)
+  - [get_pubkey_balance command](#-get_pubkey_balance-command)
+  - [get_pubkey_from_keypair_file command](#-get_pubkey_from_keypair_file-command)
+- [Environment variables](#environment-variables)
+- [Some interesting links](#some-interesting-links)
+- [Security](#security)
+- [FAQ](#faq)
+- [License](#license)
+
+
+
 ## Summary of commands
 
 - [generate_seed](#-generate_seed-command): Generates a 12-word BIP39 mnemonic phrase, derives the corresponding seed, saves the keypair, and displays the public key.
@@ -92,7 +113,7 @@ cp .env.example .env
 
 **Keypair storage**:
 
-`generate_seed` and `from_mnemonic` commands writes the generated keypair to the `<project-directory>/storage/keypair/id.json` file (`KEYPAIR_PATH` env var), allowing you to store or utilize the keypair in your Solana applications.
+`generate_seed` and `from_mnemonic` commands write the generated keypair to the `<project-directory>/storage/keypair/id.json` file (`KEYPAIR_PATH` env var), allowing you to store or utilize the keypair in your Solana applications.
 
 **Multiple keypairs (derivations)**:
 
@@ -100,7 +121,7 @@ If you want to generate several keypairs and several public keys with a single m
 
 Your non-derived keypair will be created in your `<project-directory>/storage/keypair/id.json` file (`KEYPAIR_PATH` env var) JSON file.
 
-And the other keypairs (which will be derived from your seed) will be created in JSON files in your `<project-directory>/storage/keypair/derived` directory (`KEYPAIR_DIR` env var).
+The other keypairs (which will be derived from your seed) will be created in JSON files in your `<project-directory>/storage/keypair/derived` directory (`KEYPAIR_DIR` env var).
 
 ### 🌐 generate_seed command
 
@@ -130,9 +151,9 @@ Solana Public Key: FTGJPL5hia749v3jhNWJA7uE2VoVGyofB7BBL2cLwoPc
 
 > Command with arguments: cargo run -- from_mnemonic `<PHRASE>`
 
-To generate and display the seed and Solana public key from a specific mnemonic phrase, pass the phrase (12 words or 24 words for examples) as an argument.
+To generate and display the seed and Solana public key from a specific mnemonic phrase, pass the phrase (12 or 24 words, for example) as an argument.
 
-This will also generates and writes the keypair to the JSON file.
+This will also generate and write the keypair to the JSON file.
 
 **Example** with this 12 words: `shed` `scorpion` `manual` `wheat` `monster` `phone` `winter` `toe` `dream` `kitchen` `salad` `column`.
 
@@ -238,7 +259,7 @@ You can configure these environment variables:
 - `NB_DERIVATIONS` (default value: `1`).
 - `KEYPAIR_PATH` (default value: `./storage/keypair/id.json`).
 - `KEYPAIR_DIR` (default value: `./storage/keypair/derived`).
-  - PS: `KEYPAIR_DIR` is only useful if `NB_DERIVATIONS` is > `1`.
+  - Note: `KEYPAIR_DIR` is only useful if `NB_DERIVATIONS` is > `1`.
 - `RPC_URL` (default value: `https://api.testnet.solana.com`).
 
 
