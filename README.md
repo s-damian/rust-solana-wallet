@@ -11,7 +11,7 @@
 
 > This is an example of a **Solana Wallet** in **Rust** 🦀
 
-[![Build](https://github.com/s-damian/rust-solana-wallet/actions/workflows/tests.yml/badge.svg)](https://github.com/s-damian/rust-solana-wallet/actions/workflows/tests.yml)
+[![Tests](https://github.com/s-damian/rust-solana-wallet/actions/workflows/tests.yml/badge.svg)](https://github.com/s-damian/rust-solana-wallet/actions/workflows/tests.yml)
 [![Static Analysis](https://github.com/s-damian/rust-solana-wallet/actions/workflows/static-analysis.yml/badge.svg)](https://github.com/s-damian/rust-solana-wallet/actions/workflows/static-analysis.yml)
 [![License](https://img.shields.io/badge/License-MIT-blue)](https://github.com/s-damian/rust-solana-wallet/blob/main/LICENSE)
 
@@ -33,7 +33,7 @@ This **example of a Solana Wallet** is developed by [Stephen Damian](https://git
 
 ## Summary
 
-- [Summary of Wallet commands](#summary-of-wallet-commands)
+- [Wallet Commands Summary](#summary-of-wallet-commands)
 - [Project Overview](#project-overview)
 - [Roadmap](#roadmap)
 - [Prerequisites](#prerequisites)
@@ -44,15 +44,15 @@ This **example of a Solana Wallet** is developed by [Stephen Damian](https://git
   - [send command](#-send-command)
   - [get_pubkey_balance command](#-get_pubkey_balance-command)
   - [get_pubkey_from_keypair_file command](#-get_pubkey_from_keypair_file-command)
-- [Environment variables](#environment-variables)
-- [Some interesting links](#some-interesting-links)
+- [Environment Variables](#environment-variables)
+- [Some Interesting Links](#some-interesting-links)
 - [Security](#security)
 - [FAQ](#faq)
 - [License](#license)
 
 
 
-## Summary of Wallet commands
+## Wallet Commands Summary
 
 - [generate_seed](#-generate_seed-command): Generates a 12-word BIP39 mnemonic phrase, derives the corresponding seed, saves the keypair, and displays the public key.
 - [from_mnemonic](#-from_mnemonic-command): Accepts a user-provided BIP39 mnemonic phrase, derives the corresponding seed, saves the keypair, and displays the public key.
@@ -89,19 +89,19 @@ Rust Solana Wallet - A lightweight Solana wallet developed in Rust.
 
 ## Setup
 
-- Clone the repository:
+Clone the repository:
 
 ```bash
 git clone https://github.com/s-damian/rust-solana-wallet.git
 ```
 
-- Navigate into the project directory:
+Navigate into the project directory:
 
 ```bash
 cd /<your-path>/rust-solana-wallet
 ```
 
-- Create your ```.env``` file:
+Create your ```.env``` file:
 
 ```bash
 cp .env.example .env
@@ -251,7 +251,7 @@ Solana Public Key: FTGJPL5hia749v3jhNWJA7uE2VoVGyofB7BBL2cLwoPc
 
 
 
-## Environment variables
+## Environment Variables
 
 Environment variables are configured in the `.env` file.
 
@@ -264,7 +264,7 @@ You can configure these environment variables:
 
 
 
-## Some interesting links
+## Some Interesting Links
 
 - **BIP39**: Learn more about the **BIP39** standard [here](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki).
 - **SLIP44**: Learn more about the **SLIP44** [here](https://github.com/satoshilabs/slips/blob/master/slip-0044.md).
@@ -279,9 +279,9 @@ This wallet is an example and should not be used to store large amounts of SOL w
 
 ## FAQ
 
-Q: Can this wallet be used on the Solana mainnet?
+**Q**: Can this wallet be used on the Solana mainnet?
 
-A: While technically possible, this wallet is designed as an educational example and is not recommended for use on the mainnet without a thorough security review.
+**A**: While technically possible, this wallet is designed as an educational example and is not recommended for use on the mainnet without a thorough security review.
 
 
 
