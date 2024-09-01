@@ -37,6 +37,7 @@ This **example of a Solana Wallet** is developed by [Stephen Damian](https://git
 - [Some Interesting Links](#some-interesting-links)
 - [Security](#security)
 - [FAQ](#faq)
+- [Various Documentations](#various-documentations)
 - [License](#license)
 
 
@@ -67,8 +68,11 @@ This wallet manages:
 | [get_pubkey_balance](#-get_pubkey_balance-command) | Get balance by public key. |
 | [get_pubkey_from_keypair_file](#-get_pubkey_from_keypair_file-command) | Displays the public key from a keypair stored in a JSON file. |
 
+To see a summary of all available commands and options:
 
-To see a summary of all available commands and options: `cargo run -- --help`
+```bash
+cargo run -- --help
+```
 
 
 
@@ -292,6 +296,13 @@ This wallet is an example and should not be used to store large amounts of SOL w
 **Q**: Can this wallet be used on the Solana mainnet?
 
 **A**: While technically possible, this wallet is designed as an educational example and is not recommended for use on the mainnet without a thorough security review.
+
+
+
+## Various Documentations
+
+- See further technical details here:
+[Notes-tech.md](./docs/Notes-tech.md)
 
 
 
