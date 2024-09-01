@@ -68,7 +68,7 @@ cargo build --release
 
 ## Using the Release
 
-Dans cet exemple, nous allons créer une version compilée, et nous allons l'utilser dans notre Desktop de notre Linux.
+This example demonstrates how to create a compiled version and use it on your Linux Desktop.
 
 - Navigate to the project directory:
 
