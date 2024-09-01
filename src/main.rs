@@ -5,13 +5,16 @@ mod solana;
 
 use app::cli::AppCli;
 use config::wallet_config::WalletConfig;
+
+#[cfg(not(test))]
 use dotenv::dotenv;
 
 fn main() {
-    // Charge les variables d'environnement depuis le fichier ".env".
+    // Charger les variables d'environnement depuis le fichier ".env" (mais seulement si nous ne sommes pas en mode test).
+    #[cfg(not(test))]
     dotenv().ok();
 
-    // Charge la configuration du wallet (selon les données du fichier .env).
+    // Charger la configuration du wallet (selon les données du fichier .env).
     let config = WalletConfig::new();
 
     let app_cli = AppCli::new(config.clone());

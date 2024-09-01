@@ -26,6 +26,14 @@ cargo clippy
 
 ## Run tests
 
+Create your ```.env.testing``` file:
+
+```bash
+cp .env.testing.example .env.testing
+```
+
+Run the tests :
+
 ```bash
 cargo test
 ```

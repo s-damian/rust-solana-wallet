@@ -1,8 +1,11 @@
+mod common;
 use rust_solana_wallet::app::wallet_manager::WalletManager;
 use rust_solana_wallet::config::wallet_config::WalletConfig;
 
 #[test]
 fn test_get_balance_by_pubkey() {
+    common::setup();
+
     let config = WalletConfig {
         nb_derivations: 1,
         keypair_path: "./storage/tests/keypair/id.json".to_string(),
