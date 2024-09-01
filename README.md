@@ -54,11 +54,13 @@ This **example of a Solana Wallet** is developed by [Stephen Damian](https://git
 
 ## Wallet Commands Summary
 
-- [generate_seed](#-generate_seed-command): Generates a 12-word BIP39 mnemonic phrase, derives the corresponding seed, saves the keypair, and displays the public key.
-- [from_mnemonic](#-from_mnemonic-command): Accepts a user-provided BIP39 mnemonic phrase, derives the corresponding seed, saves the keypair, and displays the public key.
-- [send](#-send-command): Send SOL to a recipient address.
-- [get_pubkey_balance](#-get_pubkey_balance-command): Get balance by public key.
-- [get_pubkey_from_keypair_file](#-get_pubkey_from_keypair_file-command): Displays the public key from a keypair stored in a JSON file.
+| Command | Description 
+|--------------------------------|---|
+| `[generate_seed](#-generate_seed-command)`                | Generates a 12-word BIP39 mnemonic phrase, derives the corresponding seed, saves the keypair, and displays the public key |
+| `[from_mnemonic](#-from_mnemonic-command)`                | Accepts a user-provided BIP39 mnemonic phrase, derives the corresponding seed, saves the keypair, and displays the public key |
+| `[send](#-send-command)`                         | Send SOL to a recipient address |
+| `[get_pubkey_balance](#-get_pubkey_balance-command)`           | Get balance by public key |
+| `[get_pubkey_from_keypair_file](#-get_pubkey_from_keypair_file-command)` | Displays the public key from a keypair stored in a JSON file |
 
 
 
