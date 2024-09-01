@@ -36,7 +36,7 @@ cargo test
 
 ### Run:
 
-Compiler (si nécessaire) et exécuter immédiatement le programme :
+Compile (if necessary) and immediately execute the program:
 
 ```bash
 cargo run <arguments>
@@ -45,62 +45,62 @@ cargo run <arguments>
 
 ### Build - Debug:
 
-Compiler (une version de débogage) :
+Compile a debug version:
 
 ```bash
 cargo build
 ```
 
-> Cette commande va créer ce fichier compilé: `target/debug/rust_solana_wallet`
+> This command will create the compiled file: `target/debug/rust_solana_wallet`
 
 
 ### Build - Release:
 
-Compiler (une version de Release pour la production) :
+Compile a release version for production:
 
 ```bash
 cargo build --release
 ```
 
-> Cette commande va créer ce fichier compilé: `target/release/rust_solana_wallet`
+> This command will create the compiled file: `target/release/rust_solana_wallet`
 
 
 
-## Utiliser la Release
+## Using the Release
 
 Dans cet exemple, nous allons créer une version compilée, et nous allons l'utilser dans notre Desktop de notre Linux.
 
-- Allez au répertoire du projet :
+- Navigate to the project directory:
 
 ```bash
 cd /<your-path>/rust-solana-wallet
 ```
 
-- Compilez pour créer une release :
+- Compile to create a release:
 
 ```bash
 cargo build --release
 ```
 
-- Copiez fichier de Release dans votre Desktop :
+- Copy the release file to your Desktop:
 
 ```bash
-cp ./target/release/rust_solana_wallet /home/<your-username>/Desktop
+cp ./target/release/rust_solana_wallet ~/Desktop
 ```
 
-- Configurez votre fichier `.env`, puis copiez le dans votre Desktop :
+- Configure your .`env` file, then copy it to your Desktop:
 
 ```bash
-cp ./.env /home/<your-username>/Desktop
+cp ./.env ~/Desktop
 ```
 
-- Allez dans votre Desktop:
+- Navigate to your Desktop:
 
 ```bash
-cd /home/<your-username>/Desktop
+cd ~/Desktop
 ```
 
-- Puis vous pouvez utiliser la release du Wallet. Exemple (pour générer une seed) :
+- Now you can use the Wallet release. For example, to generate a seed:
 
 ```bash
 ./rust_solana_wallet generate_seed

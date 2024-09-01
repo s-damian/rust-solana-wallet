@@ -109,7 +109,7 @@ Clone the repository:
 git clone https://github.com/s-damian/rust-solana-wallet.git
 ```
 
-Navigate into the project directory:
+Navigate to the project directory:
 
 ```bash
 cd /<your-path>/rust-solana-wallet
