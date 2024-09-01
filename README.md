@@ -22,7 +22,7 @@ This **example of a Solana Wallet** is developed by [Stephen Damian](https://git
 ## Summary
 
 - [Feature Summary](#feature-summary)
-- [Wallet Commands Description](#wallet-commands-description)
+- [Wallet Commands Summary](#wallet-commands-summary)
 - [Project Overview](#project-overview)
 - [Roadmap](#roadmap)
 - [Prerequisites](#prerequisites)
@@ -57,7 +57,7 @@ This wallet manages:
 
 
 
-## Wallet Commands Description
+## Wallet Commands Summary
 
 | Command | Description 
 |--------------------------------|---|
@@ -66,6 +66,9 @@ This wallet manages:
 | [send](#-send-command) | Send SOL to a recipient address. |
 | [get_pubkey_balance](#-get_pubkey_balance-command) | Get balance by public key. |
 | [get_pubkey_from_keypair_file](#-get_pubkey_from_keypair_file-command) | Displays the public key from a keypair stored in a JSON file. |
+
+
+To see a summary of all available commands and options: `cargo run -- --help`
 
 
 
