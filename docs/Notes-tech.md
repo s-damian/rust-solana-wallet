@@ -76,19 +76,19 @@ Dans cet exemple, nous allons créer une version compilée, et nous allons l'uti
 cd /<your-path>/rust-solana-wallet
 ```
 
-- Compiler pour créer sa release :
+- Compilez pour créer une release :
 
 ```bash
 cargo build --release
 ```
 
-- Copier fichier de Release dans votre Desktop :
+- Copiez fichier de Release dans votre Desktop :
 
 ```bash
 cp ./target/release/rust_solana_wallet /home/<your-username>/Desktop
 ```
 
-- Configurer votre fichier `.env`, puis copiez le dans votre Desktop :
+- Configurez votre fichier `.env`, puis copiez le dans votre Desktop :
 
 ```bash
 cp ./.env /home/<your-username>/Desktop
