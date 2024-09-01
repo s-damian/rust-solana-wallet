@@ -43,7 +43,7 @@ cargo run <arguments>
 ```
 
 
-### Build:
+### Build - Debug:
 
 Compiler (une version de débogage) :
 
@@ -54,9 +54,9 @@ cargo build
 > Cette commande va créer ce fichier compilé: `target/debug/rust_solana_wallet`
 
 
-### Build - Pour créer une Release:
+### Build - Release:
 
-Compiler (une version pour la production) :
+Compiler (une version de Release pour la production) :
 
 ```bash
 cargo build --release
