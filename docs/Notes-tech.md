@@ -51,10 +51,10 @@ Compiler (une version de débogage) :
 cargo build
 ```
 
-> Cette commande va créer ce fichier compilé: `target/debug/rust_solana_wallet`.
+> Cette commande va créer ce fichier compilé: `target/debug/rust_solana_wallet`
 
 
-### Build for create release:
+### Build - Pour créer une Release:
 
 Compiler (une version pour la production) :
 
@@ -62,7 +62,7 @@ Compiler (une version pour la production) :
 cargo build --release
 ```
 
-> Cette commande va créer ce fichier compilé: `target/release/rust_solana_wallet`.
+> Cette commande va créer ce fichier compilé: `target/release/rust_solana_wallet`
 
 
 
