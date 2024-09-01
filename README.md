@@ -33,7 +33,7 @@ This **example of a Solana Wallet** is developed by [Stephen Damian](https://git
 
 ## Summary
 
-- [Wallet Commands Summary](#summary-of-wallet-commands)
+- [Wallet Commands Description](#wallet-commands-description)
 - [Project Overview](#project-overview)
 - [Roadmap](#roadmap)
 - [Prerequisites](#prerequisites)
@@ -52,7 +52,7 @@ This **example of a Solana Wallet** is developed by [Stephen Damian](https://git
 
 
 
-## Wallet Commands Summary
+## Wallet Commands Description
 
 | Command | Description 
 |--------------------------------|---|
