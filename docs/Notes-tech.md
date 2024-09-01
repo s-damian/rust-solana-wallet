@@ -1,10 +1,10 @@
 ## Networks
 
-| Name         | Consensus            | Type              | For             |
-|--------------|----------------------|-------------------|------------------|
-| **Devnet**   | PoS (Proof of Stake) | Public devnet     | For development  |
-| **Testnet**  | PoS (Proof of Stake) | Public testnet    | For last testing |
-| **Mainnet**  | PoS (Proof of Stake) | Production        | For production   |
+| Name         | Type              | Environment      |
+|--------------|-------------------|------------------|
+| **Devnet**   | Public devnet     | For development  |
+| **Testnet**  | Public testnet    | For last testing |
+| **Mainnet**  | Production        | For production   |
 
 
 
