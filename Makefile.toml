@@ -1,0 +1,6 @@
+[tasks.lint-all]
+description = "Run cargo fmt and cargo clippy"
+script = [
+    "cargo fmt",
+    "cargo clippy"
+]
