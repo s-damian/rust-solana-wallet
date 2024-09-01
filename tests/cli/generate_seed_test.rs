@@ -8,7 +8,7 @@ fn test_generate_seed() {
 
     // Exécute la commande.
     let output = Command::new("cargo")
-        .args(&["run", "--", "generate_seed"])
+        .args(["run", "--", "generate_seed"])
         .output()
         .expect("Failed to execute command");
 
@@ -42,10 +42,9 @@ fn test_generate_seed() {
         .find(|line| line.starts_with("BIP39 Mnemonic"))
         .expect("Mnemonic line not found");
     let mnemonic_words: Vec<&str> = mnemonic_line
-        .split(":")
+        .split(':')
         .nth(1)
         .unwrap()
-        .trim()
         .split_whitespace()
         .collect();
     assert_eq!(mnemonic_words.len(), 12, "Mnemonic should contain 12 words");
@@ -55,7 +54,7 @@ fn test_generate_seed() {
         .lines()
         .find(|line| line.starts_with("Seed:"))
         .expect("Seed line not found");
-    let seed = seed_line.split(":").nth(1).unwrap().trim();
+    let seed = seed_line.split(':').nth(1).unwrap().trim();
     assert_eq!(seed.len(), 128, "Seed should be 128 characters long");
     assert!(
         seed.chars().all(|c| c.is_ascii_hexdigit()),
@@ -67,7 +66,7 @@ fn test_generate_seed() {
         .lines()
         .find(|line| line.starts_with("Solana Public Key"))
         .expect("Public key line not found");
-    let pubkey = pubkey_line.split(":").nth(1).unwrap().trim();
+    let pubkey = pubkey_line.split(':').nth(1).unwrap().trim();
     assert_eq!(
         pubkey.len(),
         44,

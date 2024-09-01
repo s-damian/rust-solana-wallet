@@ -22,6 +22,12 @@ Lint:
 cargo clippy
 ```
 
+Lint (with warnings):
+
+```bash
+cargo clippy --all-targets
+```
+
 
 
 ## Run tests

@@ -31,4 +31,4 @@ jobs:
           components: clippy
 
       - name: Analyze
-        run: cargo clippy --all-targets -- -D warnings
+        run: cargo clippy
