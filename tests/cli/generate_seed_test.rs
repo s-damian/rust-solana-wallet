@@ -1,4 +1,4 @@
-mod common;
+use crate::common;
 use std::process::Command;
 use std::str;
 
@@ -6,19 +6,19 @@ use std::str;
 fn test_generate_seed() {
     common::setup();
 
-    // Exécute la commande
+    // Exécute la commande.
     let output = Command::new("cargo")
         .args(&["run", "--", "generate_seed"])
         .output()
         .expect("Failed to execute command");
 
-    // Convertit la sortie en chaîne de caractères
+    // Convertit la sortie en chaîne de caractères.
     let output_str = str::from_utf8(&output.stdout).expect("Invalid UTF-8 output");
 
-    // Vérifie que la commande s'est exécutée avec succès
+    // Vérifie que la commande s'est exécutée avec succès.
     assert!(output.status.success(), "Error: Command failed to execute");
 
-    // Vérifie que la sortie contient les éléments attendus
+    // Vérifie que la sortie contient les éléments attendus.
     assert!(
         output_str.contains("BIP39 Mnemonic (random phrase):"),
         "Error: Mnemonic phrase not found in output"
@@ -36,7 +36,7 @@ fn test_generate_seed() {
         "Public key not found in output"
     );
 
-    // Vérifie le format de la phrase mnémonique (12 mots séparés par des espaces)
+    // Vérifie le format de la phrase mnémonique (12 mots séparés par des espaces).
     let mnemonic_line = output_str
         .lines()
         .find(|line| line.starts_with("BIP39 Mnemonic"))
@@ -50,7 +50,7 @@ fn test_generate_seed() {
         .collect();
     assert_eq!(mnemonic_words.len(), 12, "Mnemonic should contain 12 words");
 
-    // Vérifie le format de la seed (64 caractères hexadécimaux)
+    // Vérifie le format de la seed (64 caractères hexadécimaux).
     let seed_line = output_str
         .lines()
         .find(|line| line.starts_with("Seed:"))
@@ -62,7 +62,7 @@ fn test_generate_seed() {
         "Seed should only contain hexadecimal characters"
     );
 
-    // Vérifie le format de la clé publique Solana (adresse de 32 caractères base58)
+    // Vérifie le format de la clé publique Solana (adresse de 32 caractères base58).
     let pubkey_line = output_str
         .lines()
         .find(|line| line.starts_with("Solana Public Key"))

@@ -1,4 +1,4 @@
-mod common;
+use crate::common;
 use rust_solana_wallet::app::wallet_manager::WalletManager;
 use rust_solana_wallet::config::wallet_config::WalletConfig;
 

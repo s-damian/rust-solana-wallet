@@ -1,0 +1,1 @@
+mod get_balance_by_pubkey_test;
