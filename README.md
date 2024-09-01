@@ -17,22 +17,11 @@
 
 This **example of a Solana Wallet** is developed by [Stephen Damian](https://github.com/s-damian)
 
-### This wallet manages
-
-- **Generate Mnemonic**: Creates a new random BIP39 mnemonic phrase.
-- **Seed**: Derives a seed from the mnemonic phrase.
-- **Passphrase**: You can optionally use a passphrase.
-- **Keypair Generation**: Generates a Solana keypair (public and private key) from the derived seed.
-- **Keypair Storage**: Saves the generated keypair to a local JSON file for future use.
-- **Key Derivation**: Supports generating multiple keypairs from a single seed by applying BIP44 derivation paths.
-- **Send SOL (lamports)**: Send SOL to a recipient address (sign outgoing transaction).
-- **Get Balance**: Get balance (in SOL and in lamports) by public key.
-- **Public Key Display**: Retrieves and displays the public key from the locally stored keypair.
-
 
 
 ## Summary
 
+- [Feature Summary](#feature-summary)
 - [Wallet Commands Description](#wallet-commands-description)
 - [Project Overview](#project-overview)
 - [Roadmap](#roadmap)
@@ -49,6 +38,22 @@ This **example of a Solana Wallet** is developed by [Stephen Damian](https://git
 - [Security](#security)
 - [FAQ](#faq)
 - [License](#license)
+
+
+
+## Feature Summary
+
+This wallet manages:
+
+- **Generate Mnemonic**: Creates a new random BIP39 mnemonic phrase.
+- **Seed**: Derives a seed from the mnemonic phrase.
+- **Passphrase**: You can optionally use a passphrase.
+- **Keypair Generation**: Generates a Solana keypair (public and private key) from the derived seed.
+- **Keypair Storage**: Saves the generated keypair to a local JSON file for future use.
+- **Key Derivation**: Supports generating multiple keypairs from a single seed by applying BIP44 derivation paths.
+- **Send SOL (lamports)**: Send SOL to a recipient address (sign outgoing transaction).
+- **Get Balance**: Get balance (in SOL and in lamports) by public key.
+- **Public Key Display**: Retrieves and displays the public key from the locally stored keypair.
 
 
 
