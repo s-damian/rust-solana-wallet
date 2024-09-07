@@ -42,12 +42,9 @@ jobs:
         run: cp .env.testing.example .env.testing
 
       # Étape pour charger les variables d'environnement à partir de .env.testing
-      - name: Load environment variables from .env.testing
+      - name: Load environment variables
         run: |
-          export $(grep -v '^#' .env.testing | xargs) && \
-          echo "TEST_MODE=$TEST_MODE" >> $GITHUB_ENV && \
-          echo "NB_DERIVATIONS=$NB_DERIVATIONS" >> $GITHUB_ENV && \
-          echo "RPC_URL=$RPC_URL" >> $GITHUB_ENV
+          grep -v '^#' .env.testing >> $GITHUB_ENV
 
       - name: Debug Environment
         run: |
