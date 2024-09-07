@@ -12,10 +12,7 @@ use dotenv::dotenv;
 fn main() {
     // Charger les variables d'environnement depuis le fichier ".env" (mais seulement si nous ne sommes pas en mode test).
     if env::var("TEST_MODE").unwrap_or_default() != "true" {
-        println!("-----TEST----- IF");
         dotenv().ok();
-    } else {
-        println!("-----TEST----- ELSE");
     }
 
     // Charger la configuration du wallet (selon les données du fichier .env).
