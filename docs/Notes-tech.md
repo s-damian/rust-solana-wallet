@@ -28,6 +28,12 @@ Lint (with warnings):
 cargo clippy --all-targets
 ```
 
+### With `Makefile.toml` :
+
+```bash
+cargo make lint-all
+```
+
 
 
 ## Run tests
