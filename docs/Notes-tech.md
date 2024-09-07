@@ -50,6 +50,12 @@ Run the tests :
 cargo test
 ```
 
+Run tests by capturing and displaying output :
+
+```bash
+cargo test -- --nocapture
+```
+
 
 
 ## Run / Build / Release

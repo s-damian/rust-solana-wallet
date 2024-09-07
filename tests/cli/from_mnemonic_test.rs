@@ -8,7 +8,7 @@ fn test_from_mnemonic() {
 
     let mnemonic = "shed scorpion manual wheat monster phone winter toe dream kitchen salad column";
 
-    // Exécute la commande.
+    // Exécute la commande "from_mnemonic" avec la mnémonic donnée.
     let output = Command::new("cargo")
         .args(["run", "--", "from_mnemonic", mnemonic])
         .output()
@@ -17,7 +17,7 @@ fn test_from_mnemonic() {
     // Vérifie que la commande s'est exécutée avec succès.
     assert!(output.status.success(), "Error: Command failed to execute");
 
-    // Convertit la sortie en chaîne de caractères.
+    // Convertit la sortie de la commande en chaîne de caractères.
     let output_str = str::from_utf8(&output.stdout).expect("Invalid UTF-8 output");
 
     // Vérifie que la sortie contient les éléments attendus.
@@ -60,16 +60,16 @@ fn test_from_mnemonic() {
         "Seed should only contain hexadecimal characters"
     );
 
-    // Vérifie le format de la clé publique Solana (adresse de 44 caractères base58).
+    // Vérifie le format de la clé publique Solana (adresse entre 32 et 44 caractères base58).
     let pubkey_line = output_str
         .lines()
         .find(|line| line.starts_with("Solana Public Key"))
         .expect("Public key line not found");
     let pubkey = pubkey_line.split(':').nth(1).unwrap().trim();
-    assert_eq!(
-        pubkey.len(),
-        44,
-        "Solana public key should be 44 characters long"
+    assert!(
+        pubkey.len() >= 32 && pubkey.len() <= 44,
+        "Solana public key should be between 32 and 44 characters long, but it's {} characters long",
+        pubkey.len()
     );
     assert!(
         pubkey.chars().all(|c| c.is_ascii_alphanumeric()),
