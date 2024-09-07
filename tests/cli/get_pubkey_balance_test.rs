@@ -51,8 +51,8 @@ fn test_get_pubkey_balance() {
 
     // Vérifie que le solde en lamports est un entier valide.
     let lamports = balance_parts[3]
-        .trim_end_matches(")")
-        .trim_start_matches("(");
+        .trim_end_matches(')')
+        .trim_start_matches('(');
     let lamports_balance = lamports
         .parse::<u64>()
         .expect("Failed to parse lamports balance as an integer");
