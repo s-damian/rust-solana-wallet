@@ -35,9 +35,9 @@ impl TransactionManager {
         // Extraction et validation du montant à envoyer.
         let amount = self.get_amount_from_matches(matches)?;
 
-        // Vérifiez si nous sommes en mode test
+        // Vérifier si nous sommes en mode test.
         if env::var("TEST_MODE").unwrap_or_default() == "true" {
-            // Simulation de la transaction
+            // Simulation de la transaction.
             println!(
                 "Simulating transaction: {} lamports from {} to {}",
                 amount,
