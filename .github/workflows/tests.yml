@@ -38,6 +38,9 @@ jobs:
             target
           key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
 
+      - name: Copy .env.testing.example to .env.testing
+        run: cp .env.testing.example .env.testing
+
       - name: Build with Cargo
         run: cargo build --verbose
 
