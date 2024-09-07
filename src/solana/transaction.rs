@@ -6,6 +6,7 @@ use solana_sdk::{
     system_instruction,
     transaction::Transaction,
 };
+use std::env;
 
 pub struct SolanaTransaction {}
 
@@ -26,27 +27,42 @@ impl SolanaTransaction {
         recipient_pubkey: &Pubkey,
         lamports: u64,
     ) -> Result<(), Box<dyn std::error::Error>> {
-        // Crée un client pour interagir avec le réseau Solana via RPC.
-        let client = RpcClient::new(String::from(rpc_url));
+        // Vérifier si nous sommes en mode test.
+        if env::var("TEST_MODE").unwrap_or_default() == "true" {
+            // Simulation de la transaction.
+            println!(
+                "Simulating transaction: {} lamports from {} to {}",
+                lamports,
+                sender_keypair.pubkey(),
+                recipient_pubkey
+            );
+            println!("Transaction sent successfully!");
+            Ok(())
+        } else {
+            // Envoi réel de la transaction via le réseau Solana :
 
-        // Récupère le dernier blockhash utilisé comme référence de frais pour la transaction.
-        let recent_blockhash = client.get_latest_blockhash()?;
+            // Crée un client pour interagir avec le réseau Solana via RPC.
+            let client = RpcClient::new(String::from(rpc_url));
 
-        // Crée une instruction pour transférer des lamports du compte expéditeur au destinataire.
-        let instruction =
-            system_instruction::transfer(&sender_keypair.pubkey(), recipient_pubkey, lamports);
+            // Récupère le dernier blockhash utilisé comme référence de frais pour la transaction.
+            let recent_blockhash = client.get_latest_blockhash()?;
 
-        // Emballe l'instruction dans un message, en spécifiant le compte expéditeur comme compte de frais.
-        let message = Message::new(&[instruction], Some(&sender_keypair.pubkey()));
+            // Crée une instruction pour transférer des lamports du compte expéditeur au destinataire.
+            let instruction =
+                system_instruction::transfer(&sender_keypair.pubkey(), recipient_pubkey, lamports);
 
-        // Crée la transaction en utilisant la paire de clés de l'expéditeur, le message et le blockhash récent.
-        // La transaction est automatiquement signée par la paire de clés de l'expéditeur lors de la création.
-        let transaction = Transaction::new(&[sender_keypair], message, recent_blockhash);
+            // Emballe l'instruction dans un message, en spécifiant le compte expéditeur comme compte de frais.
+            let message = Message::new(&[instruction], Some(&sender_keypair.pubkey()));
 
-        // Envoie la transaction signée au réseau Solana et attend la confirmation.
-        client.send_and_confirm_transaction(&transaction)?;
+            // Crée la transaction en utilisant la paire de clés de l'expéditeur, le message et le blockhash récent.
+            // La transaction est automatiquement signée par la paire de clés de l'expéditeur lors de la création.
+            let transaction = Transaction::new(&[sender_keypair], message, recent_blockhash);
 
-        // Retourne Ok si tout s'est bien passé.
-        Ok(())
+            // Envoie la transaction signée au réseau Solana et attend la confirmation.
+            client.send_and_confirm_transaction(&transaction)?;
+
+            // Retourne Ok si tout s'est bien passé.
+            Ok(())
+        }
     }
 }

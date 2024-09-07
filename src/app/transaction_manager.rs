@@ -1,9 +1,7 @@
 use crate::config::wallet_config::WalletConfig;
 use crate::solana::transaction::SolanaTransaction;
 use clap::ArgMatches;
-use solana_sdk::signature::Signer;
 use solana_sdk::{pubkey::Pubkey, signature::read_keypair_file};
-use std::env;
 use std::str::FromStr;
 
 pub struct TransactionManager {
@@ -35,27 +33,14 @@ impl TransactionManager {
         // Extraction et validation du montant à envoyer.
         let amount = self.get_amount_from_matches(matches)?;
 
-        // Vérifier si nous sommes en mode test.
-        if env::var("TEST_MODE").unwrap_or_default() == "true" {
-            // Simulation de la transaction.
-            println!(
-                "Simulating transaction: {} lamports from {} to {}",
-                amount,
-                sender_keypair.pubkey(),
-                recipient_pubkey
-            );
-            println!("Transaction sent successfully!");
-            Ok(())
-        } else {
-            // Envoi réel de la transaction via le réseau Solana.
-            SolanaTransaction::send_lamports(
-                &self.config.rpc_url,
-                &sender_keypair,
-                &recipient_pubkey,
-                amount,
-            )
-            .map_err(Into::into)
-        }
+        // Envoi via le réseau Solana.
+        SolanaTransaction::send_lamports(
+            &self.config.rpc_url,
+            &sender_keypair,
+            &recipient_pubkey,
+            amount,
+        )
+        .map_err(Into::into)
     }
 
     /// Extrait l'adresse publique du destinataire à partir des arguments de ligne de commande.

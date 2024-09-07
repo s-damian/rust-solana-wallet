@@ -25,7 +25,16 @@ fn test_send_command() {
         "Unexpected output: {}",
         output_str
     );
-
+    assert!(
+        output_str.contains(&format!("Simulating transaction: {} lamports", amount)),
+        "Output should contain the correct amount: {}",
+        output_str
+    );
+    assert!(
+        output_str.contains(recipient),
+        "Output should contain the recipient address: {}",
+        output_str
+    );
     // Si la simulation a réussi, vérifiez le message de succès.
     assert!(
         output_str.contains("Transaction sent successfully!"),
