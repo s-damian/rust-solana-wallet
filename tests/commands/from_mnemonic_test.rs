@@ -34,18 +34,10 @@ fn test_from_mnemonic_command() {
         "Error: Seed not found in output"
     );
     // Vérifie que la sortie contient les clés public (dans ".env.testing" nous avons : NB_DERIVATIONS=2).
-    /*assert!(
+    assert!(
         output_str.contains("Solana Public Key:"),
         "Error: Public key not found in output"
     );
-    assert!(
-        output_str.contains("Solana Public Key (derivation 1):"),
-        "Error: Public key not found in output"
-    );
-    assert!(
-        output_str.contains("Solana Public Key (derivation 2):"),
-        "Error: Public key not found in output"
-    );*/
 
     // Vérifie que la sortie contient la mnémonique donnée exacte.
     let mnemonic_line = output_str

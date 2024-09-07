@@ -37,15 +37,16 @@ impl WalletConfig {
     pub fn new() -> Self {
         Self {
             nb_derivations: env::var("NB_DERIVATIONS")
-                .unwrap_or_else(|_| "2".to_string()) // Utilise "1" comme valeur par défaut si la variable n'est pas définie.
+                .unwrap_or_else(|_| "0".to_string()) // Utilise "1" comme valeur par défaut si la variable n'est pas définie.
                 .parse::<usize>() // Tente de convertir la chaîne de caractères en un entier de type usize.
-                .unwrap_or(2), // Retourne 1 si la conversion échoue ou si la valeur convertie n'est pas un nombre.
+                .unwrap_or(0), // Retourne 1 si la conversion échoue ou si la valeur convertie n'est pas un nombre.
             keypair_path: env::var("KEYPAIR_PATH")
                 .unwrap_or_else(|_| "./storage/keypair/id.json".to_string()),
             keypair_dir: env::var("KEYPAIR_DIR")
                 .unwrap_or_else(|_| "./storage/keypair/derived".to_string()),
-                rpc_url: env::var("RPC_URL") // Lire l'URL RPC de l'environnement
-                .unwrap_or_else(|_| "https://api.devnet.solana.com".to_string()), // URL par défaut pointant vers le Testnet de Solana.
+            rpc_url:
+                env::var("RPC_URL") // Lire l'URL RPC de l'environnement
+                    .unwrap_or_else(|_| "https://api.devnet.solana.com".to_string()), // URL par défaut pointant vers le Testnet de Solana.
         }
     }
 }
