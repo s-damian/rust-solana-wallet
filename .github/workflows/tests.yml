@@ -41,6 +41,14 @@ jobs:
       - name: Copy .env.testing.example to .env.testing
         run: cp .env.testing.example .env.testing
 
+      - name: Debug Environment
+        run: |
+          echo "Current directory: $(pwd)"
+          echo "PATH: $PATH"
+          echo "Rust version: $(rustc --version)"
+          echo "Cargo version: $(cargo --version)"
+          echo "TEST_MODE: ${TEST_MODE}"
+
       - name: Build with Cargo
         run: cargo build --verbose
 
