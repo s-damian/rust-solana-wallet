@@ -11,9 +11,9 @@ use dotenv::dotenv;
 
 fn main() {
     // Charger les variables d'environnement depuis le fichier ".env" (mais seulement si nous ne sommes pas en mode test).
-    if env::var("TEST_MODE").unwrap_or_default() != "true" {
+    //if env::var("TEST_MODE").unwrap_or_default() != "true" {
         dotenv().ok();
-    }
+    //}
 
     // Charger la configuration du wallet (selon les données du fichier .env).
     let config = WalletConfig::new();
