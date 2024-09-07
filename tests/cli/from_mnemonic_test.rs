@@ -3,7 +3,7 @@ use std::process::Command;
 use std::str;
 
 #[test]
-fn test_from_mnemonic() {
+fn test_from_mnemonic_command() {
     common::setup();
 
     let mnemonic = "shed scorpion manual wheat monster phone winter toe dream kitchen salad column";
@@ -35,6 +35,10 @@ fn test_from_mnemonic() {
     );
     assert!(
         output_str.contains("Solana Public Key 0:"),
+        "Error: Public key not found in output"
+    );
+    assert!(
+        output_str.contains("Solana Public Key 1:"),
         "Error: Public key not found in output"
     );
 

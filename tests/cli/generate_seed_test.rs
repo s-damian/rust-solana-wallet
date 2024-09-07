@@ -3,7 +3,7 @@ use std::process::Command;
 use std::str;
 
 #[test]
-fn test_generate_seed() {
+fn test_generate_seed_command() {
     common::setup();
 
     // Exécute la commande "generate_seed".
@@ -33,7 +33,11 @@ fn test_generate_seed() {
     );
     assert!(
         output_str.contains("Solana Public Key 0:"),
-        "Public key not found in output"
+        "Error: Public key not found in output"
+    );
+    assert!(
+        output_str.contains("Solana Public Key 1:"),
+        "Error: Public key not found in output"
     );
 
     // Vérifie le format de la phrase mnémonique (12 mots séparés par des espaces).

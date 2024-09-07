@@ -3,7 +3,7 @@ use std::process::Command;
 use std::str;
 
 #[test]
-fn test_get_pubkey_balance() {
+fn test_get_pubkey_balance_command() {
     common::setup();
 
     // Clé publique Solana à utiliser dans le test.
