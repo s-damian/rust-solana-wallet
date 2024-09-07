@@ -1,2 +1,2 @@
-mod cli;
+mod commands;
 mod common;
