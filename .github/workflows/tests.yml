@@ -41,6 +41,11 @@ jobs:
       - name: Copy .env.testing.example to .env.testing
         run: cp .env.testing.example .env.testing
 
+      # Étape pour charger les variables d'environnement à partir de .env.testing
+      - name: Load environment variables from .env.testing
+        run: |
+          export $(grep -v '^#' .env.testing | xargs)
+
       - name: Debug Environment
         run: |
           echo "Current directory: $(pwd)"
@@ -48,6 +53,8 @@ jobs:
           echo "Rust version: $(rustc --version)"
           echo "Cargo version: $(cargo --version)"
           echo "TEST_MODE: ${TEST_MODE}"
+          echo "NB_DERIVATIONS: ${NB_DERIVATIONS}"
+          echo "RPC_URL: ${RPC_URL}"
 
       - name: Build with Cargo
         run: cargo build --verbose
