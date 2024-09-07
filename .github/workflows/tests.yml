@@ -38,13 +38,13 @@ jobs:
             target
           key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
 
-      - name: Copy .env.testing.example to .env.testing
-        run: cp .env.testing.example .env.testing
+      #- name: Copy .env.testing.example to .env.testing
+      #  run: cp .env.testing.example .env.testing
 
       # Étape pour charger les variables d'environnement à partir de .env.testing
-      - name: Load environment variables
-        run: |
-          grep -v '^#' .env.testing >> $GITHUB_ENV
+      #- name: Load environment variables
+      #  run: |
+      #    grep -v '^#' .env.testing >> $GITHUB_ENV
 
       - name: Debug Environment
         run: |
