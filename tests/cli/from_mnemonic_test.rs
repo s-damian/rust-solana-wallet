@@ -22,12 +22,8 @@ fn test_from_mnemonic() {
 
     // Vérifie que la sortie contient les éléments attendus.
     assert!(
-        output_str.contains("BIP39 Mnemonic (given phrase):"),
+        output_str.contains(&format!("BIP39 Mnemonic (given phrase): {}", mnemonic)),
         "Error: Mnemonic phrase not found in output"
-    );
-    assert!(
-        output_str.contains(mnemonic),
-        "Error: Given mnemonic not found in output"
     );
     assert!(
         output_str.contains("Enter passphrase (optional)"),
