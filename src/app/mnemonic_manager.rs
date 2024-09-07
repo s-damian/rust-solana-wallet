@@ -35,8 +35,12 @@ impl MnemonicManager {
     fn handle_key_derivation(&self, seed_bytes: &[u8]) {
         // Récupère le nombre de dérivations souhaitées (est de 1 par défaut).
         let nb_derivations = self.config.nb_derivations;
+
+        // Nb de public keys = 1 (la seed originale) + le dérivations souhaitées.
+        let nb_pubkeys = 1 + nb_derivations;
+
         // Gère les dérivations multiples pour générer plusieurs paires de clés.
-        for index in 0..nb_derivations {
+        for index in 0..nb_pubkeys {
             self.derive_and_store_keypair(seed_bytes, index);
         }
     }
@@ -54,7 +58,15 @@ impl MnemonicManager {
                 SolanaAddress::write_keypair(&keypair, &keypair_path);
 
                 // Affiche la clé publique (qui dans le cas de Solana, est également utilisée comme adresse publique du wallet).
-                println!("Solana Public Key {}: {}", index, keypair.pubkey());
+                if index == 0 {
+                    println!("Solana Public Key: {}", keypair.pubkey());
+                } else {
+                    println!(
+                        "Solana Public Key (derivation {}): {}",
+                        index,
+                        keypair.pubkey()
+                    );
+                }
             }
             Err(e) => println!("Error deriving seed bytes: {}", e),
         }

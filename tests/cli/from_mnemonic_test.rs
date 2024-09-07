@@ -34,11 +34,11 @@ fn test_from_mnemonic_command() {
         "Error: Seed not found in output"
     );
     assert!(
-        output_str.contains("Solana Public Key 0:"),
+        output_str.contains("Solana Public Key:"),
         "Error: Public key not found in output"
     );
     assert!(
-        output_str.contains("Solana Public Key 1:"),
+        output_str.contains("Solana Public Key (derivation 1):"),
         "Error: Public key not found in output"
     );
 

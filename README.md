@@ -270,10 +270,10 @@ Solana Public Key: FTGJPL5hia749v3jhNWJA7uE2VoVGyofB7BBL2cLwoPc
 Environment variables are configured in the `.env` file.
 
 You can configure these environment variables:
-- `NB_DERIVATIONS` (default value: `1`).
+- `NB_DERIVATIONS` (default value: `0`).
 - `KEYPAIR_PATH` (default value: `./storage/keypair/id.json`).
 - `KEYPAIR_DIR` (default value: `./storage/keypair/derived`).
-  - Note: `KEYPAIR_DIR` is only useful if `NB_DERIVATIONS` is > `1`.
+  - Note: `KEYPAIR_DIR` is only useful if `NB_DERIVATIONS` is > `0`.
 - `RPC_URL` (default value: `https://api.testnet.solana.com`).
 
 
