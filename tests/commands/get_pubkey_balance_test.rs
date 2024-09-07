@@ -21,8 +21,6 @@ fn test_get_pubkey_balance_command() {
     // Convertit la sortie de la commande en chaîne de caractères.
     let output_str = str::from_utf8(&output.stdout).expect("Invalid UTF-8 output");
 
-    println!("TEST output_str : {}", output_str);
-
     // Vérifie que la sortie contient le mot "Balance".
     assert!(
         output_str.contains("Balance:"),
