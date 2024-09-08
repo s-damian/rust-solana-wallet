@@ -69,7 +69,7 @@ fn test_generate_seed_command() {
         .expect("Public key line not found");
     let pubkey = pubkey_line.split(':').nth(1).unwrap().trim();
     assert!(
-        pubkey.len() >= 32 && pubkey.len() <= 44,
+        (32..=44).contains(&pubkey.len()),
         "Solana public key should be between 32 and 44 characters long, but it's {} characters long",
         pubkey.len()
     );

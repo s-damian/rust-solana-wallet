@@ -8,7 +8,7 @@ fn test_pubkey_command() {
 
     /*
     |--------------------------------------------------------------------------
-    | Étape 1/2 :
+    | Étape 1/2 : Génération de la clé publique avec "recover_seed"
     |--------------------------------------------------------------------------
     */
 
@@ -34,12 +34,15 @@ fn test_pubkey_command() {
         .expect("Public key line not found");
     let recovered_pubkey = recovered_pubkey_line.split(':').nth(1).unwrap().trim();
 
-    //println!("TEST recover_pubkey_output_str : {}", recover_pubkey_output_str);
-    println!("TEST recovered_pubkey : {}", recovered_pubkey);
+    assert!(
+        (32..=44).contains(&recovered_pubkey.len()),
+        "Solana public key should be between 32 and 44 characters long, but it's {} characters long",
+        recovered_pubkey.len()
+    );
 
     /*
     |--------------------------------------------------------------------------
-    | Étape 2/2 :
+    | Étape 2/2 : Récupération de la clé publique avec "pubkey"
     |--------------------------------------------------------------------------
     */
 
@@ -56,25 +59,29 @@ fn test_pubkey_command() {
     );
 
     // Convertit la sortie de la commande en chaîne de caractères.
-    let get_pubkey_output_str =
+    let show_pubkey_output_str =
         str::from_utf8(&pubkey_output.stdout).expect("Invalid UTF-8 output");
-    let get_pubkey_line = get_pubkey_output_str
+    let show_pubkey_line = show_pubkey_output_str
         .lines()
         .find(|line| line.starts_with("Solana Public Key"))
         .expect("Public key line not found");
-    let get_pubkey = get_pubkey_line.split(':').nth(1).unwrap().trim();
+    let show_pubkey = show_pubkey_line.split(':').nth(1).unwrap().trim();
 
-    //println!("TEST get_pubkey_output_str : {}", get_pubkey_output_str);
-    println!("TEST get_pubkey : {}", get_pubkey);
-
-    // Vérifie que la clé publique récupérée par la commande "pubkey" correspond à celle générée précédemment.
     assert!(
-        get_pubkey_output_str.contains(recovered_pubkey),
-        "Error: Expected public key not found in output"
+        (32..=44).contains(&show_pubkey.len()),
+        "Solana public key should be between 32 and 44 characters long, but it's {} characters long",
+        show_pubkey.len()
     );
+
+    /*
+    |--------------------------------------------------------------------------
+    | Vérifications finales
+    |--------------------------------------------------------------------------
+    */
+
     // Vérifier que la public key extraite correspond à celle générée précédemment.
     assert_eq!(
-        get_pubkey, recovered_pubkey,
+        show_pubkey, recovered_pubkey,
         "The public key from pubkey command doesn't match the one generated"
     );
 }
