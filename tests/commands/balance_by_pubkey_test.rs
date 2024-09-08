@@ -63,6 +63,4 @@ fn test_balance_by_pubkey_command() {
         lamports_balance,
         "SOL and lamports balance are inconsistent"
     );
-
-    println!("Test passed successfully. Balance output: {}", balance_line);
 }
