@@ -12,7 +12,7 @@ impl KeypairManager {
     }
 
     /// Récupère et affiche la clé publique à partir d'une paire de clés stockée localement dans un fichier.
-    pub fn get_pubkey_from_keypair_file(&self) {
+    pub fn pubkey(&self) {
         // Obtient le chemin d'accès au fichier où la paire de clés est stockée.
         let keypair_path = &self.config.keypair_path;
 

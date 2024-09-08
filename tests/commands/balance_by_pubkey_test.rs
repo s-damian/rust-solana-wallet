@@ -3,15 +3,15 @@ use std::process::Command;
 use std::str;
 
 #[test]
-fn test_get_pubkey_balance_command() {
+fn test_balance_by_pubkey_command() {
     common::setup();
 
     // Clé publique Solana à utiliser dans le test.
     let pubkey = "FTGJPL5hia749v3jhNWJA7uE2VoVGyofB7BBL2cLwoPc";
 
-    // Exécute la commande "get_pubkey_balance" avec la clé publique donnée.
+    // Exécute la commande "balance_by_pubkey" avec la clé publique donnée.
     let output = Command::new("cargo")
-        .args(["run", "--", "get_pubkey_balance", pubkey])
+        .args(["run", "--", "balance_by_pubkey", pubkey])
         .output()
         .expect("Failed to execute command");
 

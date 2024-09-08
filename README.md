@@ -29,10 +29,10 @@ This **example of a Solana Wallet** is developed by [Stephen Damian](https://git
 - [Setup](#setup)
 - [How to use?](#how-to-use)
   - [generate_seed command](#-generate_seed-command)
-  - [from_mnemonic command](#-from_mnemonic-command)
+  - [recover_seed command](#-recover_seed-command)
   - [send command](#-send-command)
-  - [get_pubkey_balance command](#-get_pubkey_balance-command)
-  - [get_pubkey_from_keypair_file command](#-get_pubkey_from_keypair_file-command)
+  - [pubkey command](#-pubkey-command)
+  - [balance_by_pubkey command](#-balance_by_pubkey-command)
 - [Environment Variables](#environment-variables)
 - [Some Interesting Links](#some-interesting-links)
 - [Security](#security)
@@ -53,8 +53,8 @@ This wallet manages:
 - **Keypair Storage**: Saves the generated keypair to a local JSON file for future use.
 - **Key Derivation**: Supports generating multiple keypairs from a single seed by applying BIP44 derivation paths.
 - **Send SOL (lamports)**: Send SOL to a recipient address (sign outgoing transaction).
-- **Get Balance**: Get balance (in SOL and in lamports) by public key.
 - **Public Key Display**: Retrieves and displays the public key from the locally stored keypair.
+- **Get Balance**: Get balance (in SOL and in lamports) by public key.
 
 
 
@@ -63,10 +63,10 @@ This wallet manages:
 | Command | Description 
 |--------------------------------|---|
 | [generate_seed](#-generate_seed-command) | Generates a 12-word BIP39 mnemonic phrase, derives the corresponding seed, saves the keypair, and displays the public key. |
-| [from_mnemonic](#-from_mnemonic-command) | Accepts a user-provided BIP39 mnemonic phrase, derives the corresponding seed, saves the keypair, and displays the public key. |
+| [recover_seed](#-recover_seed-command) | Accepts a user-provided BIP39 mnemonic phrase, derives the corresponding seed, saves the keypair, and displays the public key. |
 | [send](#-send-command) | Send SOL to a recipient address. |
-| [get_pubkey_balance](#-get_pubkey_balance-command) | Get balance by public key. |
-| [get_pubkey_from_keypair_file](#-get_pubkey_from_keypair_file-command) | Displays the public key from a keypair stored in a JSON file. |
+| [pubkey](#-pubkey-command) | Displays the public key from a keypair stored in a JSON file. |
+| [balance_by_pubkey](#-balance_by_pubkey-command) | Get balance by public key. |
 
 To see a summary of all available commands and options:
 
@@ -127,7 +127,7 @@ cp .env.example .env
 
 **Keypair storage**:
 
-`generate_seed` and `from_mnemonic` commands write the generated keypair to the `<project-directory>/storage/keypair/id.json` file (`KEYPAIR_PATH` env var), allowing you to store or utilize the keypair in your Solana applications.
+`generate_seed` and `recover_seed` commands write the generated keypair to the `<project-directory>/storage/keypair/id.json` file (`KEYPAIR_PATH` env var), allowing you to store or utilize the keypair in your Solana applications.
 
 **Multiple keypairs (derivations)**:
 
@@ -159,11 +159,11 @@ Seed: 34A0EACFFDF41445C0B7E43C2D730C54F4CD1D8334528F73E3D5F2C2977FAABA7CAD88EBDA
 Solana Public Key: FTGJPL5hia749v3jhNWJA7uE2VoVGyofB7BBL2cLwoPc
 ```
 
-### 🌐 from_mnemonic command
+### 🌐 recover_seed command
 
 > Generate and display a seed and Solana public key from a specific phrase.
 
-> Command with arguments: cargo run -- from_mnemonic `<RECOVERY_PHRASE>`
+> Command with arguments: cargo run -- recover_seed `<RECOVERY_PHRASE>`
 
 To generate and display the seed and Solana public key from a specific mnemonic phrase, pass the phrase (12 or 24 words, for example) as an argument.
 
@@ -174,7 +174,7 @@ This will also generate and write the keypair to the JSON file.
 - Command:
 
 ```bash
-cargo run -- from_mnemonic "shed scorpion manual wheat monster phone winter toe dream kitchen salad column"
+cargo run -- recover_seed "shed scorpion manual wheat monster phone winter toe dream kitchen salad column"
 ```
 
 **Optional passphrase:** You will be prompted to enter a passphrase (leave blank to not use one).
@@ -215,33 +215,9 @@ Transaction sent successfully!
 
 ```bash
 Failed to send transaction: ...
-
 ```
 
-### 🌐 get_pubkey_balance command
-
-> Get balance by public key.
-
-> Command with arguments: cargo run -- get_pubkey_balance `<PUBKEY>`
-
-This command allows you to see the balance (in SOL and in lamports) of a public address.
-
-**Example** to see the balance of the public address `EMLY3VvNZ41yMWyPQy2AiEfJTPpZdzeGNG5zaaq3Lihb`.
-
-- Command:
-
-```bash
-cargo run -- get_pubkey_balance EMLY3VvNZ41yMWyPQy2AiEfJTPpZdzeGNG5zaaq3Lihb
-```
-
-- Example of result:
-
-```bash
-Balance: 0.005910000 SOL (5910000 lamports)
-
-```
-
-### 🌐 get_pubkey_from_keypair_file command
+### 🌐 pubkey command
 
 > Retrieve public key from stored keypair.
 
@@ -252,7 +228,7 @@ This command reads your JSON keypair file stored, extracts the public key, and d
 - Command:
 
 ```bash
-cargo run -- get_pubkey_from_keypair_file
+cargo run -- pubkey
 ```
 
 This command reads the keypair stored in `<project-directory>/storage/keypair/id.json` file (`KEYPAIR_PATH` env var).
@@ -261,6 +237,28 @@ This command reads the keypair stored in `<project-directory>/storage/keypair/id
 
 ```bash
 Solana Public Key: FTGJPL5hia749v3jhNWJA7uE2VoVGyofB7BBL2cLwoPc
+```
+
+### 🌐 balance_by_pubkey command
+
+> Get balance by public key.
+
+> Command with arguments: cargo run -- balance_by_pubkey `<PUBKEY>`
+
+This command allows you to see the balance (in SOL and in lamports) of a public address.
+
+**Example** to see the balance of the public address `EMLY3VvNZ41yMWyPQy2AiEfJTPpZdzeGNG5zaaq3Lihb`.
+
+- Command:
+
+```bash
+cargo run -- balance_by_pubkey EMLY3VvNZ41yMWyPQy2AiEfJTPpZdzeGNG5zaaq3Lihb
+```
+
+- Example of result:
+
+```bash
+Balance: 0.005910000 SOL (5910000 lamports)
 ```
 
 

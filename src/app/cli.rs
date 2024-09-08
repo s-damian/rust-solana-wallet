@@ -18,9 +18,9 @@ impl AppCli {
             .version("1.0.0")
             .about("Example of a Solana Wallet in Rust")
             .subcommand(self.configure_generate_seed())
-            .subcommand(self.configure_from_mnemonic())
-            .subcommand(self.configure_get_pubkey_from_keypair_file())
-            .subcommand(self.configure_get_pubkey_balance())
+            .subcommand(self.configure_recover_seed())
+            .subcommand(self.configure_pubkey())
+            .subcommand(self.configure_balance_by_pubkey())
             .subcommand(self.configure_send())
     }
 
@@ -28,8 +28,8 @@ impl AppCli {
         Command::new("generate_seed").about("Generates a new random mnemonic")
     }
 
-    fn configure_from_mnemonic(&self) -> Command {
-        Command::new("from_mnemonic")
+    fn configure_recover_seed(&self) -> Command {
+        Command::new("recover_seed")
             .about("Generates a mnemonic from a specified phrase")
             .arg(
                 Arg::new("PHRASE")
@@ -39,13 +39,12 @@ impl AppCli {
             )
     }
 
-    fn configure_get_pubkey_from_keypair_file(&self) -> Command {
-        Command::new("get_pubkey_from_keypair_file")
-            .about("Displays the public key from the keypair stored in file")
+    fn configure_pubkey(&self) -> Command {
+        Command::new("pubkey").about("Displays the public key from the keypair stored in file")
     }
 
-    fn configure_get_pubkey_balance(&self) -> Command {
-        Command::new("get_pubkey_balance")
+    fn configure_balance_by_pubkey(&self) -> Command {
+        Command::new("balance_by_pubkey")
             .about("Displays the balance for the public key")
             .arg(
                 Arg::new("PUBKEY")
@@ -73,11 +72,9 @@ impl AppCli {
     pub fn handle_matches(&self, matches: ArgMatches) {
         match matches.subcommand() {
             Some(("generate_seed", _)) => self.handle_generate_seed(),
-            Some(("from_mnemonic", sub_matches)) => self.handle_from_mnemonic(sub_matches),
-            Some(("get_pubkey_from_keypair_file", _)) => self.get_pubkey_from_keypair_file(),
-            Some(("get_pubkey_balance", sub_matches)) => {
-                self.handle_get_pubkey_balance(sub_matches)
-            }
+            Some(("recover_seed", sub_matches)) => self.handle_recover_seed(sub_matches),
+            Some(("pubkey", _)) => self.pubkey(),
+            Some(("balance_by_pubkey", sub_matches)) => self.handle_balance_by_pubkey(sub_matches),
             Some(("send", sub_matches)) => self.handle_send(sub_matches),
             _ => println!("Unknown command."),
         }
@@ -88,19 +85,19 @@ impl AppCli {
         wallet_manager.generate_and_print_random_mnemonic();
     }
 
-    fn handle_from_mnemonic(&self, sub_matches: &ArgMatches) {
+    fn handle_recover_seed(&self, sub_matches: &ArgMatches) {
         if let Some(phrase) = sub_matches.get_one::<String>("PHRASE") {
             let wallet_manager = WalletManager::new(self.config.clone());
             wallet_manager.generate_and_print_mnemonic_from_phrase(phrase);
         }
     }
 
-    fn get_pubkey_from_keypair_file(&self) {
+    fn pubkey(&self) {
         let keypair_manager = KeypairManager::new(self.config.clone());
-        keypair_manager.get_pubkey_from_keypair_file();
+        keypair_manager.pubkey();
     }
 
-    fn handle_get_pubkey_balance(&self, sub_matches: &ArgMatches) {
+    fn handle_balance_by_pubkey(&self, sub_matches: &ArgMatches) {
         if let Some(pubkey) = sub_matches.get_one::<String>("PUBKEY") {
             let wallet_manager = WalletManager::new(self.config.clone());
             match wallet_manager.get_balance_by_pubkey(pubkey) {

@@ -3,14 +3,14 @@ use std::process::Command;
 use std::str;
 
 #[test]
-fn test_from_mnemonic_command() {
+fn test_recover_seed_command() {
     common::setup();
 
     let mnemonic = "shed scorpion manual wheat monster phone winter toe dream kitchen salad column";
 
-    // Exécute la commande "from_mnemonic" avec la mnémonic donnée.
+    // Exécute la commande "recover_seed" avec la mnémonic donnée.
     let output = Command::new("cargo")
-        .args(["run", "--", "from_mnemonic", mnemonic])
+        .args(["run", "--", "recover_seed", mnemonic])
         .output()
         .expect("Failed to execute command");
 
