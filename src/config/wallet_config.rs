@@ -111,7 +111,7 @@ mod tests {
         env::set_var("NB_DERIVATIONS", "not_a_number");
 
         let config = WalletConfig::new();
-        assert_eq!(config.nb_derivations, 0); // Should default to 0 if invalid
+        assert_eq!(config.nb_derivations, 0); // Doit être par défaut à 0 s'il n'est pas valide.
 
         teardown();
     }

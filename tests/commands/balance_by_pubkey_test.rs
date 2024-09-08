@@ -21,6 +21,12 @@ fn test_balance_by_pubkey_command() {
     // Convertit la sortie de la commande en chaîne de caractères.
     let output_str = str::from_utf8(&output.stdout).expect("Invalid UTF-8 output");
 
+    /*
+    |--------------------------------------------------------------------------
+    | Les vérifications de la sortie de la commande
+    |--------------------------------------------------------------------------
+    */
+
     // Vérifie que la sortie contient le mot "Balance".
     assert!(
         output_str.contains("Balance:"),
@@ -33,6 +39,12 @@ fn test_balance_by_pubkey_command() {
         output_str.contains("lamports"),
         "Error: lamports not found in output"
     );
+
+    /*
+    |--------------------------------------------------------------------------
+    | Les autres vérifications
+    |--------------------------------------------------------------------------
+    */
 
     // Extrait les informations de solde.
     let balance_line = output_str

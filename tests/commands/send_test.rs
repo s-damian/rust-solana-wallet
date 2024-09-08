@@ -18,8 +18,17 @@ fn test_send_command() {
         .output()
         .expect("Failed to execute command");
 
+    // Vérifie que la commande s'est exécutée avec succès.
+    assert!(output.status.success(), "Error: Command failed to execute");
+
     // Convertit la sortie de la commande en chaîne de caractères.
     let output_str = str::from_utf8(&output.stdout).expect("Invalid UTF-8 output");
+
+    /*
+    |--------------------------------------------------------------------------
+    | Les vérifications de la sortie de la commande
+    |--------------------------------------------------------------------------
+    */
 
     // Vérifiez si la sortie contient soit le message de simulation.
     assert!(

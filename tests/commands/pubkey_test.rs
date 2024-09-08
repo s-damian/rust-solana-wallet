@@ -62,7 +62,7 @@ fn test_pubkey_command() {
     |--------------------------------------------------------------------------
     */
 
-    // Étape 2 : Exécute la commande "pubkey" pour récupérer la clé publique depuis le fichier keypair.
+    // Exécute la commande "pubkey" pour récupérer la clé publique depuis le fichier keypair.
     let pubkey_output = Command::new("cargo")
         .args(["run", "--", "pubkey"])
         .output()
@@ -100,7 +100,7 @@ fn test_pubkey_command() {
 
     /*
     |--------------------------------------------------------------------------
-    | Nettoyage de "KEYPAIR_PATH" : reset comme avant.
+    | Nettoyage de "KEYPAIR_PATH" : reset env var comme avant
     |--------------------------------------------------------------------------
     */
 

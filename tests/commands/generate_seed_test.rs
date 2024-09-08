@@ -14,11 +14,17 @@ fn test_generate_seed_command() {
         .output()
         .expect("Failed to execute command");
 
+    // Vérifie que la commande s'est exécutée avec succès.
+    assert!(output.status.success(), "Error: Command failed to execute");
+
     // Convertit la sortie de la commande en chaîne de caractères.
     let output_str = str::from_utf8(&output.stdout).expect("Invalid UTF-8 output");
 
-    // Vérifie que la commande s'est exécutée avec succès.
-    assert!(output.status.success(), "Error: Command failed to execute");
+    /*
+    |--------------------------------------------------------------------------
+    | Les vérifications de la sortie de la commande
+    |--------------------------------------------------------------------------
+    */
 
     // Vérifie que la sortie contient les éléments attendus.
     assert!(
@@ -38,6 +44,12 @@ fn test_generate_seed_command() {
         output_str.contains("Solana Public Key:"),
         "Error: Public key not found in output"
     );
+
+    /*
+    |--------------------------------------------------------------------------
+    | Les autres vérifications
+    |--------------------------------------------------------------------------
+    */
 
     // Vérifie le format de la phrase mnémonique (12 mots séparés par des espaces).
     let mnemonic_line = output_str

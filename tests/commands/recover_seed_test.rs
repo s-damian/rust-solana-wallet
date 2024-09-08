@@ -22,6 +22,12 @@ fn test_recover_seed_command() {
     // Convertit la sortie de la commande en chaîne de caractères.
     let output_str = str::from_utf8(&output.stdout).expect("Invalid UTF-8 output");
 
+    /*
+    |--------------------------------------------------------------------------
+    | Les vérifications de la sortie de la commande
+    |--------------------------------------------------------------------------
+    */
+
     // Vérifie que la sortie contient les éléments attendus.
     assert!(
         output_str.contains(&format!("BIP39 Mnemonic (given phrase): {}", mnemonic)),
@@ -40,6 +46,12 @@ fn test_recover_seed_command() {
         output_str.contains("Solana Public Key:"),
         "Error: Public key not found in output"
     );
+
+    /*
+    |--------------------------------------------------------------------------
+    | Les autres vérifications
+    |--------------------------------------------------------------------------
+    */
 
     // Vérifie que la sortie contient la mnémonique donnée exacte.
     let mnemonic_line = output_str
