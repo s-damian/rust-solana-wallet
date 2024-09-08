@@ -19,9 +19,9 @@ impl AppCli {
             .about("Example of a Solana Wallet in Rust")
             .subcommand(self.configure_generate_seed())
             .subcommand(self.configure_recover_seed())
+            .subcommand(self.configure_send())
             .subcommand(self.configure_pubkey())
             .subcommand(self.configure_balance_by_pubkey())
-            .subcommand(self.configure_send())
     }
 
     fn configure_generate_seed(&self) -> Command {
@@ -34,21 +34,6 @@ impl AppCli {
             .arg(
                 Arg::new("PHRASE")
                     .help("A mnemonic phrase")
-                    .required(true)
-                    .index(1),
-            )
-    }
-
-    fn configure_pubkey(&self) -> Command {
-        Command::new("pubkey").about("Displays the public key from the keypair stored in file")
-    }
-
-    fn configure_balance_by_pubkey(&self) -> Command {
-        Command::new("balance_by_pubkey")
-            .about("Displays the balance for the public key")
-            .arg(
-                Arg::new("PUBKEY")
-                    .help("A public key")
                     .required(true)
                     .index(1),
             )
@@ -69,13 +54,28 @@ impl AppCli {
             )
     }
 
+    fn configure_pubkey(&self) -> Command {
+        Command::new("pubkey").about("Displays the public key from the keypair stored in file")
+    }
+
+    fn configure_balance_by_pubkey(&self) -> Command {
+        Command::new("balance_by_pubkey")
+            .about("Displays the balance for the public key")
+            .arg(
+                Arg::new("PUBKEY")
+                    .help("A public key")
+                    .required(true)
+                    .index(1),
+            )
+    }
+
     pub fn handle_matches(&self, matches: ArgMatches) {
         match matches.subcommand() {
             Some(("generate_seed", _)) => self.handle_generate_seed(),
             Some(("recover_seed", sub_matches)) => self.handle_recover_seed(sub_matches),
+            Some(("send", sub_matches)) => self.handle_send(sub_matches),
             Some(("pubkey", _)) => self.pubkey(),
             Some(("balance_by_pubkey", sub_matches)) => self.handle_balance_by_pubkey(sub_matches),
-            Some(("send", sub_matches)) => self.handle_send(sub_matches),
             _ => println!("Unknown command."),
         }
     }
