@@ -161,9 +161,9 @@ Solana Public Key: FTGJPL5hia749v3jhNWJA7uE2VoVGyofB7BBL2cLwoPc
 
 ### 🌐 from_mnemonic command
 
-> Generate and display a mnemonic from a specific phrase.
+> Generate and display a seed and Solana public key from a specific phrase.
 
-> Command with arguments: cargo run -- from_mnemonic `<PHRASE>`
+> Command with arguments: cargo run -- from_mnemonic `<RECOVERY_PHRASE>`
 
 To generate and display the seed and Solana public key from a specific mnemonic phrase, pass the phrase (12 or 24 words, for example) as an argument.
 
@@ -191,7 +191,7 @@ Solana Public Key: FTGJPL5hia749v3jhNWJA7uE2VoVGyofB7BBL2cLwoPc
 
 > Send SOL (lamports) to a recipient address (sign outgoing transaction).
 
-> Command with arguments: cargo run -- send `<RECIPIENT>` `<AMOUNT>`
+> Command with arguments: cargo run -- send `<RECIPIENT_PUBKEY>` `<AMOUNT_IN_LAMPORTS>`
 
 This command allows you to sign an outgoing transaction from your wallet to a destination address.
 
