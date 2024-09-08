@@ -1,5 +1,8 @@
 use std::env;
 
+#[cfg(test)]
+use serial_test::serial;
+
 #[derive(Clone)] // Cette ligne est utile pour implémenter automatiquement Clone.
 pub struct WalletConfig {
     pub keypair_path: String,
@@ -64,8 +67,10 @@ mod tests {
     }
 
     #[test]
+    #[serial]
     fn test_default_values() {
         setup();
+
         let config = WalletConfig::new();
         assert_eq!(config.nb_derivations, 0);
         assert_eq!(config.keypair_path, "./storage/keypair/id.json");
@@ -74,23 +79,27 @@ mod tests {
     }
 
     #[test]
+    #[serial]
     fn test_custom_values() {
         setup();
+
         env::set_var("NB_DERIVATIONS", "5");
-        env::set_var("KEYPAIR_PATH", "./storage/custom/path/keypair.json");
-        env::set_var("KEYPAIR_DIR", "./storage/custom/derived/keys");
+        env::set_var("KEYPAIR_PATH", "./storage/custom/keypair/id.json");
+        env::set_var("KEYPAIR_DIR", "./storage/custom/keypair/derived");
         env::set_var("RPC_URL", "https://custom.rpc.url");
 
         let config = WalletConfig::new();
         assert_eq!(config.nb_derivations, 5);
-        assert_eq!(config.keypair_path, "./storage/custom/path/keypair.json");
-        assert_eq!(config.keypair_dir, "./storage/custom/derived/keys");
+        assert_eq!(config.keypair_path, "./storage/custom/keypair/id.json");
+        assert_eq!(config.keypair_dir, "./storage/custom/keypair/derived");
         assert_eq!(config.rpc_url, "https://custom.rpc.url");
     }
 
     #[test]
+    #[serial]
     fn test_invalid_nb_derivations() {
         setup();
+
         env::set_var("NB_DERIVATIONS", "not_a_number");
 
         let config = WalletConfig::new();
