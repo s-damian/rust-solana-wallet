@@ -69,13 +69,5 @@ fn test_recover_seed_command() {
         .find(|line| line.starts_with("Solana Public Key"))
         .expect("Public key line not found");
     let pubkey = pubkey_line.split(':').nth(1).unwrap().trim();
-    assert!(
-        (32..=44).contains(&pubkey.len()),
-        "Solana public key should be between 32 and 44 characters long, but it's {} characters long",
-        pubkey.len()
-    );
-    assert!(
-        pubkey.chars().all(|c| c.is_ascii_alphanumeric()),
-        "Public key should only contain alphanumeric characters"
-    );
+    common::verify_pubkey(pubkey);
 }

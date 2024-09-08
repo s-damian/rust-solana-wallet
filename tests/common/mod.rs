@@ -14,3 +14,15 @@ pub fn setup() {
         "TEST_MODE should be set to 'true' for tests"
     );
 }
+
+pub fn verify_pubkey(pubkey: &str) {
+    assert!(
+        (32..=44).contains(&pubkey.len()),
+        "Public key should be between 32 and 44 characters long, but it's {} characters long",
+        pubkey.len()
+    );
+    assert!(
+        pubkey.chars().all(|c| c.is_ascii_alphanumeric()),
+        "Public key contains non-alphanumeric characters"
+    );
+}

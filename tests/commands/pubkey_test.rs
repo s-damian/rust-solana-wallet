@@ -7,20 +7,6 @@ use std::str;
 
 // cargo test --test mod -- commands::pubkey_test --nocapture
 
-fn verify_pubkey(pubkey: &str, key_type: &str) {
-    assert!(
-        (32..=44).contains(&pubkey.len()),
-        "{} public key should be between 32 and 44 characters long, but it's {} characters long",
-        key_type,
-        pubkey.len()
-    );
-    assert!(
-        pubkey.chars().all(|c| c.is_ascii_alphanumeric()),
-        "{} public key contains non-alphanumeric characters",
-        key_type
-    );
-}
-
 #[test]
 #[serial]
 fn test_pubkey_command() {
@@ -68,7 +54,7 @@ fn test_pubkey_command() {
     let recovered_pubkey = recovered_pubkey_line.split(':').nth(1).unwrap().trim();
     println!("DEBUG recovered_pubkey: {}", recovered_pubkey);
 
-    verify_pubkey(recovered_pubkey, "Recovered");
+    common::verify_pubkey(recovered_pubkey);
 
     /*
     |--------------------------------------------------------------------------
@@ -98,7 +84,7 @@ fn test_pubkey_command() {
     let show_pubkey = show_pubkey_line.split(':').nth(1).unwrap().trim();
     println!("DEBUG show_pubkey: {}", show_pubkey);
 
-    verify_pubkey(show_pubkey, "Shown");
+    common::verify_pubkey(show_pubkey);
 
     /*
     |--------------------------------------------------------------------------
