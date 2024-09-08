@@ -14,10 +14,10 @@ impl SolanaTransaction {
     /// Envoyer des SOL à une adresse spécifique.
     ///
     /// # Arguments:
-    /// * rpc_url - L'URL du point de terminaison RPC pour se connecter au réseau Solana.
-    /// * sender_keypair - La paire de clés du compte expéditeur utilisée pour signer la transaction.
-    /// * recipient_pubkey - La clé publique du destinataire qui recevra les SOL.
-    /// * lamports - Le montant en lamports à envoyer (1 SOL = 1_000_000_000 lamports).
+    /// - rpc_url - L'URL du point de terminaison RPC pour se connecter au réseau Solana.
+    /// - sender_keypair - La paire de clés du compte expéditeur utilisée pour signer la transaction.
+    /// - recipient_pubkey - La clé publique du destinataire qui recevra les SOL.
+    /// - lamports - Le montant en lamports à envoyer (1 SOL = 1_000_000_000 lamports).
     ///
     /// # Returns:
     /// Retourne un "Result" qui est Ok si la transaction est réussie, ou une erreur en cas d'échec.

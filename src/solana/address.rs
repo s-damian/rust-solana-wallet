@@ -9,7 +9,7 @@ impl SolanaAddress {
     /// Génère une paire de clés Solana (clé publique et clé privée) à partir d'octets de seed.
     ///
     /// # Arguments:
-    /// * seed_bytes - Les octets de la seed à partir de laquelle la paire de clés est générée.
+    /// - seed_bytes - Les octets de la seed à partir de laquelle la paire de clés est générée.
     ///
     /// # Returns:
     /// Retourne la paire de clés générée ou interrompt l'exécution en cas d'erreur.
@@ -22,8 +22,8 @@ impl SolanaAddress {
     /// Le fichier créé possède des permissions restreintes (0o600) sur les systèmes Unix, assurant une sécurité accrue.
     ///
     /// # Arguments:
-    /// * keypair - La paire de clés à écrire.
-    /// * file_path - Le chemin du fichier où écrire la paire de clés.
+    /// - keypair - La paire de clés à écrire.
+    /// - file_path - Le chemin du fichier où écrire la paire de clés.
     ///   @note Ce fichier peut être utilisé pour stocker de manière sécurisée la paire de clés ou pour l'importer dans d'autres applications ou services compatibles avec Solana.
     pub fn write_keypair(keypair: &Keypair, file_path: &str) {
         write_keypair_file(keypair, file_path).expect("Failed to write keypair to file");

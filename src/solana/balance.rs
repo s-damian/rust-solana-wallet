@@ -16,11 +16,11 @@ impl SolanaBalance {
     /// Retourne la balance en SOL pour une clé publique donnée.
     ///
     /// Arguments:
-    /// * pubkey_str - La clé publique sous forme de chaîne de caractères.
+    /// - pubkey_str - La clé publique sous forme de chaîne de caractères.
     ///
     /// # Returns:
-    /// * Ok(balance) - Si la requête est réussie.
-    /// * Err(e) - Si une erreur se produit lors de la récupération de la balance.
+    /// - Ok(balance) - Si la requête est réussie.
+    /// - Err(e) - Si une erreur se produit lors de la récupération de la balance.
     pub fn get_balance_by_pubkey(&self, pubkey: &str) -> Result<u64, Box<dyn std::error::Error>> {
         let pubkey = Pubkey::from_str(pubkey)?;
         let client = RpcClient::new(&self.config.rpc_url);

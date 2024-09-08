@@ -8,8 +8,8 @@ impl BipSeed {
     /// Génère la seed à partir de la phrase mnémonique (mnemonic param).
     ///
     /// # Arguments:
-    /// * mnemonic - La mnémonique à partir de laquelle la seed est générée.
-    /// * passphrase - La passphrase optionnelle pour ajouter une couche de sécurité supplémentaire à la seed.
+    /// - mnemonic - La mnémonique à partir de laquelle la seed est générée.
+    /// - passphrase - La passphrase optionnelle pour ajouter une couche de sécurité supplémentaire à la seed.
     ///
     /// # Returns:
     /// Retourne la seed générée.
@@ -20,7 +20,7 @@ impl BipSeed {
     /// Récupère la seed sous forme d'octets bruts.
     ///
     /// # Arguments:
-    /// * seed - La seed dont les octets bruts doivent être récupérés.
+    /// - seed - La seed dont les octets bruts doivent être récupérés.
     ///
     /// # Returns:
     /// Retourne une référence vers un tableau d'octets.
@@ -32,8 +32,8 @@ impl BipSeed {
     /// Utilise le chemin de dérivation BIP44 spécifique à Solana.
     ///
     /// # Arguments:
-    /// * seed_bytes - Les octets de la seed à partir de laquelle les clés seront dérivées.
-    /// * index - L'index de dérivation utilisé pour générer différentes clés privées.
+    /// - seed_bytes - Les octets de la seed à partir de laquelle les clés seront dérivées.
+    /// - index - L'index de dérivation utilisé pour générer différentes clés privées.
     ///
     /// # Returns:
     /// Retourne un vecteur contenant les octets de la clé privée dérivée. Ou retourne une erreur en cas de problème lors de la dérivation.
