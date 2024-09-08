@@ -1,8 +1,10 @@
 use crate::common;
+use serial_test::serial;
 use std::process::Command;
 use std::str;
 
 #[test]
+#[serial]
 fn test_send_command() {
     common::setup();
 

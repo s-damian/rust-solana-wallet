@@ -19,3 +19,6 @@ tiny-bip39 = "0.8.2"
 dotenv = "0.15"
 bip32 = "0.3.0"
 tokio = { version = "1", features = ["full"] }
+
+[dev-dependencies]
+serial_test = "3.1.1"

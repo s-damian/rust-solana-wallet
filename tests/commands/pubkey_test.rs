@@ -1,10 +1,45 @@
 use crate::common;
+use serial_test::serial;
+use std::env;
+use std::fs;
 use std::process::Command;
 use std::str;
 
+// cargo test --test mod -- commands::pubkey_test --nocapture
+
+fn verify_pubkey(pubkey: &str, key_type: &str) {
+    assert!(
+        (32..=44).contains(&pubkey.len()),
+        "{} public key should be between 32 and 44 characters long, but it's {} characters long",
+        key_type,
+        pubkey.len()
+    );
+    assert!(
+        pubkey.chars().all(|c| c.is_ascii_alphanumeric()),
+        "{} public key contains non-alphanumeric characters",
+        key_type
+    );
+}
+
 #[test]
+#[serial]
 fn test_pubkey_command() {
     common::setup();
+
+    /*
+    |--------------------------------------------------------------------------
+    | Préparation d'un "KEYPAIR_PATH" temporaire.
+    |--------------------------------------------------------------------------
+    */
+
+    // Utiliser un chemin de fichier temporaire unique pour ce test.
+    let temp_keypair_path = "./storage/tests/keypair/id_temp_test_pubkey_command.json";
+
+    // Sauvegarder l'ancienne valeur de "KEYPAIR_PATH".
+    let old_keypair_path = env::var("KEYPAIR_PATH").unwrap_or_default();
+
+    // Définir la nouvelle valeur de KEYPAIR_PATH pour ce test.
+    env::set_var("KEYPAIR_PATH", temp_keypair_path);
 
     /*
     |--------------------------------------------------------------------------
@@ -12,12 +47,10 @@ fn test_pubkey_command() {
     |--------------------------------------------------------------------------
     */
 
-    // Étape 1 : Exécute la commande "recover_seed" pour générer une clé publique et stocker la keypair dans le fichier.
-    let mnemonic = "shed scorpion manual wheat monster phone winter toe dream kitchen salad column";
     let recover_output = Command::new("cargo")
-        .args(["run", "--", "recover_seed", mnemonic])
+        .args(["run", "--", "generate_seed"])
         .output()
-        .expect("Failed to execute 'recover_seed' command");
+        .expect("Failed to 'recover_output' execute command");
 
     // Vérifie que la commande "recover_seed" s'est exécutée avec succès.
     assert!(
@@ -33,12 +66,9 @@ fn test_pubkey_command() {
         .find(|line| line.starts_with("Solana Public Key"))
         .expect("Public key line not found");
     let recovered_pubkey = recovered_pubkey_line.split(':').nth(1).unwrap().trim();
+    println!("DEBUG recovered_pubkey: {}", recovered_pubkey);
 
-    assert!(
-        (32..=44).contains(&recovered_pubkey.len()),
-        "Solana public key should be between 32 and 44 characters long, but it's {} characters long",
-        recovered_pubkey.len()
-    );
+    verify_pubkey(recovered_pubkey, "Recovered");
 
     /*
     |--------------------------------------------------------------------------
@@ -66,12 +96,9 @@ fn test_pubkey_command() {
         .find(|line| line.starts_with("Solana Public Key"))
         .expect("Public key line not found");
     let show_pubkey = show_pubkey_line.split(':').nth(1).unwrap().trim();
+    println!("DEBUG show_pubkey: {}", show_pubkey);
 
-    assert!(
-        (32..=44).contains(&show_pubkey.len()),
-        "Solana public key should be between 32 and 44 characters long, but it's {} characters long",
-        show_pubkey.len()
-    );
+    verify_pubkey(show_pubkey, "Shown");
 
     /*
     |--------------------------------------------------------------------------
@@ -84,4 +111,14 @@ fn test_pubkey_command() {
         show_pubkey, recovered_pubkey,
         "The public key from pubkey command doesn't match the one generated"
     );
+
+    /*
+    |--------------------------------------------------------------------------
+    | Nettoyage de "KEYPAIR_PATH" : reset comme avant.
+    |--------------------------------------------------------------------------
+    */
+
+    // Nettoyage : supprimer le fichier temporaire et restaurer l'ancienne valeur de "KEYPAIR_PATH".
+    fs::remove_file(temp_keypair_path).expect("Failed to remove temporary keypair file");
+    env::set_var("KEYPAIR_PATH", old_keypair_path);
 }
