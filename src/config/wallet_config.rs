@@ -66,6 +66,10 @@ mod tests {
         env::remove_var("RPC_URL");
     }
 
+    fn teardown() {
+        dotenv::from_filename(".env.testing").ok();
+    }
+
     #[test]
     #[serial]
     fn test_default_values() {
@@ -76,6 +80,8 @@ mod tests {
         assert_eq!(config.keypair_path, "./storage/keypair/id.json");
         assert_eq!(config.keypair_dir, "./storage/keypair/derived");
         assert_eq!(config.rpc_url, "https://api.devnet.solana.com");
+
+        teardown();
     }
 
     #[test]
@@ -93,6 +99,8 @@ mod tests {
         assert_eq!(config.keypair_path, "./storage/custom/keypair/id.json");
         assert_eq!(config.keypair_dir, "./storage/custom/keypair/derived");
         assert_eq!(config.rpc_url, "https://custom.rpc.url");
+
+        teardown();
     }
 
     #[test]
@@ -104,5 +112,7 @@ mod tests {
 
         let config = WalletConfig::new();
         assert_eq!(config.nb_derivations, 0); // Should default to 0 if invalid
+
+        teardown();
     }
 }
