@@ -50,3 +50,50 @@ impl WalletConfig {
         }
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use std::env;
+
+    fn setup() {
+        env::remove_var("NB_DERIVATIONS");
+        env::remove_var("KEYPAIR_PATH");
+        env::remove_var("KEYPAIR_DIR");
+        env::remove_var("RPC_URL");
+    }
+
+    #[test]
+    fn test_default_values() {
+        setup();
+        let config = WalletConfig::new();
+        assert_eq!(config.nb_derivations, 0);
+        assert_eq!(config.keypair_path, "./storage/keypair/id.json");
+        assert_eq!(config.keypair_dir, "./storage/keypair/derived");
+        assert_eq!(config.rpc_url, "https://api.devnet.solana.com");
+    }
+
+    #[test]
+    fn test_custom_values() {
+        setup();
+        env::set_var("NB_DERIVATIONS", "5");
+        env::set_var("KEYPAIR_PATH", "./storage/custom/path/keypair.json");
+        env::set_var("KEYPAIR_DIR", "./storage/custom/derived/keys");
+        env::set_var("RPC_URL", "https://custom.rpc.url");
+
+        let config = WalletConfig::new();
+        assert_eq!(config.nb_derivations, 5);
+        assert_eq!(config.keypair_path, "./storage/custom/path/keypair.json");
+        assert_eq!(config.keypair_dir, "./storage/custom/derived/keys");
+        assert_eq!(config.rpc_url, "https://custom.rpc.url");
+    }
+
+    #[test]
+    fn test_invalid_nb_derivations() {
+        setup();
+        env::set_var("NB_DERIVATIONS", "not_a_number");
+
+        let config = WalletConfig::new();
+        assert_eq!(config.nb_derivations, 0); // Should default to 0 if invalid
+    }
+}
