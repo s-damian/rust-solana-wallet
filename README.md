@@ -170,8 +170,6 @@ Here, since we wanted 3 derivations, 4 accounts (4 public keys) have been genera
 
 > Recover keypair and seed from a specific mnemonic phrase.
 
-> Command with arguments: cargo run -- recover_seed `<RECOVERY_PHRASE>`
-
 To generate and display the seed and Solana public key from a specific mnemonic phrase, pass the phrase (12 or 24 words, for example) as an argument.
 
 This will also generate and write the keypair to the JSON file.
@@ -179,6 +177,12 @@ This will also generate and write the keypair to the JSON file.
 **Example** with this 12 words: `shed` `scorpion` `manual` `wheat` `monster` `phone` `winter` `toe` `dream` `kitchen` `salad` `column`.
 
 - Command:
+
+```bash
+cargo run -- recover_seed <RECOVERY_PHRASE>
+```
+
+- Example:
 
 ```bash
 cargo run -- recover_seed "shed scorpion manual wheat monster phone winter toe dream kitchen salad column"
@@ -203,13 +207,17 @@ Here, since we wanted 3 derivations, 4 accounts (4 public keys) have been genera
 
 > Send SOL (lamports) to a recipient address (sign outgoing transaction).
 
-> Command with arguments: cargo run -- send `<RECIPIENT_PUBKEY>` `<AMOUNT_IN_LAMPORTS>`
-
 This command allows you to sign an outgoing transaction from your wallet to a destination address.
 
 **Example** to send `0.002` SOL (`2000000` lamports) to recipient address `EMLY3VvNZ41yMWyPQy2AiEfJTPpZdzeGNG5zaaq3Lihb`.
 
 - Command:
+
+```bash
+cargo run -- send <RECIPIENT_PUBKEY> <AMOUNT_IN_LAMPORTS>
+```
+
+- Example:
 
 ```bash
 cargo run -- send EMLY3VvNZ41yMWyPQy2AiEfJTPpZdzeGNG5zaaq3Lihb 2000000
@@ -255,13 +263,17 @@ Solana Public Key: FTGJPL5hia749v3jhNWJA7uE2VoVGyofB7BBL2cLwoPc
 
 > Get balance by public key.
 
-> Command with arguments: cargo run -- balance_by_pubkey `<PUBKEY>`
-
 This command allows you to see the balance (in SOL and in lamports) of a public address.
 
 **Example** to see the balance of the public address `EMLY3VvNZ41yMWyPQy2AiEfJTPpZdzeGNG5zaaq3Lihb`.
 
 - Command:
+
+```bash
+cargo run -- balance_by_pubkey <PUBKEY>
+```
+
+- Example:
 
 ```bash
 cargo run -- balance_by_pubkey EMLY3VvNZ41yMWyPQy2AiEfJTPpZdzeGNG5zaaq3Lihb
