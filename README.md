@@ -168,7 +168,7 @@ Here, since we wanted 3 derivations, 4 accounts (4 public keys) have been genera
 
 ### 🌐 recover_seed command
 
-> Recover keypair and display a seed and Solana public key from a specific mnemonic phrase.
+> Recover keypair and seed from a specific mnemonic phrase.
 
 > Command with arguments: cargo run -- recover_seed `<RECOVERY_PHRASE>`
 
