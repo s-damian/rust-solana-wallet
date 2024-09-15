@@ -64,7 +64,7 @@ This wallet manages:
 | Command | Description 
 |--------------------------------|---|
 | [generate_seed](#-generate_seed-command) | Generates a 12-word BIP39 mnemonic phrase, derives the corresponding seed, saves the keypair, and displays the public key. |
-| [recover_seed](#-recover_seed-command) | Accepts a user-provided BIP39 mnemonic phrase, derives the corresponding seed, saves the keypair, and displays the public key. |
+| [recover_seed](#-recover_seed-command) | Accepts a user-provided BIP39 mnemonic phrase, derives the corresponding seed, restores the keypair, and displays the public key. |
 | [send](#-send-command) | Send SOL to a recipient address. |
 | [pubkey](#-pubkey-command) | Displays the public key from a keypair stored in a JSON file. |
 | [balance_by_pubkey](#-balance_by_pubkey-command) | Get balance by public key. |
@@ -179,7 +179,7 @@ This will also generate and write the keypair to the JSON file.
 - Command:
 
 ```bash
-cargo run -- recover_seed <RECOVERY_PHRASE>
+cargo run -- recover_seed "<RECOVERY_PHRASE>"
 ```
 
 - Example:
