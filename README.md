@@ -163,7 +163,7 @@ Solana Public Key (derivation 2): 8PnmS7rp3hRTSqGJkYedm8tavYuDfLjBJJL9ssBuyAis
 Solana Public Key (derivation 3): 7rdf3btc5zNA7TXvA3Jc31VKnYRdc9goLmFYy6mEjbTv
 ```
 
-Here, since we wanted 3 derivations, this generated 4 accounts (4 public keys) for us.
+Here, since we wanted 3 derivations, 4 accounts (4 public keys) have been generated.
 
 ### 🌐 recover_seed command
 
@@ -196,7 +196,7 @@ Solana Public Key (derivation 2): 8PnmS7rp3hRTSqGJkYedm8tavYuDfLjBJJL9ssBuyAis
 Solana Public Key (derivation 3): 7rdf3btc5zNA7TXvA3Jc31VKnYRdc9goLmFYy6mEjbTv
 ```
 
-Here, since we wanted 3 derivations, this generated 4 accounts (4 public keys) for us.
+Here, since we wanted 3 derivations, 4 accounts (4 public keys) have been generated.
 
 ### 🌐 send command
 
