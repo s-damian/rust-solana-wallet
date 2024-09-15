@@ -152,13 +152,18 @@ cargo run -- generate_seed
 
 **Optional passphrase:** You will be prompted to enter a passphrase (leave blank to not use one).
 
-- Example of result:
+- Example of result (with `NB_DERIVATIONS=3`):
 
 ```bash
 BIP39 Mnemonic (random phrase): shed scorpion manual wheat monster phone winter toe dream kitchen salad column
 Seed: 34A0EACFFDF41445C0B7E43C2D730C54F4CD1D8334528F73E3D5F2C2977FAABA7CAD88EBDA6A1F02CE6BB596F04036305A32B96303F93FF864D268539739AFF8
 Solana Public Key: FTGJPL5hia749v3jhNWJA7uE2VoVGyofB7BBL2cLwoPc
+Solana Public Key (derivation 1): EMLY3VvNZ41yMWyPQy2AiEfJTPpZdzeGNG5zaaq3Lihb
+Solana Public Key (derivation 2): 8PnmS7rp3hRTSqGJkYedm8tavYuDfLjBJJL9ssBuyAis
+Solana Public Key (derivation 3): 7rdf3btc5zNA7TXvA3Jc31VKnYRdc9goLmFYy6mEjbTv
 ```
+
+Here, since we wanted 3 derivations, this generated 4 accounts (4 public keys) for us.
 
 ### 🌐 recover_seed command
 
@@ -180,13 +185,18 @@ cargo run -- recover_seed "shed scorpion manual wheat monster phone winter toe d
 
 **Optional passphrase:** You will be prompted to enter a passphrase (leave blank to not use one).
 
-- Example of result:
+- Example of result (with `NB_DERIVATIONS=3`):
 
 ```bash
 BIP39 Mnemonic (given phrase): shed scorpion manual wheat monster phone winter toe dream kitchen salad column
 Seed: 34A0EACFFDF41445C0B7E43C2D730C54F4CD1D8334528F73E3D5F2C2977FAABA7CAD88EBDA6A1F02CE6BB596F04036305A32B96303F93FF864D268539739AFF8
 Solana Public Key: FTGJPL5hia749v3jhNWJA7uE2VoVGyofB7BBL2cLwoPc
+Solana Public Key (derivation 1): EMLY3VvNZ41yMWyPQy2AiEfJTPpZdzeGNG5zaaq3Lihb
+Solana Public Key (derivation 2): 8PnmS7rp3hRTSqGJkYedm8tavYuDfLjBJJL9ssBuyAis
+Solana Public Key (derivation 3): 7rdf3btc5zNA7TXvA3Jc31VKnYRdc9goLmFYy6mEjbTv
 ```
+
+Here, since we wanted 3 derivations, this generated 4 accounts (4 public keys) for us.
 
 ### 🌐 send command
 

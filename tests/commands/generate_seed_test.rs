@@ -44,6 +44,14 @@ fn test_generate_seed_command() {
         output_str.contains("Solana Public Key:"),
         "Error: Public key not found in output"
     );
+    assert!(
+        output_str.contains("Solana Public Key (derivation 1):"),
+        "Error: Public key not found in output"
+    );
+    assert!(
+        output_str.contains("Solana Public Key (derivation 2):"),
+        "Error: Public key not found in output"
+    );
 
     /*
     |--------------------------------------------------------------------------
