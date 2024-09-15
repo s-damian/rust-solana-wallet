@@ -6,7 +6,7 @@ use serial_test::serial;
 #[derive(Clone)] // Cette ligne est utile pour implémenter automatiquement Clone.
 pub struct WalletConfig {
     pub keypair_path: String,
-    pub keypair_dir: String,
+    pub keypair_derivations_path: String,
     pub nb_derivations: usize,
     pub rpc_url: String,
 }
@@ -27,8 +27,8 @@ impl Default for WalletConfig {
 ///   Récupère le chemin d'accès au fichier où la paire de clés principale est stockée à partir de la variable d'environnement `KEYPAIR_PATH`.
 ///   Retourne un chemin par défaut si la variable d'environnement n'est pas définie.
 ///
-/// - keypair_dir:
-///   Récupère le chemin d'accès au dossier où les paires de clés dérivées sont stockées, spécifié par la variable d'environnement `KEYPAIR_DIR`.
+/// - keypair_derivations_path:
+///   Récupère le chemin d'accès au dossier où les paires de clés dérivées sont stockées, spécifié par la variable d'environnement `KEYPAIR_DERIVATIONS_PATH`.
 ///   Retourne un chemin par défaut si la variable d'environnement n'est pas définie.
 ///
 /// - rpc_url:
@@ -45,7 +45,7 @@ impl WalletConfig {
                 .unwrap_or(0), // Retourne 1 si la conversion échoue ou si la valeur convertie n'est pas un nombre.
             keypair_path: env::var("KEYPAIR_PATH")
                 .unwrap_or_else(|_| "./storage/keypair/id.json".to_string()),
-            keypair_dir: env::var("KEYPAIR_DIR")
+                keypair_derivations_path: env::var("KEYPAIR_DERIVATIONS_PATH")
                 .unwrap_or_else(|_| "./storage/keypair/derived".to_string()),
             rpc_url:
                 env::var("RPC_URL") // Lire l'URL RPC de l'environnement
@@ -62,7 +62,7 @@ mod tests {
     fn setup() {
         env::remove_var("NB_DERIVATIONS");
         env::remove_var("KEYPAIR_PATH");
-        env::remove_var("KEYPAIR_DIR");
+        env::remove_var("KEYPAIR_DERIVATIONS_PATH");
         env::remove_var("RPC_URL");
     }
 
@@ -78,7 +78,7 @@ mod tests {
         let config = WalletConfig::new();
         assert_eq!(config.nb_derivations, 0);
         assert_eq!(config.keypair_path, "./storage/keypair/id.json");
-        assert_eq!(config.keypair_dir, "./storage/keypair/derived");
+        assert_eq!(config.keypair_derivations_path, "./storage/keypair/derived");
         assert_eq!(config.rpc_url, "https://api.devnet.solana.com");
 
         teardown();
@@ -91,13 +91,13 @@ mod tests {
 
         env::set_var("NB_DERIVATIONS", "5");
         env::set_var("KEYPAIR_PATH", "./storage/custom/keypair/id.json");
-        env::set_var("KEYPAIR_DIR", "./storage/custom/keypair/derived");
+        env::set_var("KEYPAIR_DERIVATIONS_PATH", "./storage/custom/keypair/derived");
         env::set_var("RPC_URL", "https://custom.rpc.url");
 
         let config = WalletConfig::new();
         assert_eq!(config.nb_derivations, 5);
         assert_eq!(config.keypair_path, "./storage/custom/keypair/id.json");
-        assert_eq!(config.keypair_dir, "./storage/custom/keypair/derived");
+        assert_eq!(config.keypair_derivations_path, "./storage/custom/keypair/derived");
         assert_eq!(config.rpc_url, "https://custom.rpc.url");
 
         teardown();

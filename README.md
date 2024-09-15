@@ -137,7 +137,7 @@ If you want to generate several keypairs and several public keys with a single m
 
 Your non-derived keypair will be created in your `<your-path>/storage/keypair/id.json` file (`KEYPAIR_PATH` env var) JSON file.
 
-The other keypairs (which will be derived from your seed) will be created in JSON files in your `<your-path>/storage/keypair/derived` directory (`KEYPAIR_DIR` env var).
+The other keypairs (which will be derived from your seed) will be created in JSON files in your `<your-path>/storage/keypair/derived` directory (`KEYPAIR_DERIVATIONS_PATH` env var).
 
 ### 🌐 generate_seed command
 
@@ -282,8 +282,8 @@ Environment variables are configured in the `.env` file.
 You can configure these environment variables:
 - `NB_DERIVATIONS` (default value: `0`).
 - `KEYPAIR_PATH` (default value: `./storage/keypair/id.json`).
-- `KEYPAIR_DIR` (default value: `./storage/keypair/derived`).
-  - Note: `KEYPAIR_DIR` is only useful if `NB_DERIVATIONS` is > `0`.
+- `KEYPAIR_DERIVATIONS_PATH` (default value: `./storage/keypair/derived`).
+  - Note: `KEYPAIR_DERIVATIONS_PATH` is only useful if `NB_DERIVATIONS` is > `0`.
 - `RPC_URL` (default value: `https://api.devnet.solana.com`).
 
 

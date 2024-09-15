@@ -77,7 +77,7 @@ impl MnemonicManager {
         if index == 0 {
             self.config.keypair_path.clone()
         } else {
-            format!("{}/keypair-{}.json", self.config.keypair_dir, index)
+            format!("{}/keypair-{}.json", self.config.keypair_derivations_path, index)
         }
     }
 }
