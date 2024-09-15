@@ -33,7 +33,7 @@ impl Default for WalletConfig {
 ///
 /// - rpc_url:
 ///   Récupère l'URL du serveur RPC pour l'accès au réseau Solana à partir de la variable d'environnement `RPC_URL`.
-///   Retourne "https://api.testnet.solana.com" par défaut, indiquant que le réseau Testnet est utilisé si la variable d'environnement n'est pas définie.
+///   Retourne "https://api.devnet.solana.com" par défaut, indiquant que le réseau Testnet est utilisé si la variable d'environnement n'est pas définie.
 
 impl WalletConfig {
     /// Charge la configuration depuis les variables d'environnement ou utilise les valeurs par défaut.
