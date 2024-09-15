@@ -47,7 +47,7 @@ This **example of a Solana Wallet** is developed by [Stephen Damian](https://git
 This wallet manages:
 
 - **Generate Mnemonic**: Creates a new random BIP39 mnemonic phrase.
-- **Recover keypair** : Recover keypair and seed from a mnemonic phrase.
+- **Recover Keypair** : Recover keypair and seed from a mnemonic phrase.
 - **Seed**: Derives a seed from the mnemonic phrase.
 - **Passphrase**: You can optionally use a passphrase.
 - **Keypair Generation**: Generates a Solana keypair (public and private key) from the derived seed.
@@ -129,15 +129,15 @@ cp .env.example .env
 
 **Keypair storage**:
 
-`generate_seed` and `recover_seed` commands write the generated keypair to the `<project-directory>/storage/keypair/id.json` file (`KEYPAIR_PATH` env var), allowing you to store or utilize the keypair in your Solana applications.
+`generate_seed` and `recover_seed` commands write the generated keypair to the `<your-path>/storage/keypair/id.json` file (`KEYPAIR_PATH` env var), allowing you to store or utilize the keypair in your Solana applications.
 
 **Multiple keypairs (derivations)**:
 
-If you want to generate several keypairs and several public keys with a single mnemonic phrase, you must set the `NB_DERIVATIONS` environment variable to a value greater than `1`.
+If you want to generate several keypairs and several public keys with a single mnemonic phrase, you must set the `NB_DERIVATIONS` environment variable to a value greater than `0`.
 
-Your non-derived keypair will be created in your `<project-directory>/storage/keypair/id.json` file (`KEYPAIR_PATH` env var) JSON file.
+Your non-derived keypair will be created in your `<your-path>/storage/keypair/id.json` file (`KEYPAIR_PATH` env var) JSON file.
 
-The other keypairs (which will be derived from your seed) will be created in JSON files in your `<project-directory>/storage/keypair/derived` directory (`KEYPAIR_DIR` env var).
+The other keypairs (which will be derived from your seed) will be created in JSON files in your `<your-path>/storage/keypair/derived` directory (`KEYPAIR_DIR` env var).
 
 ### 🌐 generate_seed command
 
@@ -215,7 +215,7 @@ This command allows you to sign an outgoing transaction from your wallet to a de
 cargo run -- send EMLY3VvNZ41yMWyPQy2AiEfJTPpZdzeGNG5zaaq3Lihb 2000000
 ```
 
-This command will sign the transaction with the keypair which is stored in the file `<project-directory>/storage/keypair/id.json` file (`KEYPAIR_PATH` env var).
+This command will sign the transaction with the keypair which is stored in the file `<your-path>/storage/keypair/id.json` file (`KEYPAIR_PATH` env var).
 
 - Example of result (when successfully):
 
@@ -243,7 +243,7 @@ This command reads your JSON keypair file stored, extracts the public key, and d
 cargo run -- pubkey
 ```
 
-This command reads the keypair stored in `<project-directory>/storage/keypair/id.json` file (`KEYPAIR_PATH` env var).
+This command reads the keypair stored in `<your-path>/storage/keypair/id.json` file (`KEYPAIR_PATH` env var).
 
 - Example of result:
 
