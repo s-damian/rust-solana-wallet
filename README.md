@@ -47,6 +47,7 @@ This **example of a Solana Wallet** is developed by [Stephen Damian](https://git
 This wallet manages:
 
 - **Generate Mnemonic**: Creates a new random BIP39 mnemonic phrase.
+- **Recover keypair** : Recover keypair and seed from a mnemonic phrase.
 - **Seed**: Derives a seed from the mnemonic phrase.
 - **Passphrase**: You can optionally use a passphrase.
 - **Keypair Generation**: Generates a Solana keypair (public and private key) from the derived seed.
@@ -167,7 +168,7 @@ Here, since we wanted 3 derivations, 4 accounts (4 public keys) have been genera
 
 ### 🌐 recover_seed command
 
-> Generate and display a seed and Solana public key from a specific phrase.
+> Recover keypair and display a seed and Solana public key from a specific mnemonic phrase.
 
 > Command with arguments: cargo run -- recover_seed `<RECOVERY_PHRASE>`
 
