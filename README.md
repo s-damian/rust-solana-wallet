@@ -303,6 +303,7 @@ You can configure these environment variables:
 ## Some Interesting Links
 
 - **BIP39**: Learn more about the **BIP39** standard [here](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki).
+- **BIP44**: Learn more about the **BIP44** [here](https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki).
 - **SLIP44**: Learn more about the **SLIP44** [here](https://github.com/satoshilabs/slips/blob/master/slip-0044.md).
 
 
