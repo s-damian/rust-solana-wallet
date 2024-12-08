@@ -46,8 +46,24 @@ impl BipSeed {
 
         // Construit le chemin de dérivation complet en utilisant le standard BIP44 pour Solana.
         // Le format est "m/44'/501'/0'/0/{index}", où {index} représente le numéro de la dérivation.
-        // SLIP-0044: 501 = Solana Coin (SOL Symbol).
-        // Le chemin de dérivation utilisé dans BIP44 suit cette structure : m / purpose' / coin_type' / account' / change / address_index
+        // SLIP44: 501 = Solana Coin (SOL Symbol).
+        //
+        // Le chemin de dérivation utilisé dans BIP44 suit cette structure :
+        // m / purpose' / coin_type' / account' / change / address_index
+        // # Résumé :
+        // - m:
+        //   Est la "master key", la racine de toutes les dérivations.
+        // - purpose:
+        //   Est une constante fixée à 44' (pour indiquer qu'on suit la norme BIP44).
+        // - coin_type:
+        //   Est une constante (integer), définie pour chaque crypto-monnaie.
+        // - account:
+        //   Les users peuvent utiliser ces comptes pour organiser les fonds de la même manière que les comptes bancaires.
+        //   Ce numéro est utilisé comme index enfant dans la dérivation BIP32.
+        // - change: 0 ou 1.
+        //   La constante 0 est utilisée pour la chaîne externe. La constante 1 pour la chaîne interne (également appelée adresse de changement).
+        // - address_index:
+        //   Représente le numéro séquentiel d’une adresse à l’intérieur de cet "account".
         let path = format!("m/44'/501'/0'/0/{}", index);
         let derivation_path = DerivationPath::from_str(&path)?;
 

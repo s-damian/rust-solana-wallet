@@ -45,7 +45,7 @@ impl WalletConfig {
                 .unwrap_or(0), // Retourne 1 si la conversion échoue ou si la valeur convertie n'est pas un nombre.
             keypair_path: env::var("KEYPAIR_PATH")
                 .unwrap_or_else(|_| "./storage/keypair/id.json".to_string()),
-                keypair_derivations_path: env::var("KEYPAIR_DERIVATIONS_PATH")
+            keypair_derivations_path: env::var("KEYPAIR_DERIVATIONS_PATH")
                 .unwrap_or_else(|_| "./storage/keypair/derived".to_string()),
             rpc_url:
                 env::var("RPC_URL") // Lire l'URL RPC de l'environnement
@@ -91,13 +91,19 @@ mod tests {
 
         env::set_var("NB_DERIVATIONS", "5");
         env::set_var("KEYPAIR_PATH", "./storage/custom/keypair/id.json");
-        env::set_var("KEYPAIR_DERIVATIONS_PATH", "./storage/custom/keypair/derived");
+        env::set_var(
+            "KEYPAIR_DERIVATIONS_PATH",
+            "./storage/custom/keypair/derived",
+        );
         env::set_var("RPC_URL", "https://custom.rpc.url");
 
         let config = WalletConfig::new();
         assert_eq!(config.nb_derivations, 5);
         assert_eq!(config.keypair_path, "./storage/custom/keypair/id.json");
-        assert_eq!(config.keypair_derivations_path, "./storage/custom/keypair/derived");
+        assert_eq!(
+            config.keypair_derivations_path,
+            "./storage/custom/keypair/derived"
+        );
         assert_eq!(config.rpc_url, "https://custom.rpc.url");
 
         teardown();
