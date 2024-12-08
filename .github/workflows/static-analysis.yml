@@ -16,7 +16,7 @@ jobs:
     strategy:
       matrix:
         # Rust releases: https://releases.rs/
-        rust-version: [1.75.0, 1.82.0]
+        rust-version: [1.75.0, 1.83.0]
 
     steps:
       - name: Checkout Code
