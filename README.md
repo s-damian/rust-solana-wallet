@@ -7,15 +7,13 @@
 <img src="https://raw.githubusercontent.com/s-damian/medias/main/technos-logos/rust.webp" alt="Rust Logo" height="100px">
 </a>
 
-> #Solana #Wallet #Rust #BIP39 #Web3 #Blockchain
+Solana Wallet - Made in France 🇫🇷
 
-> This is an example of a **Solana Wallet** in **Rust** 🦀
+Dear Rustaceans, here is a 100% Rust Wallet 🦀
 
 [![Tests](https://github.com/s-damian/rust-solana-wallet/actions/workflows/tests.yml/badge.svg)](https://github.com/s-damian/rust-solana-wallet/actions/workflows/tests.yml)
 [![Static Analysis](https://github.com/s-damian/rust-solana-wallet/actions/workflows/static-analysis.yml/badge.svg)](https://github.com/s-damian/rust-solana-wallet/actions/workflows/static-analysis.yml)
 [![License](https://img.shields.io/badge/License-MIT-blue)](https://github.com/s-damian/rust-solana-wallet/blob/main/LICENSE)
-
-Solana Wallet - Made in France 🇫🇷
 
 This **example of a Solana Wallet** is developed by [Stephen Damian](https://github.com/s-damian).
 
@@ -312,7 +310,9 @@ You can configure these environment variables:
 
 ## Security
 
-This wallet is an example and should not be used to store large amounts of SOL without a thorough security review. Always make sure to back up your mnemonic phrases and private keys in a secure location.
+This wallet is an example and should not be used to store large amounts of SOL without a thorough security review.
+
+Always make sure to back up your mnemonic phrases and private keys in a secure location.
 
 
 
