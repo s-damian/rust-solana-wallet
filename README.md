@@ -7,9 +7,9 @@
 <img src="https://raw.githubusercontent.com/s-damian/medias/main/technos-logos/rust.webp" alt="Rust Logo" height="100px">
 </a>
 
-A Solana Wallet made in France 🇫🇷
-
 Dear Rustaceans, here is a 100% Rust Wallet 🦀
+
+A Solana Wallet made in France 🇫🇷
 
 [![Tests](https://github.com/s-damian/rust-solana-wallet/actions/workflows/tests.yml/badge.svg)](https://github.com/s-damian/rust-solana-wallet/actions/workflows/tests.yml)
 [![Static Analysis](https://github.com/s-damian/rust-solana-wallet/actions/workflows/static-analysis.yml/badge.svg)](https://github.com/s-damian/rust-solana-wallet/actions/workflows/static-analysis.yml)
