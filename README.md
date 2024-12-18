@@ -15,7 +15,9 @@
 [![Static Analysis](https://github.com/s-damian/rust-solana-wallet/actions/workflows/static-analysis.yml/badge.svg)](https://github.com/s-damian/rust-solana-wallet/actions/workflows/static-analysis.yml)
 [![License](https://img.shields.io/badge/License-MIT-blue)](https://github.com/s-damian/rust-solana-wallet/blob/main/LICENSE)
 
-This **example of a Solana Wallet** is developed by [Stephen Damian](https://github.com/s-damian)
+Solana Wallet - Made in France 🇫🇷
+
+This **example of a Solana Wallet** is developed by [Stephen Damian](https://github.com/s-damian).
 
 
 
