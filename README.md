@@ -7,6 +7,8 @@
 <img src="https://raw.githubusercontent.com/s-damian/medias/main/technos-logos/rust.webp" alt="Rust Logo" height="100px">
 </a>
 
+This **example of a Solana Wallet** is developed by [Stephen Damian](https://github.com/s-damian).
+
 Solana Wallet - Made in France 🇫🇷
 
 Dear Rustaceans, here is a 100% Rust Wallet 🦀
@@ -14,8 +16,6 @@ Dear Rustaceans, here is a 100% Rust Wallet 🦀
 [![Tests](https://github.com/s-damian/rust-solana-wallet/actions/workflows/tests.yml/badge.svg)](https://github.com/s-damian/rust-solana-wallet/actions/workflows/tests.yml)
 [![Static Analysis](https://github.com/s-damian/rust-solana-wallet/actions/workflows/static-analysis.yml/badge.svg)](https://github.com/s-damian/rust-solana-wallet/actions/workflows/static-analysis.yml)
 [![License](https://img.shields.io/badge/License-MIT-blue)](https://github.com/s-damian/rust-solana-wallet/blob/main/LICENSE)
-
-This **example of a Solana Wallet** is developed by [Stephen Damian](https://github.com/s-damian).
 
 
 
