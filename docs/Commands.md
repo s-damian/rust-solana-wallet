@@ -115,7 +115,7 @@ Balance: 0.010000000 SOL (10000000 lamports)
 ```
 
 
-## Get help for this Wallet
+## Get Help
 
 This command allows you to display the available commands.
 
