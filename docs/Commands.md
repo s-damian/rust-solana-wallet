@@ -13,7 +13,7 @@ A Solana Wallet made in France 🇫🇷
 | [Send SOL (lamports)](#send-sol-lamports) | Send SOL to a recipient address (sign outgoing transaction). | `send <RECIPIENT_PUBKEY> <AMOUNT_IN_LAMPORTS>` |
 | [Public Key Display](#get-public-key) | Retrieves and displays the public key from the locally stored keypair. | `pubkey` |
 | [Get Balance](#get-balance-by-public-key) | Get balance (in SOL and in lamports) by public key. | `balance_by_pubkey <PUBKEY>` |
-| [Get Help](#get-help-for-this-wallet) | Get help for this Wallet. | `cargo run -- --help` |
+| [Get Help](#get-help) | Get help for this Wallet. | `cargo run -- --help` |
 
 
 ## Generate Mnemonic
