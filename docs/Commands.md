@@ -24,7 +24,7 @@ This command generates a new mnemonic phrase (12 words).
 cargo run -- generate_seed
 ```
 
-> PS: In this example we did not use a passphrase
+> PS: In this example we did not use a passphrase.
 
 Example of result:
 
@@ -48,7 +48,7 @@ cargo run -- recover_seed "<RECOVERY_PHRASE>"
 cargo run -- recover_seed "owner cherry you seek bless holiday humble rare orchard tennis cycle solid"
 ```
 
-> PS: In this example we did not use a passphrase
+> PS: In this example we did not use a passphrase.
 
 Example of result:
 
