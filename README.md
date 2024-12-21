@@ -21,24 +21,32 @@ This **example of a Solana Wallet** is developed by [Stephen Damian](https://git
 
 ## Summary
 
-- [Feature Summary](#feature-summary)
 - [Wallet Commands Summary](#wallet-commands-summary)
+- [Feature Summary](#feature-summary)
 - [Project Overview](#project-overview)
 - [Roadmap](#roadmap)
 - [Prerequisites](#prerequisites)
 - [Setup](#setup)
 - [How to use?](#how-to-use)
-  - [generate_seed command](#-generate_seed-command)
-  - [recover_seed command](#-recover_seed-command)
-  - [send command](#-send-command)
-  - [pubkey command](#-pubkey-command)
-  - [balance_by_pubkey command](#-balance_by_pubkey-command)
 - [Environment Variables](#environment-variables)
 - [Some Interesting Links](#some-interesting-links)
 - [Security](#security)
 - [FAQ](#faq)
 - [Various Documentations](#various-documentations)
 - [License](#license)
+
+
+
+## Wallet Commands Summary
+
+| Functionality | Description | Command |
+|---------------|-------------|---------|
+| [Generate Mnemonic](#-generate-mnemonic) | Creates a new BIP39 mnemonic phrase (12 words, with an optional passphrase). | `generate_seed` |
+| [Recover Keypair](#-recover-keypair) | Recover keypair and seed from a BIP39 mnemonic phrase. | `recover_seed <RECOVERY_PHRASE>` |
+| [Send SOL (lamports)](#-send-sol-lamports) | Send SOL to a recipient address (sign outgoing transaction). | `send <RECIPIENT_PUBKEY> <AMOUNT_IN_LAMPORTS>` |
+| [Public Key Display](#-get-public-key) | Retrieves and displays the public key from the locally stored keypair. | `pubkey` |
+| [Get Balance](#-get-balance-by-public-key) | Get balance (in SOL and in lamports) by public key. | `balance_by_pubkey <PUBKEY>` |
+| Get help | Get help for this Wallet. | `cargo run -- --help` |
 
 
 
@@ -56,24 +64,6 @@ This wallet manages:
 - **Send SOL (lamports)**: Send SOL to a recipient address (sign outgoing transaction).
 - **Public Key Display**: Retrieves and displays the public key from the locally stored keypair.
 - **Get Balance**: Get balance (in SOL and in lamports) by public key.
-
-
-
-## Wallet Commands Summary
-
-| Functionality | Description | Command |
-|---------------|-------------|---------|
-| [Generate Mnemonic](#generate-mnemonic) | Creates a new BIP39 mnemonic phrase (12 words, with an optional passphrase). | `generate_seed` |
-| [Recover Keypair](#recover-keypair) | Recover keypair and seed from a BIP39 mnemonic phrase. | `recover_seed <RECOVERY_PHRASE>` |
-| [Send SOL (lamports)](#send-sol-lamports) | Send SOL to a recipient address (sign outgoing transaction). | `send <RECIPIENT_PUBKEY> <AMOUNT_IN_LAMPORTS>` |
-| [Public Key Display](#get-public-key) | Retrieves and displays the public key from the locally stored keypair. | `pubkey` |
-| [Get Balance](#get-balance-by-public-key) | Get balance (in SOL and in lamports) by public key. | `balance_by_pubkey <PUBKEY>` |
-
-To see a summary of all available commands and options:
-
-```bash
-cargo run -- --help
-```
 
 
 
@@ -139,6 +129,8 @@ Your non-derived keypair will be created in your `<your-path>/storage/keypair/id
 
 The other keypairs (which will be derived from your seed) will be created in JSON files in your `<your-path>/storage/keypair/derived` directory (`KEYPAIR_DERIVATIONS_PATH` env var).
 
+
+
 ## 🌐 Generate Mnemonic
 
 > Generate and display a random mnemonic phrase.
@@ -165,6 +157,8 @@ Solana Public Key (derivation 3): 7rdf3btc5zNA7TXvA3Jc31VKnYRdc9goLmFYy6mEjbTv
 ```
 
 Here, since we wanted 3 derivations, 4 accounts (4 public keys) have been generated.
+
+
 
 ## 🌐 Recover Keypair
 
@@ -203,6 +197,8 @@ Solana Public Key (derivation 3): 7rdf3btc5zNA7TXvA3Jc31VKnYRdc9goLmFYy6mEjbTv
 
 Here, since we wanted 3 derivations, 4 accounts (4 public keys) have been generated.
 
+
+
 ## 🌐 Send SOL (lamports)
 
 > Send SOL (lamports) to a recipient address (sign outgoing transaction).
@@ -237,6 +233,8 @@ Transaction sent successfully!
 Failed to send transaction: ...
 ```
 
+
+
 ## 🌐 Get Public Key
 
 > Retrieve public key from stored keypair.
@@ -258,6 +256,8 @@ This command reads the keypair stored in `<your-path>/storage/keypair/id.json` f
 ```bash
 Solana Public Key: FTGJPL5hia749v3jhNWJA7uE2VoVGyofB7BBL2cLwoPc
 ```
+
+
 
 ## 🌐 Get Balance by Public Key
 

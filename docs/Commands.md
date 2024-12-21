@@ -103,7 +103,7 @@ cargo run -- balance_by_pubkey <PUBKEY>
 cargo run -- balance_by_pubkey BcHM6w7ywAsktXmmWG4Jjk2PmL2stS1K3ZKnQ6da24hk
 ```
 
->> Example of result:
+> Example of result:
 
 ```bash
 Balance: 0.010000000 SOL (10000000 lamports)
