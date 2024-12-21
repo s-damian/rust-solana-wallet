@@ -61,13 +61,13 @@ This wallet manages:
 
 ## Wallet Commands Summary
 
-| Command | Description 
-|--------------------------------|---|
-| [generate_seed](#-generate_seed-command) | Generates a 12-word BIP39 mnemonic phrase, derives the corresponding seed, saves the keypair, and displays the public key. |
-| [recover_seed](#-recover_seed-command) | Accepts a user-provided BIP39 mnemonic phrase, derives the corresponding seed, restores the keypair, and displays the public key. |
-| [send](#-send-command) | Send SOL to a recipient address. |
-| [pubkey](#-pubkey-command) | Displays the public key from a keypair stored in a JSON file. |
-| [balance_by_pubkey](#-balance_by_pubkey-command) | Get balance by public key. |
+| Functionality | Description | Command |
+|---------------|-------------|---------|
+| [Generate Mnemonic](#generate-mnemonic) | Creates a new BIP39 mnemonic phrase (12 words, with an optional passphrase). | `generate_seed` |
+| [Recover Keypair](#recover-keypair) | Recover keypair and seed from a BIP39 mnemonic phrase. | `recover_seed <RECOVERY_PHRASE>` |
+| [Send SOL (lamports)](#send-sol-lamports) | Send SOL to a recipient address (sign outgoing transaction). | `send <RECIPIENT_PUBKEY> <AMOUNT_IN_LAMPORTS>` |
+| [Public Key Display](#get-public-key) | Retrieves and displays the public key from the locally stored keypair. | `pubkey` |
+| [Get Balance](#get-balance-by-public-key) | Get balance (in SOL and in lamports) by public key. | `balance_by_pubkey <PUBKEY>` |
 
 To see a summary of all available commands and options:
 
@@ -139,7 +139,7 @@ Your non-derived keypair will be created in your `<your-path>/storage/keypair/id
 
 The other keypairs (which will be derived from your seed) will be created in JSON files in your `<your-path>/storage/keypair/derived` directory (`KEYPAIR_DERIVATIONS_PATH` env var).
 
-### 🌐 generate_seed command
+## 🌐 Generate Mnemonic
 
 > Generate and display a random mnemonic phrase.
 
@@ -166,7 +166,7 @@ Solana Public Key (derivation 3): 7rdf3btc5zNA7TXvA3Jc31VKnYRdc9goLmFYy6mEjbTv
 
 Here, since we wanted 3 derivations, 4 accounts (4 public keys) have been generated.
 
-### 🌐 recover_seed command
+## 🌐 Recover Keypair
 
 > Recover keypair and seed from a specific mnemonic phrase.
 
@@ -203,7 +203,7 @@ Solana Public Key (derivation 3): 7rdf3btc5zNA7TXvA3Jc31VKnYRdc9goLmFYy6mEjbTv
 
 Here, since we wanted 3 derivations, 4 accounts (4 public keys) have been generated.
 
-### 🌐 send command
+## 🌐 Send SOL (lamports)
 
 > Send SOL (lamports) to a recipient address (sign outgoing transaction).
 
@@ -237,7 +237,7 @@ Transaction sent successfully!
 Failed to send transaction: ...
 ```
 
-### 🌐 pubkey command
+## 🌐 Get Public Key
 
 > Retrieve public key from stored keypair.
 
@@ -259,7 +259,7 @@ This command reads the keypair stored in `<your-path>/storage/keypair/id.json` f
 Solana Public Key: FTGJPL5hia749v3jhNWJA7uE2VoVGyofB7BBL2cLwoPc
 ```
 
-### 🌐 balance_by_pubkey command
+## 🌐 Get Balance by Public Key
 
 > Get balance by public key.
 

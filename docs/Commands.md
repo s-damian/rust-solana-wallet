@@ -8,8 +8,8 @@ A Solana Wallet made in France 🇫🇷
 
 | Functionality | Description | Command |
 |---------------|-------------|---------|
-| [Generate Mnemonic](#generate-mnemonic) | Creates a new mnemonic phrase (12 words, with an optional passphrase). | `generate_seed` |
-| [Recover Keypair](#recover-keypair) | Recover keypair and seed from a mnemonic phrase. | `recover_seed <RECOVERY_PHRASE>` |
+| [Generate Mnemonic](#generate-mnemonic) | Creates a new BIP39 mnemonic phrase (12 words, with an optional passphrase). | `generate_seed` |
+| [Recover Keypair](#recover-keypair) | Recover keypair and seed from a BIP39 mnemonic phrase. | `recover_seed <RECOVERY_PHRASE>` |
 | [Send SOL (lamports)](#send-sol-lamports) | Send SOL to a recipient address (sign outgoing transaction). | `send <RECIPIENT_PUBKEY> <AMOUNT_IN_LAMPORTS>` |
 | [Public Key Display](#get-public-key) | Retrieves and displays the public key from the locally stored keypair. | `pubkey` |
 | [Get Balance](#get-balance-by-public-key) | Get balance (in SOL and in lamports) by public key. | `balance_by_pubkey <PUBKEY>` |
@@ -69,7 +69,7 @@ cargo run -- send 27nJwboVxL39gGfwFeefiHYqrFtipmHAHgkxo3xjPJ3L 2000000
 
 PS: 2000000 Lamports = 0.002 SOL.
 
-Example of result:
+> Example of result:
 
 ```bash
 Transaction sent successfully!
@@ -84,7 +84,7 @@ This command allows you to view your Solana public key if you have already store
 cargo run -- pubkey
 ```
 
-Example of result:
+> Example of result:
 
 ```bash
 Solana Public Key: BcHM6w7ywAsktXmmWG4Jjk2PmL2stS1K3ZKnQ6da24hk
@@ -103,7 +103,7 @@ cargo run -- balance_by_pubkey <PUBKEY>
 cargo run -- balance_by_pubkey BcHM6w7ywAsktXmmWG4Jjk2PmL2stS1K3ZKnQ6da24hk
 ```
 
-Example of result:
+>> Example of result:
 
 ```bash
 Balance: 0.010000000 SOL (10000000 lamports)
