@@ -1,7 +1,7 @@
-# BIP39 Solana Wallet
+# Rust Solana Wallet - Commands
 
 
-## Feature Summary
+- Feature Summary
 
 | Functionality | Description | Command |
 |---------------|-------------|---------|
@@ -12,9 +12,7 @@
 | [Get Balance](#get-balance-by-public-key) | Get balance (in SOL and in lamports) by public key. | `balance_by_pubkey <PUBKEY>` |
 
 
-## Commands
-
-### Generate Mnemonic
+## Generate Mnemonic
 
 This command generates a new mnemonic phrase (12 words).
 
@@ -32,7 +30,7 @@ Solana Public Key: BcHM6w7ywAsktXmmWG4Jjk2PmL2stS1K3ZKnQ6da24hk
 ```
 
 
-### Recover Keypair
+## Recover Keypair
 
 This command allows you to retrieve your seed (and therefore your private key) via a given mnemonic phrase.
 
@@ -50,7 +48,7 @@ Solana Public Key: BcHM6w7ywAsktXmmWG4Jjk2PmL2stS1K3ZKnQ6da24hk
 ```
 
 
-### Send SOL (lamports)
+## Send SOL (lamports)
 
 This command allows you to send Lamports to a destination address.
 
@@ -67,7 +65,7 @@ Transaction sent successfully!
 ```
 
 
-### Get Public Key
+## Get Public Key
 
 This command allows you to view your Solana public key if you have already stored your keypair locally.
 
@@ -82,7 +80,7 @@ Solana Public Key: BcHM6w7ywAsktXmmWG4Jjk2PmL2stS1K3ZKnQ6da24hk
 ```
 
 
-### Get Balance by Public Key
+## Get Balance by Public Key
 
 This command allows you to see the balance of a public address.
 
