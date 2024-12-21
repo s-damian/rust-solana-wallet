@@ -38,6 +38,10 @@ Solana Public Key: BcHM6w7ywAsktXmmWG4Jjk2PmL2stS1K3ZKnQ6da24hk
 This command allows you to retrieve your seed (and therefore your private key) via a given mnemonic phrase.
 
 ```bash
+cargo run -- recover_seed "<RECOVERY_PHRASE>"
+```
+
+```bash
 cargo run -- recover_seed "owner cherry you seek bless holiday humble rare orchard tennis cycle solid"
 ```
 
@@ -54,6 +58,10 @@ Solana Public Key: BcHM6w7ywAsktXmmWG4Jjk2PmL2stS1K3ZKnQ6da24hk
 ## Send SOL (lamports)
 
 This command allows you to send Lamports to a destination address.
+
+```bash
+cargo run -- send <RECIPIENT_PUBKEY> <AMOUNT_IN_LAMPORTS>
+```
 
 ```bash
 cargo run -- send 27nJwboVxL39gGfwFeefiHYqrFtipmHAHgkxo3xjPJ3L 2000000
@@ -86,6 +94,10 @@ Solana Public Key: BcHM6w7ywAsktXmmWG4Jjk2PmL2stS1K3ZKnQ6da24hk
 ## Get Balance by Public Key
 
 This command allows you to see the balance of a public address.
+
+```bash
+cargo run -- balance_by_pubkey <PUBKEY>
+```
 
 ```bash
 cargo run -- balance_by_pubkey BcHM6w7ywAsktXmmWG4Jjk2PmL2stS1K3ZKnQ6da24hk
