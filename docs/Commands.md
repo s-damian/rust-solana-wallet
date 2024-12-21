@@ -70,7 +70,7 @@ cargo run -- send 27nJwboVxL39gGfwFeefiHYqrFtipmHAHgkxo3xjPJ3L 2000000
 
 PS: 2000000 Lamports = 0.002 SOL.
 
-> Example of result:
+Example of result:
 
 ```bash
 Transaction sent successfully!
@@ -85,7 +85,7 @@ This command allows you to view your Solana public key if you have already store
 cargo run -- pubkey
 ```
 
-> Example of result:
+Example of result:
 
 ```bash
 Solana Public Key: BcHM6w7ywAsktXmmWG4Jjk2PmL2stS1K3ZKnQ6da24hk
@@ -104,7 +104,7 @@ cargo run -- balance_by_pubkey <PUBKEY>
 cargo run -- balance_by_pubkey BcHM6w7ywAsktXmmWG4Jjk2PmL2stS1K3ZKnQ6da24hk
 ```
 
-> Example of result:
+Example of result:
 
 ```bash
 Balance: 0.010000000 SOL (10000000 lamports)

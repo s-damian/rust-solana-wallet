@@ -176,8 +176,6 @@ This will also generate and write the keypair to the JSON file.
 cargo run -- recover_seed "<RECOVERY_PHRASE>"
 ```
 
-- Example:
-
 ```bash
 cargo run -- recover_seed "shed scorpion manual wheat monster phone winter toe dream kitchen salad column"
 ```
@@ -212,8 +210,6 @@ This command allows you to sign an outgoing transaction from your wallet to a de
 ```bash
 cargo run -- send <RECIPIENT_PUBKEY> <AMOUNT_IN_LAMPORTS>
 ```
-
-- Example:
 
 ```bash
 cargo run -- send EMLY3VvNZ41yMWyPQy2AiEfJTPpZdzeGNG5zaaq3Lihb 2000000
@@ -272,8 +268,6 @@ This command allows you to see the balance (in SOL and in lamports) of a public 
 ```bash
 cargo run -- balance_by_pubkey <PUBKEY>
 ```
-
-- Example:
 
 ```bash
 cargo run -- balance_by_pubkey EMLY3VvNZ41yMWyPQy2AiEfJTPpZdzeGNG5zaaq3Lihb
