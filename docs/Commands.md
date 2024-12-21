@@ -3,7 +3,7 @@
 
 A Solana Wallet made in France 🇫🇷
 
-### Here you can see the examples of the commands as in a real context
+**Here you can see the examples of the commands as in a real context**
 
 
 | Functionality | Description | Command |
