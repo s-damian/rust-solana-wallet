@@ -329,6 +329,9 @@ Always make sure to back up your mnemonic phrases and private keys in a secure l
 - See further technical details here:
 [Notes-tech.md](./docs/Notes-tech.md)
 
+- See example commands (as in real context):
+[Commands.md](./docs/Commands.md)
+
 
 
 ## License
