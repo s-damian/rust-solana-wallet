@@ -126,6 +126,8 @@ cargo run -- --help
 Example of result:
 
 ```bash
+Example of a Solana Wallet in Rust
+
 Usage: rust_solana_wallet [COMMAND]
 
 Commands:
