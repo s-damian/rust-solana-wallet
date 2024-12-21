@@ -109,3 +109,30 @@ Example of result:
 ```bash
 Balance: 0.010000000 SOL (10000000 lamports)
 ```
+
+
+## Get help for this Wallet
+
+Get help for this Wallet.
+
+```bash
+cargo run -- --help
+```
+
+Example of result:
+
+```bash
+Usage: rust_solana_wallet [COMMAND]
+
+Commands:
+  generate_seed      Generates a new random mnemonic
+  recover_seed       Generates a mnemonic from a specified phrase
+  send               Send SOL to a specific address
+  pubkey             Displays the public key from the keypair stored in file
+  balance_by_pubkey  Displays the balance for the public key
+  help               Print this message or the help of the given subcommand(s)
+
+Options:
+  -h, --help     Print help
+  -V, --version  Print version
+```
