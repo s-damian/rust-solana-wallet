@@ -131,7 +131,7 @@ The other keypairs (which will be derived from your seed) will be created in JSO
 
 
 
-## 🌐 Generate Mnemonic
+## 🦀 Generate Mnemonic
 
 > Generate and display a random mnemonic phrase.
 
@@ -160,7 +160,7 @@ Here, since we wanted 3 derivations, 4 accounts (4 public keys) have been genera
 
 
 
-## 🌐 Recover Keypair
+## 🦀 Recover Keypair
 
 > Recover keypair and seed from a specific mnemonic phrase.
 
@@ -197,7 +197,7 @@ Here, since we wanted 3 derivations, 4 accounts (4 public keys) have been genera
 
 
 
-## 🌐 Send SOL (lamports)
+## 🦀 Send SOL (lamports)
 
 > Send SOL (lamports) to a recipient address (sign outgoing transaction).
 
@@ -231,7 +231,7 @@ Failed to send transaction: ...
 
 
 
-## 🌐 Get Public Key
+## 🦀 Get Public Key
 
 > Retrieve public key from stored keypair.
 
@@ -255,7 +255,7 @@ Solana Public Key: FTGJPL5hia749v3jhNWJA7uE2VoVGyofB7BBL2cLwoPc
 
 
 
-## 🌐 Get Balance by Public Key
+## 🦀 Get Balance by Public Key
 
 > Get balance by public key.
 
