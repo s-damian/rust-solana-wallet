@@ -13,7 +13,7 @@ A Solana Wallet made in France 🇫🇷
 | [Send SOL (lamports)](#send-sol-lamports) | Send SOL to a recipient address (sign outgoing transaction). | `send <RECIPIENT_PUBKEY> <AMOUNT_IN_LAMPORTS>` |
 | [Public Key Display](#get-public-key) | Retrieves and displays the public key from the locally stored keypair. | `pubkey` |
 | [Get Balance](#get-balance-by-public-key) | Get balance (in SOL and in lamports) by public key. | `balance_by_pubkey <PUBKEY>` |
-| [Get help](#get-help-for-this-wallet) | Get help for this Wallet. | `cargo run -- --help` |
+| [Get Help](#get-help-for-this-wallet) | Get help for this Wallet. | `cargo run -- --help` |
 
 
 ## Generate Mnemonic
@@ -24,7 +24,9 @@ This command generates a new mnemonic phrase (12 words).
 cargo run -- generate_seed
 ```
 
-Example of result (without passphrase):
+> PS: In this example we did not use a passphrase
+
+Example of result:
 
 ```bash
 BIP39 Mnemonic (random phrase): owner cherry you seek bless holiday humble rare orchard tennis cycle solid
@@ -46,7 +48,9 @@ cargo run -- recover_seed "<RECOVERY_PHRASE>"
 cargo run -- recover_seed "owner cherry you seek bless holiday humble rare orchard tennis cycle solid"
 ```
 
-Example of result (without passphrase):
+> PS: In this example we did not use a passphrase
+
+Example of result:
 
 ```bash
 BIP39 Mnemonic (given phrase): owner cherry you seek bless holiday humble rare orchard tennis cycle solid
@@ -68,7 +72,7 @@ cargo run -- send <RECIPIENT_PUBKEY> <AMOUNT_IN_LAMPORTS>
 cargo run -- send 27nJwboVxL39gGfwFeefiHYqrFtipmHAHgkxo3xjPJ3L 2000000
 ```
 
-PS: 2000000 Lamports = 0.002 SOL.
+> PS: 2000000 Lamports = 0.002 SOL.
 
 Example of result:
 
