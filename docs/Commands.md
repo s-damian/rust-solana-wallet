@@ -1,7 +1,9 @@
 # Rust Solana Wallet - Commands
 
 
-#### Here you can see the examples of the commands as in a real context
+A Solana Wallet made in France 🇫🇷
+
+### Here you can see the examples of the commands as in a real context
 
 
 | Functionality | Description | Command |
