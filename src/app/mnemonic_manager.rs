@@ -47,7 +47,7 @@ impl MnemonicManager {
 
     /// Dérive et stocke une paire de clés.
     fn derive_and_store_keypair(&self, seed_bytes: &[u8], index: usize) {
-        // Dériver la seed pour chaque index spécifié (sauf pour l'index 0 qui utilise la seed originale).
+        // Dériver la seed pour chaque index spécifié.
         match BipSeed::derive_seed_bytes(seed_bytes, index) {
             Ok(derived_seed_bytes) => {
                 // Génerer une paire de clés (clé publique et clé privée) à partir de la seed en bytes.

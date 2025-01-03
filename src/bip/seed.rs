@@ -38,12 +38,6 @@ impl BipSeed {
     /// # Returns:
     /// Retourne un vecteur contenant les octets de la clé privée dérivée. Ou retourne une erreur en cas de problème lors de la dérivation.
     pub fn derive_seed_bytes(seed_bytes: &[u8], index: usize) -> Result<Vec<u8>, Bip32Error> {
-        // Si l'index est 0, retourne directement les octets de la seed originale sans modification.
-        // Cela garantit que la clé principale reste inchangée si aucune dérivation n'est requise.
-        if index == 0 {
-            return Ok(seed_bytes.to_vec());
-        }
-
         // Construit le chemin de dérivation complet en utilisant le standard BIP44 pour Solana.
         // Le format est "m/44'/501'/0'/0/{index}", où {index} représente le numéro de la dérivation.
         // SLIP44: 501 = Solana Coin (SOL Symbol).
