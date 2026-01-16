@@ -38,27 +38,27 @@ impl BipSeed {
     /// # Returns:
     /// Retourne un vecteur contenant les octets de la clé privée dérivée. Ou retourne une erreur en cas de problème lors de la dérivation.
     pub fn derive_seed_bytes(seed_bytes: &[u8], index: usize) -> Result<Vec<u8>, Bip32Error> {
-        // Construit le chemin de dérivation complet en utilisant le standard BIP44 pour Solana.
-        // Le format est "m/44'/501'/0'/0/{index}", où {index} représente le numéro de la dérivation.
         // SLIP44: 501 = Solana Coin (SOL Symbol).
+        // Format: "m/44'/501'/{index}'/0'" (Style Trezor)
         //
         // Le chemin de dérivation utilisé dans BIP44 suit cette structure :
-        // m / purpose' / coin_type' / account' / change / address_index
+        // m / purpose' / coin_type' / account' / change'
         // # Résumé :
-        // - m:
-        //   Est la "master key", la racine de toutes les dérivations.
-        // - purpose:
-        //   Est une constante fixée à 44' (pour indiquer qu'on suit la norme BIP44).
-        // - coin_type:
-        //   Est une constante (integer), définie pour chaque crypto-monnaie.
-        // - account:
-        //   Les users peuvent utiliser ces comptes pour organiser les fonds de la même manière que les comptes bancaires.
-        //   Ce numéro est utilisé comme index enfant dans la dérivation BIP32.
-        // - change: 0 ou 1.
-        //   La constante 0 est utilisée pour la chaîne externe. La constante 1 pour la chaîne interne (également appelée adresse de changement).
-        // - address_index:
-        //   Représente le numéro séquentiel d’une adresse à l’intérieur de cet "account".
-        let path = format!("m/44'/501'/0'/0/{}", index);
+        // - m : Est la "master key", la racine de toutes les dérivations.
+        // - purpose : Est une constante fixée à 44' (pour indiquer qu'on suit la norme BIP44).
+        // - coin_type : Est une constante (integer), définie pour chaque crypto-monnaie.
+        // - account : Account index (incrémenté pour chaque nouveau compte).
+        // - change (0 ou 1) : 0' pour sous-niveau hardened fixe (structure HD Trezor).
+        //
+        // Note :
+        // Solana utilise Ed25519 (et non secp256k1 comme BTC/ETH).
+        // Ed25519 (SLIP-0010) exige que tous les niveaux soient hardened (').
+        // Les niveaux non-hardened (change/address_index classiques de BIP44) ne sont pas supportés avec Solana,
+        // d'où l'utilisation de /0' au lieu de /0/0.
+
+        //let path = format!("m/44'/501'/0'/0/{}", index); // Deprecated derivation paths (Non-hardened invalide pour Solana).
+        //let path = format!("m/44'/501'/{}'", index); // bip44 grouping : Style Ledger (simple).
+        let path = format!("m/44'/501'/{}'/0'", index); // bip44Change grouping : Style Trezor (avec sous-niveau).
         let derivation_path = DerivationPath::from_str(&path)?;
 
         // Créer une clé privée étendue à partir des octets de la seed.
